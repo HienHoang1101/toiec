@@ -1147,7 +1147,7 @@ function render() {
     const key = item.test + '-' + item.idx;
     const isS = state.starred.has(key);
     return `<tr style="animation-delay:${Math.min(i*8,300)}ms">
-      <td>${item.test * 100 - 100 + item.idx + 1}</td>
+      <td>${i + 1}</td>
       <td><span class="word">${item.w}</span><br><small style="color:var(--muted);font-size:11px">Test ${item.test} · #${item.idx+1}</small></td>
       <td><span class="meaning">${item.m}</span></td>
       <td><span class="tag ${item.t}">${TYPE_LABELS[item.t]||item.t}</span></td>
