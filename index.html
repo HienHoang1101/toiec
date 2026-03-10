@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOEIC Vol.5 – 10 Tests Vocabulary</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -35,7 +35,9 @@
       body {
         background: var(--bg);
         color: var(--text);
-        font-family: "DM Sans", sans-serif;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
         min-height: 100vh;
         overflow-x: hidden;
       }
@@ -108,15 +110,16 @@
         font-size: 8px;
       }
       h1 {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: clamp(32px, 6vw, 64px);
         font-weight: 800;
-        letter-spacing: -2px;
-        line-height: 1.05;
+        letter-spacing: -1px;
+        line-height: 1.1;
       }
       h1 em {
         font-style: normal;
         background: linear-gradient(135deg, #4f8fff, #a78bfa);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -144,7 +147,7 @@
         min-width: 100px;
       }
       .gstat-n {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: 26px;
         font-weight: 800;
       }
@@ -193,7 +196,7 @@
         background: var(--card);
         border: 1px solid var(--border2);
         color: var(--text);
-        font-family: "DM Sans", sans-serif;
+        font-family: "Be Vietnam Pro", sans-serif;
         font-size: 14px;
         padding: 12px 14px 12px 42px;
         border-radius: 12px;
@@ -217,7 +220,7 @@
         background: var(--card);
         border: 1px solid var(--border2);
         color: var(--muted);
-        font-family: "DM Sans", sans-serif;
+        font-family: "Be Vietnam Pro", sans-serif;
         font-size: 12px;
         font-weight: 600;
         padding: 9px 16px;
@@ -264,7 +267,7 @@
         background: var(--card);
         border: 1px solid var(--border);
         color: var(--muted);
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: 13px;
         font-weight: 700;
         padding: 10px 18px;
@@ -294,7 +297,7 @@
         gap: 10px;
       }
       .section-title {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: 22px;
         font-weight: 800;
       }
@@ -302,7 +305,7 @@
         font-size: 14px;
         color: var(--muted);
         font-weight: 400;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Be Vietnam Pro", sans-serif;
         margin-left: 8px;
       }
       .showing-info {
@@ -326,10 +329,10 @@
         border-bottom: 1px solid var(--border);
       }
       th {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: 10px;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 1.2px;
         text-transform: uppercase;
         color: var(--muted);
         padding: 16px 20px;
@@ -365,7 +368,7 @@
         text-align: center;
         color: var(--muted);
         font-size: 11px;
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-weight: 700;
       }
       td:last-child {
@@ -510,7 +513,7 @@
         transition: width 0.4s ease;
       }
       .qword {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: clamp(28px, 5vw, 42px);
         font-weight: 800;
         color: #fff;
@@ -554,7 +557,7 @@
         color: var(--accent2);
       }
       .result-score {
-        font-family: "Syne", sans-serif;
+        font-family: "Lexend", sans-serif;
         font-size: 72px;
         font-weight: 800;
         color: var(--accent3);
@@ -571,7 +574,7 @@
         background: var(--border);
         border: none;
         color: var(--muted2);
-        font-family: "DM Sans", sans-serif;
+        font-family: "Be Vietnam Pro", sans-serif;
         font-size: 14px;
         font-weight: 600;
         padding: 13px 26px;
@@ -1851,7 +1854,7 @@
           pct >= 80 ? "Xuất sắc!" : pct >= 60 ? "Tốt lắm!" : "Cần ôn thêm!";
         document.getElementById("qcard").innerHTML = `
     <div style="font-size:52px">${e}</div>
-    <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:12px 0 4px">${msg}</div>
+    <div style="font-family:'Lexend',sans-serif;font-size:22px;font-weight:800;margin:12px 0 4px">${msg}</div>
     <div class="result-score">${Q.score}/${Q.data.length}</div>
     <div style="color:var(--muted);margin-bottom:24px">${pct}% chính xác</div>
     <div class="qbtn-row">
