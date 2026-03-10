@@ -1,1226 +1,1855 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOEIC Vol.5 – 10 Tests Vocabulary</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #080b14;
-  --surface: #0f1221;
-  --card: #141828;
-  --border: #1e2540;
-  --border2: #262d4a;
-  --accent: #4f8fff;
-  --accent2: #ff6b6b;
-  --accent3: #43e97b;
-  --gold: #ffc947;
-  --purple: #a78bfa;
-  --text: #dde3f8;
-  --muted: #6b77a0;
-  --muted2: #8892b8;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOEIC Vol.5 – 10 Tests Vocabulary</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #080b14;
+        --surface: #0f1221;
+        --card: #141828;
+        --border: #1e2540;
+        --border2: #262d4a;
+        --accent: #4f8fff;
+        --accent2: #ff6b6b;
+        --accent3: #43e97b;
+        --gold: #ffc947;
+        --purple: #a78bfa;
+        --text: #dde3f8;
+        --muted: #6b77a0;
+        --muted2: #8892b8;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-/* Ambient glow */
-.glow-orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;opacity:0.18}
-.glow-orb.a{width:600px;height:600px;background:#4f8fff;top:-200px;left:-200px}
-.glow-orb.b{width:500px;height:500px;background:#7c3aed;top:50%;right:-200px}
+      /* Ambient glow */
+      .glow-orb {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(120px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.18;
+      }
+      .glow-orb.a {
+        width: 600px;
+        height: 600px;
+        background: #4f8fff;
+        top: -200px;
+        left: -200px;
+      }
+      .glow-orb.b {
+        width: 500px;
+        height: 500px;
+        background: #7c3aed;
+        top: 50%;
+        right: -200px;
+      }
 
-/* Noise overlay */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+      /* Noise overlay */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+      }
 
-.app{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 16px 80px}
+      .app {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px 80px;
+      }
 
-/* ── HEADER ── */
-header{text-align:center;padding:56px 0 40px;animation:fadeDown .7s ease both}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4f8fff18,#a78bfa18);border:1px solid #4f8fff33;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:999px;margin-bottom:20px}
-.eyebrow::before{content:'◆';font-size:8px}
-h1{font-family:'Syne',sans-serif;font-size:clamp(32px,6vw,64px);font-weight:800;letter-spacing:-2px;line-height:1.05}
-h1 em{font-style:normal;background:linear-gradient(135deg,#4f8fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.tagline{margin-top:14px;color:var(--muted2);font-size:16px}
+      /* ── HEADER ── */
+      header {
+        text-align: center;
+        padding: 56px 0 40px;
+        animation: fadeDown 0.7s ease both;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #4f8fff18, #a78bfa18);
+        border: 1px solid #4f8fff33;
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        padding: 6px 18px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+      }
+      .eyebrow::before {
+        content: "◆";
+        font-size: 8px;
+      }
+      h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(32px, 6vw, 64px);
+        font-weight: 800;
+        letter-spacing: -2px;
+        line-height: 1.05;
+      }
+      h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, #4f8fff, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .tagline {
+        margin-top: 14px;
+        color: var(--muted2);
+        font-size: 16px;
+      }
 
-/* ── GLOBAL STATS ── */
-.global-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;animation:fadeDown .7s .1s ease both}
-.gstat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 24px;text-align:center;min-width:100px}
-.gstat-n{font-family:'Syne',sans-serif;font-size:26px;font-weight:800}
-.gstat-n.blue{color:var(--accent)}
-.gstat-n.gold{color:var(--gold)}
-.gstat-n.green{color:var(--accent3)}
-.gstat-l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+      /* ── GLOBAL STATS ── */
+      .global-stats {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+        animation: fadeDown 0.7s 0.1s ease both;
+      }
+      .gstat {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px 24px;
+        text-align: center;
+        min-width: 100px;
+      }
+      .gstat-n {
+        font-family: "Syne", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+      }
+      .gstat-n.blue {
+        color: var(--accent);
+      }
+      .gstat-n.gold {
+        color: var(--gold);
+      }
+      .gstat-n.green {
+        color: var(--accent3);
+      }
+      .gstat-l {
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 2px;
+      }
 
-/* ── CONTROLS BAR ── */
-.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px;animation:fadeDown .7s .15s ease both}
-.search-wrap{position:relative;flex:1;min-width:240px;max-width:380px}
-.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
-input[type=text]{width:100%;background:var(--card);border:1px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;padding:12px 14px 12px 42px;border-radius:12px;outline:none;transition:border-color .2s}
-input[type=text]:focus{border-color:var(--accent)}
-input[type=text]::placeholder{color:var(--muted)}
+      /* ── CONTROLS BAR ── */
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 32px;
+        animation: fadeDown 0.7s 0.15s ease both;
+      }
+      .search-wrap {
+        position: relative;
+        flex: 1;
+        min-width: 240px;
+        max-width: 380px;
+      }
+      .search-wrap svg {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--muted);
+        pointer-events: none;
+      }
+      input[type="text"] {
+        width: 100%;
+        background: var(--card);
+        border: 1px solid var(--border2);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        padding: 12px 14px 12px 42px;
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      input[type="text"]:focus {
+        border-color: var(--accent);
+      }
+      input[type="text"]::placeholder {
+        color: var(--muted);
+      }
 
-.btn-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.chip{background:var(--card);border:1px solid var(--border2);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;transition:all .18s;white-space:nowrap}
-.chip:hover{border-color:var(--accent);color:var(--accent)}
-.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.chip.gold-chip.on{background:var(--gold);border-color:var(--gold);color:#000}
-.quiz-chip{background:linear-gradient(135deg,#4f8fff,#7c3aed);border:none;color:#fff;font-weight:700}
-.quiz-chip:hover{opacity:.85;color:#fff}
+      .btn-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .chip {
+        background: var(--card);
+        border: 1px solid var(--border2);
+        color: var(--muted);
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 9px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.18s;
+        white-space: nowrap;
+      }
+      .chip:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .chip.on {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .chip.gold-chip.on {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: #000;
+      }
+      .quiz-chip {
+        background: linear-gradient(135deg, #4f8fff, #7c3aed);
+        border: none;
+        color: #fff;
+        font-weight: 700;
+      }
+      .quiz-chip:hover {
+        opacity: 0.85;
+        color: #fff;
+      }
 
-/* ── TEST TABS ── */
-.test-tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;animation:fadeDown .7s .2s ease both}
-.ttab{background:var(--card);border:1px solid var(--border);color:var(--muted);font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:10px 18px;border-radius:10px;cursor:pointer;transition:all .2s}
-.ttab:hover{border-color:var(--border2);color:var(--text)}
-.ttab.on{color:#fff;border-color:transparent}
+      /* ── TEST TABS ── */
+      .test-tabs {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 28px;
+        animation: fadeDown 0.7s 0.2s ease both;
+      }
+      .ttab {
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-family: "Syne", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .ttab:hover {
+        border-color: var(--border2);
+        color: var(--text);
+      }
+      .ttab.on {
+        color: #fff;
+        border-color: transparent;
+      }
 
-/* ── TABLE SECTION ── */
-.table-section{animation:fadeUp .5s .25s ease both}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
-.section-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800}
-.section-title span{font-size:14px;color:var(--muted);font-weight:400;font-family:'DM Sans',sans-serif;margin-left:8px}
-.showing-info{color:var(--muted);font-size:13px}
+      /* ── TABLE SECTION ── */
+      .table-section {
+        animation: fadeUp 0.5s 0.25s ease both;
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .section-title {
+        font-family: "Syne", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .section-title span {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 400;
+        font-family: "DM Sans", sans-serif;
+        margin-left: 8px;
+      }
+      .showing-info {
+        color: var(--muted);
+        font-size: 13px;
+      }
 
-.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:20px}
-table{width:100%;border-collapse:collapse}
-thead tr{background:linear-gradient(90deg,#161c30,#141828);border-bottom:1px solid var(--border)}
-th{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:16px 20px;text-align:left}
-th:first-child{width:50px;text-align:center}
-th:last-child{width:60px;text-align:center}
+      .table-wrap {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead tr {
+        background: linear-gradient(90deg, #161c30, #141828);
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        font-family: "Syne", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 16px 20px;
+        text-align: left;
+      }
+      th:first-child {
+        width: 50px;
+        text-align: center;
+      }
+      th:last-child {
+        width: 60px;
+        text-align: center;
+      }
 
-tbody tr{border-bottom:1px solid var(--border);transition:background .15s;animation:rowIn .3s ease both}
-tbody tr:last-child{border-bottom:none}
-tbody tr:hover{background:#1a2038}
+      tbody tr {
+        border-bottom: 1px solid var(--border);
+        transition: background 0.15s;
+        animation: rowIn 0.3s ease both;
+      }
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+      tbody tr:hover {
+        background: #1a2038;
+      }
 
-td{padding:13px 20px;font-size:14px;vertical-align:middle}
-td:first-child{text-align:center;color:var(--muted);font-size:11px;font-family:'Syne',sans-serif;font-weight:700}
-td:last-child{text-align:center}
+      td {
+        padding: 13px 20px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+      td:first-child {
+        text-align: center;
+        color: var(--muted);
+        font-size: 11px;
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+      td:last-child {
+        text-align: center;
+      }
 
-.word{font-weight:700;font-size:15px;color:#fff;letter-spacing:.2px}
-.meaning{color:var(--gold);font-weight:500}
-.tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 8px;border-radius:6px;border:1px solid}
-.tag.v{color:#4f8fff;border-color:#4f8fff33;background:#4f8fff0d}
-.tag.n{color:#43e97b;border-color:#43e97b33;background:#43e97b0d}
-.tag.adj{color:#ffc947;border-color:#ffc94733;background:#ffc9470d}
-.tag.adv{color:#ff6b6b;border-color:#ff6b6b33;background:#ff6b6b0d}
-.tag.ph{color:#a78bfa;border-color:#a78bfa33;background:#a78bfa0d}
+      .word {
+        font-weight: 700;
+        font-size: 15px;
+        color: #fff;
+        letter-spacing: 0.2px;
+      }
+      .meaning {
+        color: var(--gold);
+        font-weight: 500;
+      }
+      .speak-btn {
+        background: #1a2038;
+        border: 1px solid var(--border2);
+        color: var(--text);
+        font-size: 12px;
+        line-height: 1;
+        padding: 6px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.18s;
+      }
+      .speak-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .tag {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 1px solid;
+      }
+      .tag.v {
+        color: #4f8fff;
+        border-color: #4f8fff33;
+        background: #4f8fff0d;
+      }
+      .tag.n {
+        color: #43e97b;
+        border-color: #43e97b33;
+        background: #43e97b0d;
+      }
+      .tag.adj {
+        color: #ffc947;
+        border-color: #ffc94733;
+        background: #ffc9470d;
+      }
+      .tag.adv {
+        color: #ff6b6b;
+        border-color: #ff6b6b33;
+        background: #ff6b6b0d;
+      }
+      .tag.ph {
+        color: #a78bfa;
+        border-color: #a78bfa33;
+        background: #a78bfa0d;
+      }
 
-.star-btn{background:none;border:none;cursor:pointer;font-size:17px;padding:4px 6px;border-radius:6px;transition:transform .15s;color:var(--border2)}
-.star-btn:hover{transform:scale(1.3);background:none}
-.star-btn.on{color:var(--gold)}
+      .star-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+        padding: 4px 6px;
+        border-radius: 6px;
+        transition: transform 0.15s;
+        color: var(--border2);
+      }
+      .star-btn:hover {
+        transform: scale(1.3);
+        background: none;
+      }
+      .star-btn.on {
+        color: var(--gold);
+      }
 
-.no-results{text-align:center;padding:60px 20px;color:var(--muted);display:none}
-.no-results span{font-size:36px;display:block;margin-bottom:12px}
+      .no-results {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--muted);
+        display: none;
+      }
+      .no-results span {
+        font-size: 36px;
+        display: block;
+        margin-bottom: 12px;
+      }
 
-/* ── QUIZ OVERLAY ── */
-#quiz-overlay{display:none;position:fixed;inset:0;background:#080b14ee;backdrop-filter:blur(12px);z-index:200;align-items:center;justify-content:center;animation:fadeIn .3s ease}
-#quiz-overlay.show{display:flex}
-.qcard{background:var(--card);border:1px solid var(--border2);border-radius:28px;padding:48px 40px;max-width:520px;width:92%;text-align:center;box-shadow:0 40px 120px #00000090;animation:scaleIn .35s ease}
-.qprogress{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
-.qbar{height:4px;background:var(--border);border-radius:99px;margin-bottom:28px;overflow:hidden}
-.qbar-fill{height:100%;background:linear-gradient(90deg,#4f8fff,#a78bfa);border-radius:99px;transition:width .4s ease}
-.qword{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,42px);font-weight:800;color:#fff;margin-bottom:6px;word-break:break-word}
-.qhint{font-size:13px;color:var(--muted);margin-bottom:28px}
-.qopts{display:grid;gap:10px}
-.qopt{background:#1a2038;border:1px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;padding:14px 18px;border-radius:12px;cursor:pointer;transition:all .18s;text-align:left}
-.qopt:hover{background:#202840;border-color:var(--accent)}
-.qopt.correct{background:#43e97b15;border-color:var(--accent3);color:var(--accent3)}
-.qopt.wrong{background:#ff6b6b15;border-color:var(--accent2);color:var(--accent2)}
-.result-score{font-family:'Syne',sans-serif;font-size:72px;font-weight:800;color:var(--accent3);margin:10px 0}
-.qbtn-row{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
-.qbtn{background:var(--border);border:none;color:var(--muted2);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:12px;cursor:pointer;transition:all .18s}
-.qbtn:hover{background:var(--accent);color:#fff}
-.qbtn.primary{background:linear-gradient(135deg,#4f8fff,#7c3aed);color:#fff}
+      /* ── QUIZ OVERLAY ── */
+      #quiz-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #080b14ee;
+        backdrop-filter: blur(12px);
+        z-index: 200;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+      }
+      #quiz-overlay.show {
+        display: flex;
+      }
+      .qcard {
+        background: var(--card);
+        border: 1px solid var(--border2);
+        border-radius: 28px;
+        padding: 48px 40px;
+        max-width: 520px;
+        width: 92%;
+        text-align: center;
+        box-shadow: 0 40px 120px #00000090;
+        animation: scaleIn 0.35s ease;
+      }
+      .qprogress {
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .qbar {
+        height: 4px;
+        background: var(--border);
+        border-radius: 99px;
+        margin-bottom: 28px;
+        overflow: hidden;
+      }
+      .qbar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #4f8fff, #a78bfa);
+        border-radius: 99px;
+        transition: width 0.4s ease;
+      }
+      .qword {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(28px, 5vw, 42px);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 6px;
+        word-break: break-word;
+      }
+      .qhint {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 28px;
+      }
+      .qopts {
+        display: grid;
+        gap: 10px;
+      }
+      .qopt {
+        background: #1a2038;
+        border: 1px solid var(--border2);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 14px 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.18s;
+        text-align: left;
+      }
+      .qopt:hover {
+        background: #202840;
+        border-color: var(--accent);
+      }
+      .qopt.correct {
+        background: #43e97b15;
+        border-color: var(--accent3);
+        color: var(--accent3);
+      }
+      .qopt.wrong {
+        background: #ff6b6b15;
+        border-color: var(--accent2);
+        color: var(--accent2);
+      }
+      .result-score {
+        font-family: "Syne", sans-serif;
+        font-size: 72px;
+        font-weight: 800;
+        color: var(--accent3);
+        margin: 10px 0;
+      }
+      .qbtn-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+      .qbtn {
+        background: var(--border);
+        border: none;
+        color: var(--muted2);
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 13px 26px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.18s;
+      }
+      .qbtn:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+      .qbtn.primary {
+        background: linear-gradient(135deg, #4f8fff, #7c3aed);
+        color: #fff;
+      }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-@keyframes rowIn{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+      /* ── ANIMATIONS ── */
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes rowIn {
+        from {
+          opacity: 0;
+          transform: translateX(-6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
 
-/* ── RESPONSIVE ── */
-@media(max-width:600px){
-  th:nth-child(4),td:nth-child(4){display:none}
-  .qcard{padding:32px 24px}
-}
-</style>
-</head>
-<body>
-<div class="glow-orb a"></div>
-<div class="glow-orb b"></div>
+      /* ── RESPONSIVE ── */
+      @media (max-width: 600px) {
+        th:nth-child(4),
+        td:nth-child(4) {
+          display: none;
+        }
+        .qcard {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow-orb a"></div>
+    <div class="glow-orb b"></div>
 
-<div class="app">
+    <div class="app">
+      <!-- HEADER -->
+      <header>
+        <div class="eyebrow">ETS TOEIC Vol. 5 · RC</div>
+        <h1>800 từ vựng<br /><em>10 Tests</em></h1>
+        <p class="tagline">Tra cứu · Lọc · Đánh dấu · Luyện Quiz</p>
+      </header>
 
-<!-- HEADER -->
-<header>
-  <div class="eyebrow">ETS TOEIC Vol. 5 · RC</div>
-  <h1>800 từ vựng<br><em>10 Tests</em></h1>
-  <p class="tagline">Tra cứu · Lọc · Đánh dấu · Luyện Quiz</p>
-</header>
+      <!-- GLOBAL STATS -->
+      <div class="global-stats">
+        <div class="gstat">
+          <div class="gstat-n blue">800</div>
+          <div class="gstat-l">Tổng từ</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-n gold" id="g-starred">0</div>
+          <div class="gstat-l">Đã đánh dấu</div>
+        </div>
+        <div class="gstat">
+          <div class="gstat-n green" id="g-showing">800</div>
+          <div class="gstat-l">Đang hiển thị</div>
+        </div>
+      </div>
 
-<!-- GLOBAL STATS -->
-<div class="global-stats">
-  <div class="gstat"><div class="gstat-n blue">800</div><div class="gstat-l">Tổng từ</div></div>
-  <div class="gstat"><div class="gstat-n gold" id="g-starred">0</div><div class="gstat-l">Đã đánh dấu</div></div>
-  <div class="gstat"><div class="gstat-n green" id="g-showing">800</div><div class="gstat-l">Đang hiển thị</div></div>
-</div>
+      <!-- CONTROLS -->
+      <div class="controls">
+        <div class="search-wrap">
+          <svg
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            placeholder="Tìm từ tiếng Anh hoặc nghĩa tiếng Việt…"
+            oninput="render()"
+          />
+        </div>
+        <div class="btn-row" id="type-chips">
+          <button
+            class="chip on"
+            data-type="all"
+            onclick="setType('all', this)"
+          >
+            Tất cả
+          </button>
+          <button class="chip" data-type="v" onclick="setType('v', this)">
+            Động từ
+          </button>
+          <button class="chip" data-type="n" onclick="setType('n', this)">
+            Danh từ
+          </button>
+          <button class="chip" data-type="adj" onclick="setType('adj', this)">
+            Tính từ
+          </button>
+          <button class="chip" data-type="adv" onclick="setType('adv', this)">
+            Trạng từ
+          </button>
+          <button class="chip" data-type="ph" onclick="setType('ph', this)">
+            Cụm từ
+          </button>
+          <button
+            class="chip gold-chip"
+            data-type="starred"
+            onclick="setType('starred', this)"
+          >
+            ⭐ Đã đánh dấu
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="chip quiz-chip" onclick="startQuiz()">
+            🎯 Quiz luyện tập
+          </button>
+        </div>
+      </div>
 
-<!-- CONTROLS -->
-<div class="controls">
-  <div class="search-wrap">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="search" placeholder="Tìm từ tiếng Anh hoặc nghĩa tiếng Việt…" oninput="render()">
-  </div>
-  <div class="btn-row" id="type-chips">
-    <button class="chip on" data-type="all" onclick="setType('all',this)">Tất cả</button>
-    <button class="chip" data-type="v" onclick="setType('v',this)">Động từ</button>
-    <button class="chip" data-type="n" onclick="setType('n',this)">Danh từ</button>
-    <button class="chip" data-type="adj" onclick="setType('adj',this)">Tính từ</button>
-    <button class="chip" data-type="adv" onclick="setType('adv',this)">Trạng từ</button>
-    <button class="chip" data-type="ph" onclick="setType('ph',this)">Cụm từ</button>
-    <button class="chip gold-chip" data-type="starred" onclick="setType('starred',this)">⭐ Đã đánh dấu</button>
-  </div>
-  <div class="btn-row">
-    <button class="chip quiz-chip" onclick="startQuiz()">🎯 Quiz luyện tập</button>
-  </div>
-</div>
+      <!-- TEST TABS -->
+      <div class="test-tabs" id="test-tabs">
+        <button
+          class="ttab on"
+          data-test="0"
+          onclick="setTest(0, this)"
+          style="background: linear-gradient(135deg, #4f8fff, #7c3aed)"
+        >
+          Tất cả
+        </button>
+      </div>
 
-<!-- TEST TABS -->
-<div class="test-tabs" id="test-tabs">
-  <button class="ttab on" data-test="0" onclick="setTest(0,this)" style="background:linear-gradient(135deg,#4f8fff,#7c3aed)">Tất cả</button>
-</div>
+      <!-- TABLE -->
+      <div class="table-section">
+        <div class="section-header">
+          <div class="section-title" id="sec-title">
+            Tất cả <span id="sec-sub">10 Tests · 800 từ</span>
+          </div>
+          <div class="showing-info" id="showing-info">Hiển thị 800 từ</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Từ vựng</th>
+                <th>Nghĩa tiếng Việt</th>
+                <th>Loại từ</th>
+                <th>⭐</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <div class="no-results" id="no-results">
+            <span>🔍</span>Không tìm thấy từ nào phù hợp
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- TABLE -->
-<div class="table-section">
-  <div class="section-header">
-    <div class="section-title" id="sec-title">Tất cả <span id="sec-sub">10 Tests · 800 từ</span></div>
-    <div class="showing-info" id="showing-info">Hiển thị 800 từ</div>
-  </div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Từ vựng</th>
-          <th>Nghĩa tiếng Việt</th>
-          <th>Loại từ</th>
-          <th>⭐</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
-    <div class="no-results" id="no-results"><span>🔍</span>Không tìm thấy từ nào phù hợp</div>
-  </div>
-</div>
+    <!-- QUIZ -->
+    <div id="quiz-overlay">
+      <div class="qcard" id="qcard"></div>
+    </div>
 
-</div>
+    <script>
+      // ═══════════════════════════════════════════════
+      //  DATA — 800 words across 10 tests
+      // ═══════════════════════════════════════════════
+      const TESTS = [
+        // TEST 01
+        [
+          { w: "take place", m: "xảy ra, diễn ra", t: "ph" },
+          { w: "attendee", m: "người tham dự", t: "n" },
+          { w: "antique", m: "đồ cổ, đồ cổ điển", t: "n" },
+          { w: "organization", m: "tổ chức, đơn vị", t: "n" },
+          { w: "suspicious", m: "đáng ngờ, khả nghi", t: "adj" },
+          { w: "vary", m: "thay đổi, biến đổi", t: "v" },
+          { w: "inventory", m: "hàng tồn kho", t: "n" },
+          { w: "expand", m: "mở rộng, phát triển", t: "v" },
+          { w: "solicit", m: "yêu cầu, xin", t: "v" },
+          { w: "intend", m: "có ý định, dự định", t: "v" },
+          { w: "prevent", m: "ngăn chặn, phòng ngừa", t: "v" },
+          { w: "aim", m: "nhắm mục tiêu, hướng đến", t: "v" },
+          { w: "qualified", m: "có đủ năng lực, đủ tiêu chuẩn", t: "adj" },
+          { w: "resident", m: "cư dân, người cư trú", t: "n" },
+          { w: "agreement", m: "hợp đồng, thỏa thuận", t: "n" },
+          { w: "opposition", m: "sự phản đối", t: "n" },
+          { w: "extensive", m: "rộng rãi, toàn diện", t: "adj" },
+          { w: "guarantee", m: "đảm bảo, bảo đảm", t: "v" },
+          { w: "supplier", m: "nhà cung cấp", t: "n" },
+          { w: "landscaping", m: "cảnh quan, thiết kế sân vườn", t: "n" },
+          { w: "suggestion", m: "đề xuất, gợi ý", t: "n" },
+          { w: "expertise", m: "chuyên môn, kiến thức chuyên sâu", t: "n" },
+          { w: "competitor", m: "đối thủ cạnh tranh", t: "n" },
+          { w: "anniversary", m: "ngày kỷ niệm", t: "n" },
+          { w: "dedication", m: "sự cống hiến, tận tâm", t: "n" },
+          { w: "loyalty", m: "lòng trung thành", t: "n" },
+          { w: "contribute", m: "đóng góp, cống hiến", t: "v" },
+          { w: "gratitude", m: "lòng biết ơn", t: "n" },
+          { w: "refine", m: "tinh chỉnh, lọc", t: "v" },
+          { w: "spacious", m: "rộng rãi, thoáng đãng", t: "adj" },
+          { w: "go through", m: "xem xét, kiểm tra", t: "ph" },
+          { w: "various", m: "đa dạng, nhiều loại", t: "adj" },
+          { w: "secure", m: "an toàn, vững chắc", t: "adj" },
+          { w: "remove", m: "loại bỏ, di chuyển", t: "v" },
+          { w: "previous", m: "trước đây, trước đó", t: "adj" },
+          { w: "cooperation", m: "sự hợp tác", t: "n" },
+          { w: "upcoming", m: "sắp tới", t: "adj" },
+          { w: "charge", m: "tính phí, thu phí", t: "v" },
+          { w: "assign", m: "phân công, giao việc", t: "v" },
+          { w: "administrator", m: "quản trị viên, người quản lý", t: "n" },
+          { w: "new hire", m: "nhân viên mới tuyển", t: "ph" },
+          { w: "promote", m: "quảng bá, thăng chức", t: "v" },
+          { w: "advertise", m: "quảng cáo", t: "v" },
+          { w: "coordinator", m: "người điều phối, người tổ chức", t: "n" },
+          { w: "telescope", m: "kính thiên văn", t: "n" },
+          { w: "revise", m: "sửa đổi, chỉnh sửa", t: "v" },
+          { w: "representative", m: "đại diện, nhân viên", t: "n" },
+          { w: "inquiry", m: "thắc mắc, yêu cầu thông tin", t: "n" },
+          { w: "general", m: "chung, tổng quát", t: "adj" },
+          { w: "release", m: "phát hành, tung ra", t: "v" },
+          { w: "indicate", m: "chỉ ra, cho thấy", t: "v" },
+          { w: "retain", m: "giữ lại, duy trì", t: "v" },
+          { w: "flavour", m: "hương vị", t: "n" },
+          { w: "sacrifice", m: "hi sinh, hy sinh", t: "v" },
+          { w: "obtain", m: "có được, đạt được", t: "v" },
+          { w: "merger", m: "sự sáp nhập", t: "n" },
+          { w: "nutritious", m: "bổ dưỡng, giàu dinh dưỡng", t: "adj" },
+          { w: "individual", m: "cá nhân, thành viên", t: "n" },
+          { w: "opportunity", m: "cơ hội", t: "n" },
+          { w: "substitute", m: "thay thế", t: "v" },
+          { w: "critical", m: "quan trọng, phê bình", t: "adj" },
+          { w: "colleague", m: "đồng nghiệp", t: "n" },
+          { w: "courtesy", m: "sự lịch sự, phép lịch sự", t: "n" },
+          { w: "get the word out", m: "lan truyền thông tin", t: "ph" },
+          { w: "install", m: "cài đặt, lắp đặt", t: "v" },
+          { w: "significant", m: "quan trọng, đáng kể", t: "adj" },
+          { w: "estimate", m: "ước tính, đánh giá", t: "v" },
+          { w: "liaison", m: "người liên lạc, cầu nối", t: "n" },
+          { w: "successive", m: "liên tiếp, kế tiếp", t: "adj" },
+          { w: "expert", m: "chuyên gia", t: "n" },
+          { w: "diagnose", m: "chẩn đoán", t: "v" },
+          { w: "replace", m: "thay thế, thay mới", t: "v" },
+          { w: "resemble", m: "giống, trông giống", t: "v" },
+          { w: "approve", m: "phê duyệt, chấp thuận", t: "v" },
+          { w: "inspection", m: "kiểm tra, thanh tra", t: "n" },
+          { w: "proactive", m: "chủ động, tích cực", t: "adj" },
+          { w: "procedure", m: "quy trình, thủ tục", t: "n" },
+          { w: "compete", m: "cạnh tranh", t: "v" },
+          { w: "instrumental", m: "quan trọng, then chốt", t: "adj" },
+          { w: "combine", m: "kết hợp", t: "v" },
+        ],
+        // TEST 02
+        [
+          { w: "reliability", m: "độ tin cậy", t: "n" },
+          { w: "reimbursement", m: "hoàn tiền, hoàn phí", t: "n" },
+          { w: "accept", m: "chấp nhận, đồng ý", t: "v" },
+          { w: "candidate", m: "ứng viên, thí sinh", t: "n" },
+          { w: "master", m: "thành thạo, làm chủ", t: "v" },
+          { w: "power failure", m: "mất điện", t: "ph" },
+          { w: "property", m: "bất động sản, tài sản", t: "n" },
+          { w: "strategy", m: "chiến lược", t: "n" },
+          { w: "name", m: "bổ nhiệm, đặt tên", t: "v" },
+          { w: "warranty", m: "bảo hành", t: "n" },
+          { w: "workplace", m: "nơi làm việc", t: "n" },
+          { w: "postpone", m: "hoãn lại, dời lịch", t: "v" },
+          { w: "struggle", m: "cố gắng, vật lộn", t: "v" },
+          { w: "ingredient", m: "nguyên liệu, thành phần", t: "n" },
+          { w: "savory", m: "ngon miệng, đậm vị", t: "adj" },
+          { w: "eager", m: "háo hức, mong muốn", t: "adj" },
+          { w: "artificial", m: "nhân tạo, giả tạo", t: "adj" },
+          { w: "substance", m: "chất liệu, vật chất", t: "n" },
+          { w: "handy", m: "tiện lợi, hữu dụng", t: "adj" },
+          { w: "effective", m: "hiệu quả", t: "adj" },
+          { w: "sustainable", m: "bền vững, duy trì được", t: "adj" },
+          { w: "address", m: "giải quyết, đề cập", t: "v" },
+          { w: "porous", m: "có lỗ thấm nước", t: "adj" },
+          { w: "subscription", m: "đăng ký, thuê bao", t: "n" },
+          { w: "access", m: "truy cập, sử dụng", t: "v" },
+          { w: "valid", m: "hợp lệ, còn hiệu lực", t: "adj" },
+          { w: "expire", m: "hết hạn", t: "v" },
+          { w: "activate", m: "kích hoạt", t: "v" },
+          { w: "distribute", m: "phân phát, phân phối", t: "v" },
+          { w: "feature", m: "bao gồm, giới thiệu", t: "v" },
+          { w: "reveal", m: "tiết lộ, hé lộ", t: "v" },
+          { w: "extension", m: "số máy lẻ, gia hạn", t: "n" },
+          { w: "complaint", m: "khiếu nại, phàn nàn", t: "n" },
+          { w: "issue", m: "cấp phát, vấn đề", t: "v" },
+          { w: "maintenance", m: "bảo trì, duy trì", t: "n" },
+          { w: "summarize", m: "tóm tắt", t: "v" },
+          { w: "notify", m: "thông báo", t: "v" },
+          { w: "requirement", m: "yêu cầu, điều kiện", t: "n" },
+          { w: "freight", m: "hàng hóa, vận chuyển hàng", t: "n" },
+          { w: "vehicle", m: "phương tiện giao thông", t: "n" },
+          { w: "transport", m: "vận chuyển", t: "v" },
+          { w: "nationwide", m: "trên toàn quốc", t: "adv" },
+          { w: "executive", m: "ban lãnh đạo, giám đốc điều hành", t: "n" },
+          { w: "commercial", m: "thương mại", t: "adj" },
+          { w: "demand", m: "nhu cầu", t: "n" },
+          { w: "specialty", m: "lĩnh vực chuyên môn, đặc sản", t: "n" },
+          { w: "convert", m: "chuyển đổi", t: "v" },
+          { w: "virtual", m: "ảo, trực tuyến", t: "adj" },
+          { w: "visualization", m: "hình dung, trực quan hóa", t: "n" },
+          { w: "suggest", m: "đề xuất, gợi ý", t: "v" },
+          { w: "curate", m: "chọn lọc, tuyển chọn", t: "v" },
+          { w: "highlight", m: "nhấn mạnh, nổi bật", t: "v" },
+          { w: "process", m: "xử lý, tiến hành", t: "v" },
+          { w: "sleek", m: "bóng mượt, thanh lịch", t: "adj" },
+          { w: "stabilization", m: "sự ổn định", t: "n" },
+          { w: "rough", m: "thô ráp, sơ bộ", t: "adj" },
+          { w: "surface", m: "bề mặt", t: "n" },
+          { w: "discontinue", m: "ngừng lại, chấm dứt", t: "v" },
+          { w: "instruction", m: "hướng dẫn, giảng dạy", t: "n" },
+          { w: "residence", m: "nơi cư trú", t: "n" },
+          { w: "complimentary", m: "miễn phí, tặng kèm", t: "adj" },
+          { w: "accommodate", m: "phù hợp, đáp ứng", t: "v" },
+          { w: "catch up", m: "bắt kịp", t: "ph" },
+          { w: "customized", m: "tùy chỉnh, được cá nhân hóa", t: "adj" },
+          { w: "express", m: "nhanh, tốc hành", t: "adj" },
+          { w: "preserve", m: "bảo tồn, giữ gìn", t: "v" },
+          { w: "auction", m: "đấu giá", t: "n" },
+          { w: "donate", m: "quyên góp, hiến tặng", t: "v" },
+          { w: "operation", m: "vận hành, hoạt động", t: "n" },
+          { w: "thrilled", m: "rất hứng thú, phấn khích", t: "adj" },
+          { w: "in advance", m: "trước, sớm", t: "ph" },
+          { w: "indeed", m: "thực sự, thật vậy", t: "adv" },
+          { w: "typically", m: "thường thì, thông thường", t: "adv" },
+          { w: "smudge", m: "vết bẩn, vết ố", t: "n" },
+          { w: "found", m: "thành lập, thành lập", t: "v" },
+          { w: "emphasize", m: "nhấn mạnh", t: "v" },
+          { w: "immediately", m: "ngay lập tức", t: "adv" },
+          { w: "average", m: "trung bình", t: "n" },
+          { w: "navigate", m: "tìm đường, điều hướng", t: "v" },
+          { w: "ultimately", m: "cuối cùng, căn bản", t: "adv" },
+        ],
+        // TEST 03
+        [
+          { w: "youth", m: "tuổi trẻ, thanh niên", t: "n" },
+          { w: "conduct", m: "thực hiện, tiến hành", t: "v" },
+          { w: "regular", m: "đều đặn, thường xuyên", t: "adj" },
+          { w: "a majority of", m: "phần lớn, đa số", t: "ph" },
+          { w: "represent", m: "đại diện, tượng trưng", t: "v" },
+          { w: "measure", m: "biện pháp, đo lường", t: "n" },
+          { w: "submit", m: "nộp, gửi", t: "v" },
+          { w: "track", m: "theo dõi, truy vết", t: "v" },
+          { w: "rapidly", m: "nhanh chóng", t: "adv" },
+          { w: "committee", m: "ủy ban, hội đồng", t: "n" },
+          { w: "appendix", m: "phụ lục", t: "n" },
+          { w: "insight", m: "sự thấu hiểu, nhận thức sâu sắc", t: "n" },
+          { w: "investment", m: "đầu tư, vốn đầu tư", t: "n" },
+          { w: "result", m: "kết quả", t: "n" },
+          { w: "improve", m: "cải thiện, nâng cao", t: "v" },
+          { w: "appoint", m: "bổ nhiệm, chỉ định", t: "v" },
+          { w: "simultaneously", m: "đồng thời, cùng lúc", t: "adv" },
+          { w: "revenue", m: "doanh thu, thu nhập", t: "n" },
+          { w: "undergo", m: "trải qua, chịu đựng", t: "v" },
+          { w: "take advantage of", m: "tận dụng, lợi dụng", t: "ph" },
+          { w: "transaction", m: "giao dịch", t: "n" },
+          { w: "potential", m: "tiềm năng, có tiềm năng", t: "adj" },
+          { w: "attention", m: "sự chú ý", t: "n" },
+          { w: "dynamic", m: "năng động, linh hoạt", t: "adj" },
+          { w: "valuable", m: "quý giá, có giá trị", t: "adj" },
+          { w: "convince", m: "thuyết phục", t: "v" },
+          { w: "audience", m: "khán giả, người nghe", t: "n" },
+          { w: "acquire", m: "có được, mua lại", t: "v" },
+          { w: "share", m: "cổ phần, chia sẻ", t: "n" },
+          { w: "strength", m: "điểm mạnh, sức mạnh", t: "n" },
+          { w: "quote", m: "trích dẫn, báo giá", t: "v" },
+          { w: "infusion", m: "sự đưa vào, rót vốn", t: "n" },
+          { w: "refrain", m: "kiềm chế, tránh", t: "v" },
+          { w: "preference", m: "sở thích, ưu tiên", t: "n" },
+          { w: "function", m: "chức năng, hoạt động", t: "n" },
+          { w: "gathering", m: "buổi tụ họp, gặp mặt", t: "n" },
+          { w: "innovation", m: "sự đổi mới, sáng tạo", t: "n" },
+          { w: "shareholder", m: "cổ đông", t: "n" },
+          { w: "productivity", m: "năng suất", t: "n" },
+          { w: "occur", m: "xảy ra, phát sinh", t: "v" },
+          { w: "optimize", m: "tối ưu hóa", t: "v" },
+          { w: "conventional", m: "thông thường, truyền thống", t: "adj" },
+          { w: "commuter", m: "người đi làm hàng ngày", t: "n" },
+          { w: "relieved", m: "nhẹ nhõm, an tâm", t: "adj" },
+          { w: "desperate", m: "tuyệt vọng, cấp bách", t: "adj" },
+          { w: "municipal", m: "thuộc thành phố, đô thị", t: "adj" },
+          { w: "entrance", m: "lối vào, cổng vào", t: "n" },
+          { w: "mural", m: "tranh tường", t: "n" },
+          { w: "commission", m: "đặt hàng, ủy quyền", t: "v" },
+          { w: "approximately", m: "xấp xỉ, khoảng", t: "adv" },
+          { w: "publicize", m: "công bố, quảng bá", t: "v" },
+          { w: "significance", m: "tầm quan trọng, ý nghĩa", t: "n" },
+          { w: "official", m: "chính thức, chính quyền", t: "adj" },
+          { w: "mingle", m: "giao lưu, hòa nhập", t: "v" },
+          { w: "invaluable", m: "vô giá, quý báu", t: "adj" },
+          { w: "accurate", m: "chính xác", t: "adj" },
+          { w: "recruit", m: "tuyển dụng", t: "v" },
+          { w: "celebrity", m: "người nổi tiếng", t: "n" },
+          { w: "cater", m: "cung cấp thức ăn, phục vụ", t: "v" },
+          { w: "equipment", m: "thiết bị, dụng cụ", t: "n" },
+          { w: "distributor", m: "nhà phân phối", t: "n" },
+          { w: "component", m: "linh kiện, thành phần", t: "n" },
+          { w: "facility", m: "cơ sở vật chất, tiện nghi", t: "n" },
+          { w: "assembly", m: "lắp ráp, hội họp", t: "n" },
+          { w: "launch", m: "ra mắt, khai trương", t: "v" },
+          { w: "financial", m: "tài chính", t: "adj" },
+          { w: "oversee", m: "giám sát, kiểm tra", t: "v" },
+          { w: "permanently", m: "vĩnh viễn, cố định", t: "adv" },
+          { w: "relocate", m: "chuyển địa điểm", t: "v" },
+          { w: "appreciate", m: "đánh giá cao, biết ơn", t: "v" },
+          { w: "perspective", m: "quan điểm, góc nhìn", t: "n" },
+          { w: "intrigue", m: "gây tò mò, thu hút", t: "v" },
+          { w: "government", m: "chính phủ", t: "n" },
+          { w: "collaborate", m: "hợp tác, cộng tác", t: "v" },
+          { w: "commensurate", m: "tương xứng, phù hợp", t: "adj" },
+          { w: "comply with", m: "tuân thủ, chấp hành", t: "ph" },
+          { w: "essential", m: "thiết yếu, cần thiết", t: "adj" },
+          { w: "relevant", m: "liên quan, thích hợp", t: "adj" },
+          { w: "formal", m: "chính thức, trang trọng", t: "adj" },
+          { w: "remote", m: "từ xa, xa xôi", t: "adj" },
+        ],
+        // TEST 04
+        [
+          { w: "retire", m: "nghỉ hưu", t: "v" },
+          { w: "applicant", m: "ứng viên, người nộp đơn", t: "n" },
+          { w: "contract", m: "hợp đồng", t: "n" },
+          { w: "liquid", m: "chất lỏng", t: "n" },
+          { w: "praise", m: "khen ngợi", t: "v" },
+          { w: "aesthetic", m: "thẩm mỹ, mỹ học", t: "adj" },
+          { w: "maintain", m: "duy trì, bảo trì", t: "v" },
+          { w: "confidentiality", m: "tính bảo mật, bí mật", t: "n" },
+          { w: "architecture", m: "kiến trúc", t: "n" },
+          { w: "thermostat", m: "bộ điều nhiệt", t: "n" },
+          { w: "reflect", m: "phản ánh, suy nghĩ", t: "v" },
+          { w: "retreat", m: "kỳ nghỉ dưỡng, chỗ ẩn náu", t: "n" },
+          { w: "in celebration of", m: "để kỷ niệm, chào mừng", t: "ph" },
+          { w: "outline", m: "phác thảo, lược đồ", t: "v" },
+          { w: "procurement", m: "mua sắm, thu mua", t: "n" },
+          { w: "pediatric", m: "nhi khoa", t: "adj" },
+          { w: "accurately", m: "chính xác, đúng", t: "adv" },
+          { w: "authentic", m: "chân thực, chính hãng", t: "adj" },
+          { w: "cuisine", m: "ẩm thực, món ăn", t: "n" },
+          { w: "occupy", m: "chiếm, sử dụng", t: "v" },
+          { w: "enthusiasm", m: "nhiệt tình, hăng hái", t: "n" },
+          { w: "validate", m: "xác nhận, chứng thực", t: "v" },
+          { w: "at no charge", m: "miễn phí", t: "ph" },
+          { w: "memoir", m: "hồi ký", t: "n" },
+          { w: "in person", m: "trực tiếp, đích thân", t: "ph" },
+          { w: "specialize in", m: "chuyên về, chuyên môn", t: "ph" },
+          { w: "bold", m: "táo bạo, dũng cảm", t: "adj" },
+          { w: "reciprocate", m: "đáp lại, đền đáp", t: "v" },
+          {
+            w: "competitive",
+            m: "cạnh tranh, có khả năng cạnh tranh",
+            t: "adj",
+          },
+          { w: "knowledge", m: "kiến thức, hiểu biết", t: "n" },
+          { w: "regulation", m: "quy định, điều lệ", t: "n" },
+          { w: "fluency", m: "sự lưu loát, trôi chảy", t: "n" },
+          { w: "satellite", m: "vệ tinh", t: "n" },
+          { w: "grant", m: "tài trợ, cấp phép", t: "n" },
+          { w: "calculate", m: "tính toán", t: "v" },
+          { w: "snowpack", m: "lớp tuyết tích tụ", t: "n" },
+          { w: "prototype", m: "nguyên mẫu, mẫu thử", t: "n" },
+          { w: "fluctuation", m: "sự dao động, biến động", t: "n" },
+          { w: "enhance", m: "nâng cao, cải thiện", t: "v" },
+          { w: "domestic", m: "trong nước, nội địa", t: "adj" },
+          { w: "prestigious", m: "uy tín, danh giá", t: "adj" },
+          { w: "commitment", m: "cam kết, sự tận tâm", t: "n" },
+          { w: "tremendous", m: "khổng lồ, to lớn", t: "adj" },
+          { w: "headquarter", m: "đặt trụ sở chính", t: "v" },
+          { w: "facilitate", m: "tạo thuận lợi, hỗ trợ", t: "v" },
+          { w: "ergonomic", m: "công thái học, tiện dụng", t: "adj" },
+          { w: "frequently", m: "thường xuyên", t: "adv" },
+          { w: "initiate", m: "khởi xướng, bắt đầu", t: "v" },
+          { w: "appearance", m: "ngoại hình, vẻ ngoài", t: "n" },
+          { w: "enclose", m: "đính kèm, bao quanh", t: "v" },
+          { w: "commence", m: "bắt đầu, khởi động", t: "v" },
+          { w: "elaborate", m: "công phu, tỉ mỉ", t: "adj" },
+          { w: "insightful", m: "sâu sắc, thấu đáo", t: "adj" },
+          { w: "biography", m: "tiểu sử", t: "n" },
+          { w: "admire", m: "ngưỡng mộ, kính phục", t: "v" },
+          { w: "backdrop", m: "phông nền, bối cảnh", t: "n" },
+          { w: "refurbish", m: "tân trang, cải tạo", t: "v" },
+          { w: "prompt", m: "nhanh chóng, kịp thời", t: "adj" },
+          { w: "engaging", m: "hấp dẫn, thu hút", t: "adj" },
+          { w: "functionality", m: "chức năng, công dụng", t: "n" },
+          { w: "spectacular", m: "ngoạn mục, hoành tráng", t: "adj" },
+          { w: "secluded", m: "yên tĩnh, hẻo lánh", t: "adj" },
+          { w: "enchanted", m: "mê đắm, say mê", t: "adj" },
+          { w: "eclectic", m: "đa dạng, phong phú", t: "adj" },
+          { w: "audiovisual", m: "nghe nhìn", t: "adj" },
+          { w: "durability", m: "độ bền, sức bền", t: "n" },
+          { w: "versatile", m: "đa năng, linh hoạt", t: "adj" },
+          { w: "persist", m: "tiếp tục, kiên trì", t: "v" },
+          { w: "commissioner", m: "ủy viên, người được ủy quyền", t: "n" },
+          { w: "predecessor", m: "người tiền nhiệm", t: "n" },
+          { w: "step down", m: "từ chức, rút lui", t: "ph" },
+          { w: "suspension", m: "đình chỉ, tạm dừng", t: "n" },
+          { w: "inaugural", m: "đầu tiên, khai mạc", t: "adj" },
+          { w: "proceeds", m: "tiền thu được, doanh thu", t: "n" },
+          { w: "submission", m: "nộp, trình bày", t: "n" },
+          { w: "administration", m: "hành chính, quản lý", t: "n" },
+          { w: "excel", m: "xuất sắc, vượt trội", t: "v" },
+          { w: "aspect", m: "khía cạnh, mặt", t: "n" },
+          { w: "verify", m: "xác minh, kiểm tra", t: "v" },
+          { w: "convenient", m: "tiện lợi, thuận tiện", t: "adj" },
+        ],
+        // TEST 05
+        [
+          { w: "accountant", m: "kế toán viên", t: "n" },
+          { w: "agenda", m: "chương trình nghị sự", t: "n" },
+          { w: "sudden", m: "đột ngột, bất ngờ", t: "adj" },
+          { w: "proofread", m: "đọc soát lỗi", t: "v" },
+          { w: "experiment", m: "thí nghiệm, thử nghiệm", t: "n" },
+          { w: "initial", m: "ban đầu, sơ bộ", t: "adj" },
+          { w: "sealant", m: "chất bịt kín", t: "n" },
+          { w: "refined", m: "tinh chế, được lọc", t: "adj" },
+          { w: "soundproof", m: "cách âm", t: "adj" },
+          { w: "entrepreneur", m: "doanh nhân, nhà khởi nghiệp", t: "n" },
+          { w: "tenure", m: "nhiệm kỳ", t: "n" },
+          { w: "achievement", m: "thành tích, thành quả", t: "n" },
+          { w: "forthcoming", m: "sắp tới, sắp xảy ra", t: "adj" },
+          { w: "consistently", m: "nhất quán, đều đặn", t: "adv" },
+          { w: "implement", m: "thực hiện, triển khai", t: "v" },
+          { w: "accordingly", m: "theo đó, do đó", t: "adv" },
+          { w: "align", m: "sắp xếp, căn chỉnh", t: "v" },
+          { w: "tardiness", m: "sự trễ giờ", t: "n" },
+          { w: "on behalf of", m: "thay mặt cho, đại diện", t: "ph" },
+          { w: "physiotherapy", m: "vật lý trị liệu", t: "n" },
+          { w: "inviting", m: "hấp dẫn, mời gọi", t: "adj" },
+          { w: "objective", m: "mục tiêu, khách quan", t: "n" },
+          { w: "resource", m: "tài nguyên, nguồn lực", t: "n" },
+          { w: "informative", m: "có ích, bổ ích", t: "adj" },
+          { w: "previously", m: "trước đây, trước đó", t: "adv" },
+          { w: "editorial", m: "biên tập, xã luận", t: "adj" },
+          { w: "prime", m: "tốt nhất, quan trọng nhất", t: "adj" },
+          { w: "spread", m: "lan rộng, phổ biến", t: "v" },
+          { w: "overall", m: "tổng thể, toàn diện", t: "adj" },
+          { w: "determine", m: "xác định, quyết định", t: "v" },
+          { w: "avoid", m: "tránh, né tránh", t: "v" },
+          { w: "sanctuary", m: "nơi ẩn náu, khu bảo tồn", t: "n" },
+          { w: "hectic", m: "bận rộn hối hả", t: "adj" },
+          { w: "bustle", m: "sự nhộn nhịp, ồn ào", t: "n" },
+          { w: "excursion", m: "chuyến đi, dã ngoại", t: "n" },
+          { w: "cover letter", m: "thư xin việc", t: "ph" },
+          { w: "shortage", m: "sự thiếu hụt", t: "n" },
+          { w: "extract", m: "chiết xuất, trích", t: "n" },
+          { w: "favorable", m: "thuận lợi, có lợi", t: "adj" },
+          { w: "crash", m: "hỏng, sập", t: "v" },
+          { w: "compatible", m: "tương thích", t: "adj" },
+          { w: "thrive", m: "phát triển mạnh, thịnh vượng", t: "v" },
+          { w: "figure out", m: "tìm ra, hiểu ra", t: "ph" },
+          { w: "asset", m: "tài sản", t: "n" },
+          { w: "supportive", m: "hỗ trợ, ủng hộ", t: "adj" },
+          { w: "presence", m: "sự có mặt, hiện diện", t: "n" },
+          { w: "persevere", m: "kiên trì, bền lòng", t: "v" },
+          { w: "explore", m: "khám phá, điều tra", t: "v" },
+          { w: "primarily", m: "chủ yếu, trước hết", t: "adv" },
+          { w: "breach", m: "vi phạm, phá vỡ", t: "n" },
+          { w: "first aid", m: "sơ cứu", t: "ph" },
+          { w: "specific", m: "cụ thể, đặc thù", t: "adj" },
+          { w: "administrative", m: "hành chính", t: "adj" },
+          { w: "possess", m: "sở hữu, có", t: "v" },
+          { w: "subordinate", m: "nhân viên cấp dưới", t: "n" },
+          { w: "crucially", m: "quan trọng, then chốt", t: "adv" },
+          { w: "proficiency", m: "sự thành thạo, trình độ", t: "n" },
+          { w: "expenditure", m: "chi tiêu, khoản chi", t: "n" },
+          { w: "statistical", m: "thống kê", t: "adj" },
+          { w: "industrial", m: "công nghiệp", t: "adj" },
+          { w: "description", m: "mô tả, miêu tả", t: "n" },
+          { w: "dependent", m: "phụ thuộc", t: "adj" },
+          { w: "in stock", m: "còn hàng", t: "ph" },
+          { w: "unfamiliar", m: "không quen thuộc", t: "adj" },
+          { w: "questionnaire", m: "bảng câu hỏi, phiếu khảo sát", t: "n" },
+          { w: "introductory", m: "giới thiệu, mở đầu", t: "adj" },
+          { w: "subsequent", m: "tiếp theo, sau đó", t: "adj" },
+          { w: "waive", m: "miễn, bỏ qua", t: "v" },
+          { w: "prospective", m: "tương lai, tiềm năng", t: "adj" },
+          { w: "confidential", m: "bí mật, mật", t: "adj" },
+          { w: "certified", m: "được chứng nhận, có chứng chỉ", t: "adj" },
+          { w: "withdraw", m: "rút tiền, rút lui", t: "v" },
+          { w: "owed", m: "nợ, có nghĩa vụ trả", t: "adj" },
+          { w: "participant", m: "người tham gia", t: "n" },
+          { w: "steady", m: "ổn định, đều đặn", t: "adj" },
+          { w: "acceptable", m: "chấp nhận được", t: "adj" },
+          { w: "capacity", m: "sức chứa, năng lực", t: "n" },
+          { w: "authorize", m: "ủy quyền, cho phép", t: "v" },
+          { w: "faulty", m: "có lỗi, khiếm khuyết", t: "adj" },
+          { w: "personnel", m: "nhân sự, nhân viên", t: "n" },
+        ],
+        // TEST 06
+        [
+          { w: "composer", m: "nhạc sĩ, người sáng tác", t: "n" },
+          { w: "politeness", m: "sự lịch sự, nhã nhặn", t: "n" },
+          { w: "practical", m: "thực tế, thực hành", t: "adj" },
+          { w: "workstation", m: "trạm làm việc", t: "n" },
+          { w: "latest", m: "mới nhất, gần đây nhất", t: "adj" },
+          { w: "quarterly", m: "hàng quý", t: "adj" },
+          { w: "stakeholder", m: "cổ đông, bên liên quan", t: "n" },
+          { w: "biographer", m: "nhà viết tiểu sử", t: "n" },
+          { w: "distinctive", m: "đặc trưng, nổi bật", t: "adj" },
+          { w: "stationery", m: "văn phòng phẩm", t: "n" },
+          { w: "insurance", m: "bảo hiểm", t: "n" },
+          { w: "associated", m: "liên quan, có liên hệ", t: "adj" },
+          { w: "ensure", m: "đảm bảo, chắc chắn", t: "v" },
+          { w: "exterior", m: "bên ngoài, ngoại thất", t: "adj" },
+          { w: "incorporate", m: "kết hợp, tích hợp", t: "v" },
+          { w: "pleasure", m: "niềm vui, sự thích thú", t: "n" },
+          { w: "corporate", m: "doanh nghiệp, công ty", t: "adj" },
+          { w: "appliance", m: "thiết bị gia dụng", t: "n" },
+          { w: "innovative", m: "sáng tạo, đổi mới", t: "adj" },
+          { w: "geographic", m: "địa lý", t: "adj" },
+          { w: "electronics", m: "điện tử", t: "n" },
+          { w: "patience", m: "sự kiên nhẫn", t: "n" },
+          { w: "uneven", m: "không đều, lồi lõm", t: "adj" },
+          { w: "pavement", m: "vỉa hè, mặt đường", t: "n" },
+          { w: "hygienist", m: "chuyên viên vệ sinh", t: "n" },
+          { w: "handle", m: "xử lý, quản lý", t: "v" },
+          { w: "benefit", m: "lợi ích, có lợi", t: "n" },
+          { w: "streamline", m: "tinh gọn, đơn giản hóa", t: "v" },
+          { w: "unusually", m: "bất thường, khác lạ", t: "adv" },
+          { w: "moderation", m: "sự điều tiết, vừa phải", t: "n" },
+          { w: "regularly", m: "thường xuyên, định kỳ", t: "adv" },
+          { w: "landscape", m: "cảnh quan, phong cảnh", t: "n" },
+          { w: "optimal", m: "tối ưu, lý tưởng", t: "adj" },
+          { w: "reasonable", m: "hợp lý, phải chăng", t: "adj" },
+          { w: "pathway", m: "con đường, lối đi", t: "n" },
+          { w: "rustic", m: "mộc mạc, thôn quê", t: "adj" },
+          { w: "constitute", m: "tạo thành, cấu thành", t: "v" },
+          { w: "fulfill", m: "hoàn thành, thực hiện", t: "v" },
+          { w: "specification", m: "thông số kỹ thuật", t: "n" },
+          { w: "paperwork", m: "giấy tờ, hồ sơ", t: "n" },
+          { w: "security", m: "an ninh, bảo mật", t: "n" },
+          { w: "intricate", m: "phức tạp, rắc rối", t: "adj" },
+          { w: "unprecedented", m: "chưa từng có, chưa có tiền lệ", t: "adj" },
+          { w: "tactile", m: "xúc giác, cảm ứng", t: "adj" },
+          { w: "exploit", m: "khai thác, tận dụng", t: "v" },
+          { w: "layover", m: "dừng chân quá cảnh", t: "n" },
+          { w: "amenity", m: "tiện nghi, tiện ích", t: "n" },
+          { w: "awareness", m: "nhận thức, ý thức", t: "n" },
+          { w: "conserve", m: "tiết kiệm, bảo tồn", t: "v" },
+          { w: "fundamental", m: "cơ bản, nền tảng", t: "adj" },
+          { w: "specified", m: "được chỉ định, cụ thể", t: "adj" },
+          { w: "eliminate", m: "loại bỏ, xóa bỏ", t: "v" },
+          { w: "reduction", m: "sự giảm, cắt giảm", t: "n" },
+          { w: "contribution", m: "sự đóng góp", t: "n" },
+          { w: "alternate", m: "thay thế, luân phiên", t: "adj" },
+          { w: "confident", m: "tự tin, chắc chắn", t: "adj" },
+          { w: "incur", m: "gây ra, phát sinh", t: "v" },
+          { w: "offset", m: "bù đắp, cân bằng", t: "v" },
+          { w: "placement", m: "sắp xếp, bố trí", t: "n" },
+          { w: "integral", m: "thiết yếu, không thể thiếu", t: "adj" },
+          { w: "guidance", m: "hướng dẫn, chỉ dẫn", t: "n" },
+          { w: "botanical", m: "thực vật học", t: "adj" },
+          { w: "society", m: "hội, hiệp hội", t: "n" },
+          { w: "theme", m: "chủ đề", t: "n" },
+          { w: "paradise", m: "thiên đường", t: "n" },
+          { w: "ambitious", m: "tham vọng, đầy hoài bão", t: "adj" },
+          { w: "cultivate", m: "canh tác, nuôi dưỡng", t: "v" },
+          { w: "privilege", m: "đặc quyền, vinh dự", t: "n" },
+          { w: "wildlife", m: "động vật hoang dã", t: "n" },
+          { w: "cordially", m: "thân mật, trân trọng", t: "adv" },
+          { w: "nourish", m: "nuôi dưỡng, cung cấp dinh dưỡng", t: "v" },
+          { w: "deterrence", m: "sự ngăn chặn, phòng ngừa", t: "n" },
+          { w: "harmful", m: "có hại, gây hại", t: "adj" },
+          { w: "recreation", m: "giải trí, vui chơi", t: "n" },
+          { w: "athletic", m: "thể thao, thể lực", t: "adj" },
+          { w: "adequate", m: "đủ, thích hợp", t: "adj" },
+          { w: "suitable", m: "phù hợp, thích hợp", t: "adj" },
+          { w: "promptly", m: "đúng giờ, nhanh chóng", t: "adv" },
+          { w: "joint", m: "chung, liên kết", t: "adj" },
+          { w: "profitable", m: "sinh lợi, có lãi", t: "adj" },
+        ],
+        // TEST 07
+        [
+          { w: "commute", m: "đi làm hàng ngày", t: "v" },
+          { w: "understaffed", m: "thiếu nhân lực", t: "adj" },
+          { w: "keep fit", m: "giữ sức khỏe", t: "ph" },
+          { w: "completion", m: "sự hoàn thành", t: "n" },
+          { w: "concern", m: "lo ngại, mối lo", t: "n" },
+          { w: "tuition", m: "học phí", t: "n" },
+          { w: "enroll in", m: "đăng ký vào", t: "ph" },
+          { w: "evaluate", m: "đánh giá", t: "v" },
+          { w: "milestone", m: "cột mốc, dấu mốc", t: "n" },
+          { w: "responsive", m: "phản hồi nhanh, nhạy bén", t: "adj" },
+          { w: "chemistry", m: "hóa học", t: "n" },
+          { w: "rapid", m: "nhanh chóng, mau lẹ", t: "adj" },
+          { w: "hospitality", m: "dịch vụ khách hàng, hiếu khách", t: "n" },
+          { w: "payroll", m: "bảng lương, quỹ lương", t: "n" },
+          { w: "time sheet", m: "bảng chấm công", t: "ph" },
+          { w: "container", m: "hộp, thùng chứa", t: "n" },
+          { w: "fancy", m: "thích, ưa", t: "v" },
+          { w: "savour", m: "thưởng thức, thưởng vị", t: "v" },
+          { w: "socialise", m: "giao lưu, kết giao", t: "v" },
+          { w: "reserve", m: "đặt trước, dự trữ", t: "v" },
+          { w: "opening", m: "vị trí tuyển dụng, cơ hội", t: "n" },
+          { w: "renewal", m: "gia hạn, đổi mới", t: "n" },
+          { w: "assume", m: "giả định, đảm nhận", t: "v" },
+          { w: "tenant", m: "người thuê, người thuê nhà", t: "n" },
+          { w: "realty", m: "bất động sản", t: "n" },
+          { w: "peninsula", m: "bán đảo", t: "n" },
+          { w: "moderately", m: "ở mức vừa phải", t: "adv" },
+          { w: "scatter", m: "làm tản mác, rải rác", t: "v" },
+          { w: "inexpensive", m: "rẻ, không đắt", t: "adj" },
+          { w: "flock to", m: "đổ về, kéo đến", t: "ph" },
+          { w: "alert", m: "cảnh báo, thông báo", t: "n" },
+          { w: "electronically", m: "bằng điện tử", t: "adv" },
+          { w: "exclusively", m: "độc quyền, dành riêng", t: "adv" },
+          { w: "creamery", m: "cửa hàng sữa, lò bơ", t: "n" },
+          { w: "physician", m: "bác sĩ", t: "n" },
+          { w: "remind", m: "nhắc nhở", t: "v" },
+          { w: "time off", m: "nghỉ phép, thời gian tự do", t: "ph" },
+          { w: "adjust", m: "điều chỉnh", t: "v" },
+          { w: "custodian", m: "người quản lý, bảo vệ", t: "n" },
+          { w: "testimonial", m: "lời chứng thực, nhận xét", t: "n" },
+          { w: "satisfaction", m: "sự hài lòng", t: "n" },
+          { w: "detailed", m: "chi tiết, tỉ mỉ", t: "adj" },
+          { w: "reputation", m: "danh tiếng, uy tín", t: "n" },
+          { w: "identify", m: "xác định, nhận biết", t: "v" },
+          { w: "persuade", m: "thuyết phục", t: "v" },
+          { w: "imminent", m: "sắp xảy ra, cận kề", t: "adj" },
+          { w: "undoubtedly", m: "không nghi ngờ, chắc chắn", t: "adv" },
+          { w: "visible", m: "dễ thấy, rõ ràng", t: "adj" },
+          { w: "collaboration", m: "hợp tác, cộng tác", t: "n" },
+          { w: "corporation", m: "công ty, tập đoàn", t: "n" },
+          { w: "nonprofit", m: "phi lợi nhuận", t: "adj" },
+          { w: "participation", m: "sự tham gia", t: "n" },
+          { w: "involve", m: "liên quan, bao gồm", t: "v" },
+          { w: "dedicate", m: "dành cho, cống hiến", t: "v" },
+          { w: "spearhead", m: "đi đầu, lãnh đạo", t: "v" },
+          { w: "subcompact", m: "xe cỡ nhỏ", t: "n" },
+          { w: "stunning", m: "tuyệt vời, gây kinh ngạc", t: "adj" },
+          { w: "abundant", m: "dồi dào, phong phú", t: "adj" },
+          { w: "secondhand", m: "đã qua sử dụng", t: "adj" },
+          { w: "credential", m: "bằng cấp, chứng chỉ", t: "n" },
+          { w: "reliable", m: "đáng tin cậy", t: "adj" },
+          { w: "unsightly", m: "xấu xí, mất thẩm mỹ", t: "adj" },
+          { w: "merchandise", m: "hàng hóa", t: "n" },
+          { w: "possession", m: "quyền sở hữu, tài sản", t: "n" },
+          { w: "drastically", m: "đáng kể, mạnh mẽ", t: "adv" },
+          { w: "informed", m: "có thông tin, am hiểu", t: "adj" },
+          { w: "vast", m: "rộng lớn, to lớn", t: "adj" },
+          { w: "bypass", m: "bỏ qua, vòng tránh", t: "v" },
+          { w: "deboard", m: "xuống xe/tàu", t: "v" },
+          { w: "voucher", m: "phiếu, chứng từ", t: "n" },
+          { w: "demonstration", m: "buổi trình diễn, biểu tình", t: "n" },
+          { w: "unintentionally", m: "vô tình, không cố ý", t: "adv" },
+          { w: "discard", m: "vứt bỏ, loại bỏ", t: "v" },
+          { w: "lightweight", m: "nhẹ, trọng lượng nhẹ", t: "adj" },
+          { w: "disposable", m: "dùng một lần", t: "adj" },
+          { w: "receptacle", m: "vật chứa, thùng đựng", t: "n" },
+          { w: "overdue", m: "quá hạn, chậm trễ", t: "adj" },
+          { w: "withhold", m: "giữ lại, không công bố", t: "v" },
+          { w: "malfunction", m: "trục trặc, hoạt động kém", t: "v" },
+          { w: "expedite", m: "xử lý nhanh, đẩy nhanh", t: "v" },
+        ],
+        // TEST 08
+        [
+          { w: "significantly", m: "đáng kể, quan trọng", t: "adv" },
+          { w: "sturdy", m: "chắc chắn, bền bỉ", t: "adj" },
+          { w: "brief", m: "ngắn gọn, tóm tắt", t: "adj" },
+          { w: "functional", m: "hoạt động được, thực dụng", t: "adj" },
+          { w: "generate", m: "tạo ra, phát sinh", t: "v" },
+          { w: "extensively", m: "rộng rãi, toàn diện", t: "adv" },
+          { w: "proceed", m: "tiến hành, tiếp tục", t: "v" },
+          { w: "territory", m: "lãnh thổ, khu vực", t: "n" },
+          { w: "protocol", m: "quy trình, giao thức", t: "n" },
+          { w: "simplify", m: "đơn giản hóa", t: "v" },
+          { w: "directions", m: "chỉ đường, hướng dẫn", t: "n" },
+          { w: "laboratory", m: "phòng thí nghiệm", t: "n" },
+          { w: "undergraduate", m: "sinh viên đại học", t: "n" },
+          { w: "admission", m: "nhập học, sự thừa nhận", t: "n" },
+          { w: "semester", m: "học kỳ", t: "n" },
+          { w: "transcript", m: "bảng điểm", t: "n" },
+          { w: "delighted", m: "rất vui, hài lòng", t: "adj" },
+          { w: "tendency", m: "xu hướng, khuynh hướng", t: "n" },
+          { w: "disclose", m: "tiết lộ, công bố", t: "v" },
+          { w: "hesitate", m: "do dự, ngần ngại", t: "v" },
+          { w: "candid", m: "thẳng thắn, chân thật", t: "adj" },
+          { w: "unsuitable", m: "không phù hợp", t: "adj" },
+          { w: "compact", m: "nhỏ gọn, súc tích", t: "adj" },
+          { w: "beautify", m: "làm đẹp", t: "v" },
+          { w: "integrity", m: "tính toàn vẹn, liêm chính", t: "n" },
+          { w: "extra", m: "thêm, dự phòng", t: "adj" },
+          { w: "residential", m: "dân cư, nhà ở", t: "adj" },
+          { w: "paved", m: "được trải nhựa", t: "adj" },
+          { w: "border", m: "tiếp giáp, biên giới", t: "v" },
+          { w: "subsidiary", m: "công ty con, phụ trợ", t: "n" },
+          { w: "budget", m: "ngân sách", t: "n" },
+          { w: "distribution", m: "phân phối", t: "n" },
+          { w: "researcher", m: "nhà nghiên cứu", t: "n" },
+          { w: "capability", m: "năng lực, khả năng", t: "n" },
+          { w: "vacancy", m: "vị trí trống, phòng trống", t: "n" },
+          { w: "cabin", m: "khoang máy bay, cabin", t: "n" },
+          { w: "compartment", m: "ngăn, khoang", t: "n" },
+          { w: "dimension", m: "kích thước, chiều", t: "n" },
+          { w: "permission", m: "sự cho phép", t: "n" },
+          { w: "foster", m: "thúc đẩy, nuôi dưỡng", t: "v" },
+          { w: "roughly", m: "khoảng, đại khái", t: "adv" },
+          { w: "unexpected", m: "bất ngờ, không ngờ", t: "adj" },
+          { w: "fulfillment", m: "sự hoàn thành, thực hiện", t: "n" },
+          { w: "lodging", m: "chỗ ở, nơi nghỉ trọ", t: "n" },
+          { w: "intent", m: "ý định, mục đích", t: "n" },
+          { w: "directly", m: "trực tiếp, thẳng", t: "adv" },
+          { w: "instructions", m: "hướng dẫn, chỉ dẫn", t: "n" },
+          { w: "go over", m: "xem xét lại, ôn tập", t: "ph" },
+          { w: "convinced", m: "bị thuyết phục", t: "adj" },
+          { w: "personality", m: "tính cách, cá tính", t: "n" },
+          { w: "structure", m: "cấu trúc, tổ chức", t: "v" },
+          { w: "memorable", m: "đáng nhớ", t: "adj" },
+          { w: "politician", m: "chính trị gia", t: "n" },
+          { w: "numerous", m: "nhiều, đông đảo", t: "adj" },
+          { w: "straightforward", m: "thẳng thắn, rõ ràng", t: "adj" },
+          { w: "fascinating", m: "hấp dẫn, cuốn hút", t: "adj" },
+          { w: "portrait", m: "chân dung", t: "n" },
+          { w: "enigmatic", m: "bí ẩn, khó hiểu", t: "adj" },
+          { w: "anecdote", m: "giai thoại, câu chuyện nhỏ", t: "n" },
+          { w: "shortcoming", m: "nhược điểm, thiếu sót", t: "n" },
+          { w: "credible", m: "đáng tin cậy", t: "adj" },
+          { w: "fictional", m: "hư cấu, tưởng tượng", t: "adj" },
+          { w: "quaint", m: "cổ kính, thú vị", t: "adj" },
+          { w: "criticism", m: "sự phê bình", t: "n" },
+          { w: "surrounding", m: "môi trường xung quanh", t: "n" },
+          { w: "minutes", m: "biên bản cuộc họp", t: "n" },
+          { w: "earmark", m: "phân bổ, dành riêng", t: "v" },
+          { w: "adjustment", m: "điều chỉnh", t: "n" },
+          { w: "recruitment", m: "tuyển dụng", t: "n" },
+          { w: "boulevard", m: "đại lộ", t: "n" },
+          { w: "adjournment", m: "bế mạc, hoãn", t: "n" },
+          { w: "utilities", m: "tiện ích công cộng", t: "n" },
+          { w: "easygoing", m: "dễ chịu, thoải mái", t: "adj" },
+          { w: "reasonably", m: "khá, hợp lý", t: "adv" },
+          { w: "satisfy", m: "làm hài lòng, thỏa mãn", t: "v" },
+          { w: "attune", m: "điều chỉnh, đồng bộ", t: "v" },
+          { w: "resist", m: "chịu đựng, chống lại", t: "v" },
+          { w: "adhere", m: "bám dính, tuân thủ", t: "v" },
+          { w: "striped", m: "có sọc", t: "adj" },
+          { w: "outstanding", m: "xuất sắc, nổi bật", t: "adj" },
+        ],
+        // TEST 09
+        [
+          { w: "vacant", m: "trống, không có người", t: "adj" },
+          { w: "promotion", m: "thăng chức, khuyến mãi", t: "n" },
+          { w: "consumption", m: "sự tiêu thụ", t: "n" },
+          { w: "superintendent", m: "người giám sát, quản lý", t: "n" },
+          { w: "renovation", m: "cải tạo, sửa chữa", t: "n" },
+          { w: "manufacturer", m: "nhà sản xuất", t: "n" },
+          { w: "consideration", m: "sự cân nhắc, xem xét", t: "n" },
+          { w: "critic", m: "nhà phê bình", t: "n" },
+          { w: "impressive", m: "ấn tượng, gây ấn tượng", t: "adj" },
+          { w: "choreography", m: "biên đạo múa", t: "n" },
+          { w: "ongoing", m: "đang diễn ra, liên tục", t: "adj" },
+          { w: "household", m: "gia đình, hộ gia đình", t: "n" },
+          { w: "automotive", m: "ô tô, xe hơi", t: "adj" },
+          { w: "eligible", m: "đủ điều kiện, có tư cách", t: "adj" },
+          { w: "vendor", m: "người bán hàng", t: "n" },
+          { w: "variation", m: "biến thể, sự thay đổi", t: "n" },
+          { w: "imperfection", m: "khiếm khuyết, thiếu sót", t: "n" },
+          { w: "narrow", m: "hẹp, thu hẹp", t: "adj" },
+          { w: "detach", m: "tách ra, tháo rời", t: "v" },
+          { w: "abrasive", m: "chất mài mòn", t: "adj" },
+          { w: "residue", m: "phần dư, cặn", t: "n" },
+          { w: "submerge", m: "nhúng xuống nước", t: "v" },
+          { w: "utensil", m: "dụng cụ bếp", t: "n" },
+          { w: "separately", m: "riêng biệt", t: "adv" },
+          { w: "entrust", m: "giao phó, ủy thác", t: "v" },
+          { w: "convey", m: "truyền đạt, chuyển tải", t: "v" },
+          { w: "timeless", m: "vượt thời gian, bất hủ", t: "adj" },
+          { w: "precision", m: "độ chính xác", t: "n" },
+          { w: "costly", m: "tốn kém, đắt đỏ", t: "adj" },
+          { w: "initially", m: "ban đầu, lúc đầu", t: "adv" },
+          { w: "acquisition", m: "sự thâu tóm, mua lại", t: "n" },
+          { w: "insider", m: "người trong cuộc", t: "n" },
+          { w: "speculate", m: "suy đoán, đầu cơ", t: "v" },
+          { w: "iconic", m: "mang tính biểu tượng", t: "adj" },
+          { w: "reliably", m: "đáng tin cậy, ổn định", t: "adv" },
+          { w: "fate", m: "số phận, vận mệnh", t: "n" },
+          { w: "retirement", m: "về hưu, nghỉ hưu", t: "n" },
+          { w: "deactivation", m: "vô hiệu hóa", t: "n" },
+          { w: "renew", m: "gia hạn, đổi mới", t: "v" },
+          { w: "displeasure", m: "sự không hài lòng", t: "n" },
+          { w: "promise", m: "có vẻ hứa hẹn", t: "v" },
+          { w: "sufficient", m: "đủ, thỏa mãn", t: "adj" },
+          { w: "regard", m: "coi, đánh giá", t: "v" },
+          { w: "assistance", m: "sự trợ giúp, hỗ trợ", t: "n" },
+          { w: "unveil", m: "công bố, tiết lộ", t: "v" },
+          { w: "advancement", m: "sự tiến bộ, thăng tiến", t: "n" },
+          { w: "glimpse", m: "thoáng thấy", t: "n" },
+          { w: "decay", m: "suy tàn, mục nát", t: "v" },
+          { w: "architectural", m: "kiến trúc", t: "adj" },
+          { w: "transition", m: "sự chuyển đổi", t: "n" },
+          { w: "constructive", m: "mang tính xây dựng", t: "adj" },
+          { w: "showcase", m: "giới thiệu, trưng bày", t: "v" },
+          { w: "notable", m: "đáng chú ý, nổi bật", t: "adj" },
+          { w: "concrete", m: "cụ thể, rõ ràng", t: "adj" },
+          { w: "overcome", m: "vượt qua, khắc phục", t: "v" },
+          { w: "preventive", m: "phòng ngừa", t: "adj" },
+          { w: "gauge", m: "đánh giá, đo", t: "v" },
+          { w: "respective", m: "tương ứng, riêng từng", t: "adj" },
+          { w: "compensate", m: "bồi thường, đền bù", t: "v" },
+          { w: "persistent", m: "kiên trì, bền bỉ", t: "adj" },
+          { w: "narrative", m: "câu chuyện, lời kể", t: "n" },
+          { w: "adjoining", m: "tiếp giáp, kề bên", t: "adj" },
+          { w: "heritage", m: "di sản văn hóa", t: "n" },
+          { w: "vintage", m: "cổ điển, xưa", t: "adj" },
+          { w: "purified", m: "được lọc sạch", t: "adj" },
+          { w: "whimsical", m: "kỳ lạ, ngộ nghĩnh", t: "adj" },
+          { w: "infuse", m: "rót vào, thấm đẫm", t: "v" },
+          { w: "biweekly", m: "hai tuần một lần", t: "adj" },
+          { w: "affordably", m: "với giá phải chăng", t: "adv" },
+          { w: "crease", m: "nếp nhăn, vết gấp", t: "n" },
+          { w: "encyclopaedia", m: "bách khoa toàn thư", t: "n" },
+          { w: "enquiry", m: "yêu cầu thông tin", t: "n" },
+          { w: "inherit", m: "thừa kế", t: "v" },
+          { w: "onboarding", m: "quy trình tiếp nhận nhân viên", t: "n" },
+          { w: "interact", m: "tương tác", t: "v" },
+          { w: "enrollment", m: "đăng ký, ghi danh", t: "n" },
+          { w: "breathtaking", m: "ngoạn mục, tuyệt đẹp", t: "adj" },
+          { w: "certification", m: "chứng nhận, bằng cấp", t: "n" },
+          { w: "precondition", m: "điều kiện tiên quyết", t: "n" },
+          { w: "authority", m: "cơ quan có thẩm quyền", t: "n" },
+        ],
+        // TEST 10
+        [
+          { w: "commend", m: "khen ngợi, ca ngợi", t: "v" },
+          { w: "garment", m: "quần áo, trang phục", t: "n" },
+          { w: "patron", m: "khách hàng, người bảo trợ", t: "n" },
+          { w: "majority", m: "phần lớn, đa số", t: "n" },
+          { w: "quarter", m: "quý tài chính", t: "n" },
+          { w: "diplomat", m: "nhà ngoại giao", t: "n" },
+          { w: "removal", m: "sự loại bỏ, dọn dẹp", t: "n" },
+          { w: "organizer", m: "người tổ chức", t: "n" },
+          { w: "sound", m: "vững chắc, đáng tin", t: "adj" },
+          { w: "aspiring", m: "có hoài bão, đang cố gắng", t: "adj" },
+          { w: "flourishing", m: "thịnh vượng, phát triển", t: "adj" },
+          { w: "finalize", m: "hoàn thiện, kết thúc", t: "v" },
+          { w: "caution", m: "cảnh báo, thận trọng", t: "v" },
+          { w: "inferior", m: "kém hơn, thấp hơn", t: "adj" },
+          { w: "adjustable", m: "có thể điều chỉnh", t: "adj" },
+          { w: "argument", m: "lập luận, tranh luận", t: "n" },
+          { w: "shrink", m: "thu nhỏ, giảm", t: "v" },
+          { w: "collapsible", m: "có thể gấp lại", t: "adj" },
+          { w: "durable", m: "bền, chịu được", t: "adj" },
+          { w: "replacement", m: "sự thay thế", t: "n" },
+          { w: "wholesaler", m: "nhà bán buôn", t: "n" },
+          { w: "whisper", m: "thì thầm", t: "v" },
+          { w: "illusion", m: "ảo giác, ảo tưởng", t: "n" },
+          { w: "argue", m: "lập luận, tranh luận", t: "v" },
+          { w: "plotline", m: "cốt truyện", t: "n" },
+          { w: "abundance", m: "sự dồi dào, phong phú", t: "n" },
+          { w: "challenging", m: "khó khăn, thách thức", t: "adj" },
+          { w: "recipe", m: "công thức nấu ăn", t: "n" },
+          { w: "separate", m: "riêng biệt, tách rời", t: "adj" },
+          { w: "promotional", m: "quảng cáo, khuyến mãi", t: "adj" },
+          { w: "apparel", m: "trang phục, quần áo", t: "n" },
+          { w: "involvement", m: "sự tham gia, liên quan", t: "n" },
+          { w: "invention", m: "phát minh, sáng chế", t: "n" },
+          { w: "timely", m: "kịp thời, đúng lúc", t: "adj" },
+          { w: "customize", m: "tùy chỉnh, cá nhân hóa", t: "v" },
+          { w: "punctuality", m: "đúng giờ, tính đúng giờ", t: "n" },
+          { w: "performance", m: "hiệu suất, màn trình diễn", t: "n" },
+          { w: "tricky", m: "phức tạp, khó nhằn", t: "adj" },
+          { w: "stop by", m: "ghé qua", t: "ph" },
+          { w: "compile", m: "tổng hợp, biên soạn", t: "v" },
+          { w: "notification", m: "thông báo", t: "n" },
+          { w: "manuscript", m: "bản thảo, văn bản gốc", t: "n" },
+          { w: "margin", m: "lề, biên độ", t: "n" },
+          { w: "ignore", m: "bỏ qua, không để ý", t: "v" },
+          { w: "modification", m: "sửa đổi, thay đổi", t: "n" },
+          { w: "establish", m: "thiết lập, thành lập", t: "v" },
+          { w: "diverse", m: "đa dạng, phong phú", t: "adj" },
+          { w: "negotiate", m: "đàm phán, thương lượng", t: "v" },
+          { w: "exceptionally", m: "đặc biệt, ngoại lệ", t: "adv" },
+          { w: "exposure", m: "tiếp xúc, phơi bày", t: "n" },
+          { w: "triumph", m: "chiến thắng, thành công", t: "n" },
+          { w: "criteria", m: "tiêu chí, tiêu chuẩn", t: "n" },
+          { w: "exceptional", m: "xuất sắc, đặc biệt", t: "adj" },
+          { w: "extremely", m: "cực kỳ, vô cùng", t: "adv" },
+          { w: "forefront", m: "tiên phong, hàng đầu", t: "n" },
+          { w: "endeavour", m: "nỗ lực, cố gắng", t: "n" },
+          { w: "spotless", m: "không tì vết, sạch bóng", t: "adj" },
+          { w: "subsequently", m: "sau đó, tiếp theo", t: "adv" },
+          { w: "disruption", m: "sự gián đoạn, phá vỡ", t: "n" },
+          { w: "embrace", m: "chấp nhận, ôm", t: "v" },
+          { w: "life-size", m: "kích thước thật", t: "adj" },
+          { w: "synthetic", m: "tổng hợp, nhân tạo", t: "adj" },
+          { w: "perimeter", m: "chu vi, vùng xung quanh", t: "n" },
+          { w: "dismantle", m: "tháo dỡ, giải thể", t: "v" },
+          { w: "promising", m: "đầy hứa hẹn, tiềm năng", t: "adj" },
+          { w: "symbolise", m: "tượng trưng, biểu tượng", t: "v" },
+          { w: "cement", m: "củng cố, gắn kết", t: "v" },
+          { w: "flavourful", m: "đậm đà, ngon", t: "adj" },
+          { w: "shred", m: "thái sợi, xé nhỏ", t: "v" },
+          { w: "institute", m: "viện nghiên cứu, tổ chức", t: "n" },
+          { w: "disease", m: "bệnh, dịch bệnh", t: "n" },
+          { w: "quality", m: "chất lượng cao", t: "adj" },
+          { w: "appreciative", m: "biết ơn, trân trọng", t: "adj" },
+          { w: "consignment", m: "hàng ký gửi, lô hàng", t: "n" },
+          { w: "assess", m: "đánh giá, ước tính", t: "v" },
+          { w: "deduct", m: "khấu trừ, trừ", t: "v" },
+          { w: "stipulate", m: "quy định, đặt điều kiện", t: "v" },
+          { w: "identification", m: "giấy tờ tùy thân", t: "n" },
+          { w: "liability", m: "trách nhiệm pháp lý", t: "n" },
+          { w: "caterer", m: "dịch vụ cung cấp thức ăn", t: "n" },
+        ],
+      ];
 
-<!-- QUIZ -->
-<div id="quiz-overlay">
-  <div class="qcard" id="qcard"></div>
-</div>
+      // Flatten with test index
+      const ALL = [];
+      TESTS.forEach((test, ti) =>
+        test.forEach((w, wi) => ALL.push({ ...w, test: ti + 1, idx: wi })),
+      );
 
-<script>
-// ═══════════════════════════════════════════════
-//  DATA — 800 words across 10 tests
-// ═══════════════════════════════════════════════
-const TESTS = [
-  // TEST 01
-  [
-    {w:"take place",m:"xảy ra, diễn ra",t:"ph"},
-    {w:"attendee",m:"người tham dự",t:"n"},
-    {w:"antique",m:"đồ cổ, đồ cổ điển",t:"n"},
-    {w:"organization",m:"tổ chức, đơn vị",t:"n"},
-    {w:"suspicious",m:"đáng ngờ, khả nghi",t:"adj"},
-    {w:"vary",m:"thay đổi, biến đổi",t:"v"},
-    {w:"inventory",m:"hàng tồn kho",t:"n"},
-    {w:"expand",m:"mở rộng, phát triển",t:"v"},
-    {w:"solicit",m:"yêu cầu, xin",t:"v"},
-    {w:"intend",m:"có ý định, dự định",t:"v"},
-    {w:"prevent",m:"ngăn chặn, phòng ngừa",t:"v"},
-    {w:"aim",m:"nhắm mục tiêu, hướng đến",t:"v"},
-    {w:"qualified",m:"có đủ năng lực, đủ tiêu chuẩn",t:"adj"},
-    {w:"resident",m:"cư dân, người cư trú",t:"n"},
-    {w:"agreement",m:"hợp đồng, thỏa thuận",t:"n"},
-    {w:"opposition",m:"sự phản đối",t:"n"},
-    {w:"extensive",m:"rộng rãi, toàn diện",t:"adj"},
-    {w:"guarantee",m:"đảm bảo, bảo đảm",t:"v"},
-    {w:"supplier",m:"nhà cung cấp",t:"n"},
-    {w:"landscaping",m:"cảnh quan, thiết kế sân vườn",t:"n"},
-    {w:"suggestion",m:"đề xuất, gợi ý",t:"n"},
-    {w:"expertise",m:"chuyên môn, kiến thức chuyên sâu",t:"n"},
-    {w:"competitor",m:"đối thủ cạnh tranh",t:"n"},
-    {w:"anniversary",m:"ngày kỷ niệm",t:"n"},
-    {w:"dedication",m:"sự cống hiến, tận tâm",t:"n"},
-    {w:"loyalty",m:"lòng trung thành",t:"n"},
-    {w:"contribute",m:"đóng góp, cống hiến",t:"v"},
-    {w:"gratitude",m:"lòng biết ơn",t:"n"},
-    {w:"refine",m:"tinh chỉnh, lọc",t:"v"},
-    {w:"spacious",m:"rộng rãi, thoáng đãng",t:"adj"},
-    {w:"go through",m:"xem xét, kiểm tra",t:"ph"},
-    {w:"various",m:"đa dạng, nhiều loại",t:"adj"},
-    {w:"secure",m:"an toàn, vững chắc",t:"adj"},
-    {w:"remove",m:"loại bỏ, di chuyển",t:"v"},
-    {w:"previous",m:"trước đây, trước đó",t:"adj"},
-    {w:"cooperation",m:"sự hợp tác",t:"n"},
-    {w:"upcoming",m:"sắp tới",t:"adj"},
-    {w:"charge",m:"tính phí, thu phí",t:"v"},
-    {w:"assign",m:"phân công, giao việc",t:"v"},
-    {w:"administrator",m:"quản trị viên, người quản lý",t:"n"},
-    {w:"new hire",m:"nhân viên mới tuyển",t:"ph"},
-    {w:"promote",m:"quảng bá, thăng chức",t:"v"},
-    {w:"advertise",m:"quảng cáo",t:"v"},
-    {w:"coordinator",m:"người điều phối, người tổ chức",t:"n"},
-    {w:"telescope",m:"kính thiên văn",t:"n"},
-    {w:"revise",m:"sửa đổi, chỉnh sửa",t:"v"},
-    {w:"representative",m:"đại diện, nhân viên",t:"n"},
-    {w:"inquiry",m:"thắc mắc, yêu cầu thông tin",t:"n"},
-    {w:"general",m:"chung, tổng quát",t:"adj"},
-    {w:"release",m:"phát hành, tung ra",t:"v"},
-    {w:"indicate",m:"chỉ ra, cho thấy",t:"v"},
-    {w:"retain",m:"giữ lại, duy trì",t:"v"},
-    {w:"flavour",m:"hương vị",t:"n"},
-    {w:"sacrifice",m:"hi sinh, hy sinh",t:"v"},
-    {w:"obtain",m:"có được, đạt được",t:"v"},
-    {w:"merger",m:"sự sáp nhập",t:"n"},
-    {w:"nutritious",m:"bổ dưỡng, giàu dinh dưỡng",t:"adj"},
-    {w:"individual",m:"cá nhân, thành viên",t:"n"},
-    {w:"opportunity",m:"cơ hội",t:"n"},
-    {w:"substitute",m:"thay thế",t:"v"},
-    {w:"critical",m:"quan trọng, phê bình",t:"adj"},
-    {w:"colleague",m:"đồng nghiệp",t:"n"},
-    {w:"courtesy",m:"sự lịch sự, phép lịch sự",t:"n"},
-    {w:"get the word out",m:"lan truyền thông tin",t:"ph"},
-    {w:"install",m:"cài đặt, lắp đặt",t:"v"},
-    {w:"significant",m:"quan trọng, đáng kể",t:"adj"},
-    {w:"estimate",m:"ước tính, đánh giá",t:"v"},
-    {w:"liaison",m:"người liên lạc, cầu nối",t:"n"},
-    {w:"successive",m:"liên tiếp, kế tiếp",t:"adj"},
-    {w:"expert",m:"chuyên gia",t:"n"},
-    {w:"diagnose",m:"chẩn đoán",t:"v"},
-    {w:"replace",m:"thay thế, thay mới",t:"v"},
-    {w:"resemble",m:"giống, trông giống",t:"v"},
-    {w:"approve",m:"phê duyệt, chấp thuận",t:"v"},
-    {w:"inspection",m:"kiểm tra, thanh tra",t:"n"},
-    {w:"proactive",m:"chủ động, tích cực",t:"adj"},
-    {w:"procedure",m:"quy trình, thủ tục",t:"n"},
-    {w:"compete",m:"cạnh tranh",t:"v"},
-    {w:"instrumental",m:"quan trọng, then chốt",t:"adj"},
-    {w:"combine",m:"kết hợp",t:"v"}
-  ],
-  // TEST 02
-  [
-    {w:"reliability",m:"độ tin cậy",t:"n"},
-    {w:"reimbursement",m:"hoàn tiền, hoàn phí",t:"n"},
-    {w:"accept",m:"chấp nhận, đồng ý",t:"v"},
-    {w:"candidate",m:"ứng viên, thí sinh",t:"n"},
-    {w:"master",m:"thành thạo, làm chủ",t:"v"},
-    {w:"power failure",m:"mất điện",t:"ph"},
-    {w:"property",m:"bất động sản, tài sản",t:"n"},
-    {w:"strategy",m:"chiến lược",t:"n"},
-    {w:"name",m:"bổ nhiệm, đặt tên",t:"v"},
-    {w:"warranty",m:"bảo hành",t:"n"},
-    {w:"workplace",m:"nơi làm việc",t:"n"},
-    {w:"postpone",m:"hoãn lại, dời lịch",t:"v"},
-    {w:"struggle",m:"cố gắng, vật lộn",t:"v"},
-    {w:"ingredient",m:"nguyên liệu, thành phần",t:"n"},
-    {w:"savory",m:"ngon miệng, đậm vị",t:"adj"},
-    {w:"eager",m:"háo hức, mong muốn",t:"adj"},
-    {w:"artificial",m:"nhân tạo, giả tạo",t:"adj"},
-    {w:"substance",m:"chất liệu, vật chất",t:"n"},
-    {w:"handy",m:"tiện lợi, hữu dụng",t:"adj"},
-    {w:"effective",m:"hiệu quả",t:"adj"},
-    {w:"sustainable",m:"bền vững, duy trì được",t:"adj"},
-    {w:"address",m:"giải quyết, đề cập",t:"v"},
-    {w:"porous",m:"có lỗ thấm nước",t:"adj"},
-    {w:"subscription",m:"đăng ký, thuê bao",t:"n"},
-    {w:"access",m:"truy cập, sử dụng",t:"v"},
-    {w:"valid",m:"hợp lệ, còn hiệu lực",t:"adj"},
-    {w:"expire",m:"hết hạn",t:"v"},
-    {w:"activate",m:"kích hoạt",t:"v"},
-    {w:"distribute",m:"phân phát, phân phối",t:"v"},
-    {w:"feature",m:"bao gồm, giới thiệu",t:"v"},
-    {w:"reveal",m:"tiết lộ, hé lộ",t:"v"},
-    {w:"extension",m:"số máy lẻ, gia hạn",t:"n"},
-    {w:"complaint",m:"khiếu nại, phàn nàn",t:"n"},
-    {w:"issue",m:"cấp phát, vấn đề",t:"v"},
-    {w:"maintenance",m:"bảo trì, duy trì",t:"n"},
-    {w:"summarize",m:"tóm tắt",t:"v"},
-    {w:"notify",m:"thông báo",t:"v"},
-    {w:"requirement",m:"yêu cầu, điều kiện",t:"n"},
-    {w:"freight",m:"hàng hóa, vận chuyển hàng",t:"n"},
-    {w:"vehicle",m:"phương tiện giao thông",t:"n"},
-    {w:"transport",m:"vận chuyển",t:"v"},
-    {w:"nationwide",m:"trên toàn quốc",t:"adv"},
-    {w:"executive",m:"ban lãnh đạo, giám đốc điều hành",t:"n"},
-    {w:"commercial",m:"thương mại",t:"adj"},
-    {w:"demand",m:"nhu cầu",t:"n"},
-    {w:"specialty",m:"lĩnh vực chuyên môn, đặc sản",t:"n"},
-    {w:"convert",m:"chuyển đổi",t:"v"},
-    {w:"virtual",m:"ảo, trực tuyến",t:"adj"},
-    {w:"visualization",m:"hình dung, trực quan hóa",t:"n"},
-    {w:"suggest",m:"đề xuất, gợi ý",t:"v"},
-    {w:"curate",m:"chọn lọc, tuyển chọn",t:"v"},
-    {w:"highlight",m:"nhấn mạnh, nổi bật",t:"v"},
-    {w:"process",m:"xử lý, tiến hành",t:"v"},
-    {w:"sleek",m:"bóng mượt, thanh lịch",t:"adj"},
-    {w:"stabilization",m:"sự ổn định",t:"n"},
-    {w:"rough",m:"thô ráp, sơ bộ",t:"adj"},
-    {w:"surface",m:"bề mặt",t:"n"},
-    {w:"discontinue",m:"ngừng lại, chấm dứt",t:"v"},
-    {w:"instruction",m:"hướng dẫn, giảng dạy",t:"n"},
-    {w:"residence",m:"nơi cư trú",t:"n"},
-    {w:"complimentary",m:"miễn phí, tặng kèm",t:"adj"},
-    {w:"accommodate",m:"phù hợp, đáp ứng",t:"v"},
-    {w:"catch up",m:"bắt kịp",t:"ph"},
-    {w:"customized",m:"tùy chỉnh, được cá nhân hóa",t:"adj"},
-    {w:"express",m:"nhanh, tốc hành",t:"adj"},
-    {w:"preserve",m:"bảo tồn, giữ gìn",t:"v"},
-    {w:"auction",m:"đấu giá",t:"n"},
-    {w:"donate",m:"quyên góp, hiến tặng",t:"v"},
-    {w:"operation",m:"vận hành, hoạt động",t:"n"},
-    {w:"thrilled",m:"rất hứng thú, phấn khích",t:"adj"},
-    {w:"in advance",m:"trước, sớm",t:"ph"},
-    {w:"indeed",m:"thực sự, thật vậy",t:"adv"},
-    {w:"typically",m:"thường thì, thông thường",t:"adv"},
-    {w:"smudge",m:"vết bẩn, vết ố",t:"n"},
-    {w:"found",m:"thành lập, thành lập",t:"v"},
-    {w:"emphasize",m:"nhấn mạnh",t:"v"},
-    {w:"immediately",m:"ngay lập tức",t:"adv"},
-    {w:"average",m:"trung bình",t:"n"},
-    {w:"navigate",m:"tìm đường, điều hướng",t:"v"},
-    {w:"ultimately",m:"cuối cùng, căn bản",t:"adv"}
-  ],
-  // TEST 03
-  [
-    {w:"youth",m:"tuổi trẻ, thanh niên",t:"n"},
-    {w:"conduct",m:"thực hiện, tiến hành",t:"v"},
-    {w:"regular",m:"đều đặn, thường xuyên",t:"adj"},
-    {w:"a majority of",m:"phần lớn, đa số",t:"ph"},
-    {w:"represent",m:"đại diện, tượng trưng",t:"v"},
-    {w:"measure",m:"biện pháp, đo lường",t:"n"},
-    {w:"submit",m:"nộp, gửi",t:"v"},
-    {w:"track",m:"theo dõi, truy vết",t:"v"},
-    {w:"rapidly",m:"nhanh chóng",t:"adv"},
-    {w:"committee",m:"ủy ban, hội đồng",t:"n"},
-    {w:"appendix",m:"phụ lục",t:"n"},
-    {w:"insight",m:"sự thấu hiểu, nhận thức sâu sắc",t:"n"},
-    {w:"investment",m:"đầu tư, vốn đầu tư",t:"n"},
-    {w:"result",m:"kết quả",t:"n"},
-    {w:"improve",m:"cải thiện, nâng cao",t:"v"},
-    {w:"appoint",m:"bổ nhiệm, chỉ định",t:"v"},
-    {w:"simultaneously",m:"đồng thời, cùng lúc",t:"adv"},
-    {w:"revenue",m:"doanh thu, thu nhập",t:"n"},
-    {w:"undergo",m:"trải qua, chịu đựng",t:"v"},
-    {w:"take advantage of",m:"tận dụng, lợi dụng",t:"ph"},
-    {w:"transaction",m:"giao dịch",t:"n"},
-    {w:"potential",m:"tiềm năng, có tiềm năng",t:"adj"},
-    {w:"attention",m:"sự chú ý",t:"n"},
-    {w:"dynamic",m:"năng động, linh hoạt",t:"adj"},
-    {w:"valuable",m:"quý giá, có giá trị",t:"adj"},
-    {w:"convince",m:"thuyết phục",t:"v"},
-    {w:"audience",m:"khán giả, người nghe",t:"n"},
-    {w:"acquire",m:"có được, mua lại",t:"v"},
-    {w:"share",m:"cổ phần, chia sẻ",t:"n"},
-    {w:"strength",m:"điểm mạnh, sức mạnh",t:"n"},
-    {w:"quote",m:"trích dẫn, báo giá",t:"v"},
-    {w:"infusion",m:"sự đưa vào, rót vốn",t:"n"},
-    {w:"refrain",m:"kiềm chế, tránh",t:"v"},
-    {w:"preference",m:"sở thích, ưu tiên",t:"n"},
-    {w:"function",m:"chức năng, hoạt động",t:"n"},
-    {w:"gathering",m:"buổi tụ họp, gặp mặt",t:"n"},
-    {w:"innovation",m:"sự đổi mới, sáng tạo",t:"n"},
-    {w:"shareholder",m:"cổ đông",t:"n"},
-    {w:"productivity",m:"năng suất",t:"n"},
-    {w:"occur",m:"xảy ra, phát sinh",t:"v"},
-    {w:"optimize",m:"tối ưu hóa",t:"v"},
-    {w:"conventional",m:"thông thường, truyền thống",t:"adj"},
-    {w:"commuter",m:"người đi làm hàng ngày",t:"n"},
-    {w:"relieved",m:"nhẹ nhõm, an tâm",t:"adj"},
-    {w:"desperate",m:"tuyệt vọng, cấp bách",t:"adj"},
-    {w:"municipal",m:"thuộc thành phố, đô thị",t:"adj"},
-    {w:"entrance",m:"lối vào, cổng vào",t:"n"},
-    {w:"mural",m:"tranh tường",t:"n"},
-    {w:"commission",m:"đặt hàng, ủy quyền",t:"v"},
-    {w:"approximately",m:"xấp xỉ, khoảng",t:"adv"},
-    {w:"publicize",m:"công bố, quảng bá",t:"v"},
-    {w:"significance",m:"tầm quan trọng, ý nghĩa",t:"n"},
-    {w:"official",m:"chính thức, chính quyền",t:"adj"},
-    {w:"mingle",m:"giao lưu, hòa nhập",t:"v"},
-    {w:"invaluable",m:"vô giá, quý báu",t:"adj"},
-    {w:"accurate",m:"chính xác",t:"adj"},
-    {w:"recruit",m:"tuyển dụng",t:"v"},
-    {w:"celebrity",m:"người nổi tiếng",t:"n"},
-    {w:"cater",m:"cung cấp thức ăn, phục vụ",t:"v"},
-    {w:"equipment",m:"thiết bị, dụng cụ",t:"n"},
-    {w:"distributor",m:"nhà phân phối",t:"n"},
-    {w:"component",m:"linh kiện, thành phần",t:"n"},
-    {w:"facility",m:"cơ sở vật chất, tiện nghi",t:"n"},
-    {w:"assembly",m:"lắp ráp, hội họp",t:"n"},
-    {w:"launch",m:"ra mắt, khai trương",t:"v"},
-    {w:"financial",m:"tài chính",t:"adj"},
-    {w:"oversee",m:"giám sát, kiểm tra",t:"v"},
-    {w:"permanently",m:"vĩnh viễn, cố định",t:"adv"},
-    {w:"relocate",m:"chuyển địa điểm",t:"v"},
-    {w:"appreciate",m:"đánh giá cao, biết ơn",t:"v"},
-    {w:"perspective",m:"quan điểm, góc nhìn",t:"n"},
-    {w:"intrigue",m:"gây tò mò, thu hút",t:"v"},
-    {w:"government",m:"chính phủ",t:"n"},
-    {w:"collaborate",m:"hợp tác, cộng tác",t:"v"},
-    {w:"commensurate",m:"tương xứng, phù hợp",t:"adj"},
-    {w:"comply with",m:"tuân thủ, chấp hành",t:"ph"},
-    {w:"essential",m:"thiết yếu, cần thiết",t:"adj"},
-    {w:"relevant",m:"liên quan, thích hợp",t:"adj"},
-    {w:"formal",m:"chính thức, trang trọng",t:"adj"},
-    {w:"remote",m:"từ xa, xa xôi",t:"adj"}
-  ],
-  // TEST 04
-  [
-    {w:"retire",m:"nghỉ hưu",t:"v"},
-    {w:"applicant",m:"ứng viên, người nộp đơn",t:"n"},
-    {w:"contract",m:"hợp đồng",t:"n"},
-    {w:"liquid",m:"chất lỏng",t:"n"},
-    {w:"praise",m:"khen ngợi",t:"v"},
-    {w:"aesthetic",m:"thẩm mỹ, mỹ học",t:"adj"},
-    {w:"maintain",m:"duy trì, bảo trì",t:"v"},
-    {w:"confidentiality",m:"tính bảo mật, bí mật",t:"n"},
-    {w:"architecture",m:"kiến trúc",t:"n"},
-    {w:"thermostat",m:"bộ điều nhiệt",t:"n"},
-    {w:"reflect",m:"phản ánh, suy nghĩ",t:"v"},
-    {w:"retreat",m:"kỳ nghỉ dưỡng, chỗ ẩn náu",t:"n"},
-    {w:"in celebration of",m:"để kỷ niệm, chào mừng",t:"ph"},
-    {w:"outline",m:"phác thảo, lược đồ",t:"v"},
-    {w:"procurement",m:"mua sắm, thu mua",t:"n"},
-    {w:"pediatric",m:"nhi khoa",t:"adj"},
-    {w:"accurately",m:"chính xác, đúng",t:"adv"},
-    {w:"authentic",m:"chân thực, chính hãng",t:"adj"},
-    {w:"cuisine",m:"ẩm thực, món ăn",t:"n"},
-    {w:"occupy",m:"chiếm, sử dụng",t:"v"},
-    {w:"enthusiasm",m:"nhiệt tình, hăng hái",t:"n"},
-    {w:"validate",m:"xác nhận, chứng thực",t:"v"},
-    {w:"at no charge",m:"miễn phí",t:"ph"},
-    {w:"memoir",m:"hồi ký",t:"n"},
-    {w:"in person",m:"trực tiếp, đích thân",t:"ph"},
-    {w:"specialize in",m:"chuyên về, chuyên môn",t:"ph"},
-    {w:"bold",m:"táo bạo, dũng cảm",t:"adj"},
-    {w:"reciprocate",m:"đáp lại, đền đáp",t:"v"},
-    {w:"competitive",m:"cạnh tranh, có khả năng cạnh tranh",t:"adj"},
-    {w:"knowledge",m:"kiến thức, hiểu biết",t:"n"},
-    {w:"regulation",m:"quy định, điều lệ",t:"n"},
-    {w:"fluency",m:"sự lưu loát, trôi chảy",t:"n"},
-    {w:"satellite",m:"vệ tinh",t:"n"},
-    {w:"grant",m:"tài trợ, cấp phép",t:"n"},
-    {w:"calculate",m:"tính toán",t:"v"},
-    {w:"snowpack",m:"lớp tuyết tích tụ",t:"n"},
-    {w:"prototype",m:"nguyên mẫu, mẫu thử",t:"n"},
-    {w:"fluctuation",m:"sự dao động, biến động",t:"n"},
-    {w:"enhance",m:"nâng cao, cải thiện",t:"v"},
-    {w:"domestic",m:"trong nước, nội địa",t:"adj"},
-    {w:"prestigious",m:"uy tín, danh giá",t:"adj"},
-    {w:"commitment",m:"cam kết, sự tận tâm",t:"n"},
-    {w:"tremendous",m:"khổng lồ, to lớn",t:"adj"},
-    {w:"headquarter",m:"đặt trụ sở chính",t:"v"},
-    {w:"facilitate",m:"tạo thuận lợi, hỗ trợ",t:"v"},
-    {w:"ergonomic",m:"công thái học, tiện dụng",t:"adj"},
-    {w:"frequently",m:"thường xuyên",t:"adv"},
-    {w:"initiate",m:"khởi xướng, bắt đầu",t:"v"},
-    {w:"appearance",m:"ngoại hình, vẻ ngoài",t:"n"},
-    {w:"enclose",m:"đính kèm, bao quanh",t:"v"},
-    {w:"commence",m:"bắt đầu, khởi động",t:"v"},
-    {w:"elaborate",m:"công phu, tỉ mỉ",t:"adj"},
-    {w:"insightful",m:"sâu sắc, thấu đáo",t:"adj"},
-    {w:"biography",m:"tiểu sử",t:"n"},
-    {w:"admire",m:"ngưỡng mộ, kính phục",t:"v"},
-    {w:"backdrop",m:"phông nền, bối cảnh",t:"n"},
-    {w:"refurbish",m:"tân trang, cải tạo",t:"v"},
-    {w:"prompt",m:"nhanh chóng, kịp thời",t:"adj"},
-    {w:"engaging",m:"hấp dẫn, thu hút",t:"adj"},
-    {w:"functionality",m:"chức năng, công dụng",t:"n"},
-    {w:"spectacular",m:"ngoạn mục, hoành tráng",t:"adj"},
-    {w:"secluded",m:"yên tĩnh, hẻo lánh",t:"adj"},
-    {w:"enchanted",m:"mê đắm, say mê",t:"adj"},
-    {w:"eclectic",m:"đa dạng, phong phú",t:"adj"},
-    {w:"audiovisual",m:"nghe nhìn",t:"adj"},
-    {w:"durability",m:"độ bền, sức bền",t:"n"},
-    {w:"versatile",m:"đa năng, linh hoạt",t:"adj"},
-    {w:"persist",m:"tiếp tục, kiên trì",t:"v"},
-    {w:"commissioner",m:"ủy viên, người được ủy quyền",t:"n"},
-    {w:"predecessor",m:"người tiền nhiệm",t:"n"},
-    {w:"step down",m:"từ chức, rút lui",t:"ph"},
-    {w:"suspension",m:"đình chỉ, tạm dừng",t:"n"},
-    {w:"inaugural",m:"đầu tiên, khai mạc",t:"adj"},
-    {w:"proceeds",m:"tiền thu được, doanh thu",t:"n"},
-    {w:"submission",m:"nộp, trình bày",t:"n"},
-    {w:"administration",m:"hành chính, quản lý",t:"n"},
-    {w:"excel",m:"xuất sắc, vượt trội",t:"v"},
-    {w:"aspect",m:"khía cạnh, mặt",t:"n"},
-    {w:"verify",m:"xác minh, kiểm tra",t:"v"},
-    {w:"convenient",m:"tiện lợi, thuận tiện",t:"adj"}
-  ],
-  // TEST 05
-  [
-    {w:"accountant",m:"kế toán viên",t:"n"},
-    {w:"agenda",m:"chương trình nghị sự",t:"n"},
-    {w:"sudden",m:"đột ngột, bất ngờ",t:"adj"},
-    {w:"proofread",m:"đọc soát lỗi",t:"v"},
-    {w:"experiment",m:"thí nghiệm, thử nghiệm",t:"n"},
-    {w:"initial",m:"ban đầu, sơ bộ",t:"adj"},
-    {w:"sealant",m:"chất bịt kín",t:"n"},
-    {w:"refined",m:"tinh chế, được lọc",t:"adj"},
-    {w:"soundproof",m:"cách âm",t:"adj"},
-    {w:"entrepreneur",m:"doanh nhân, nhà khởi nghiệp",t:"n"},
-    {w:"tenure",m:"nhiệm kỳ",t:"n"},
-    {w:"achievement",m:"thành tích, thành quả",t:"n"},
-    {w:"forthcoming",m:"sắp tới, sắp xảy ra",t:"adj"},
-    {w:"consistently",m:"nhất quán, đều đặn",t:"adv"},
-    {w:"implement",m:"thực hiện, triển khai",t:"v"},
-    {w:"accordingly",m:"theo đó, do đó",t:"adv"},
-    {w:"align",m:"sắp xếp, căn chỉnh",t:"v"},
-    {w:"tardiness",m:"sự trễ giờ",t:"n"},
-    {w:"on behalf of",m:"thay mặt cho, đại diện",t:"ph"},
-    {w:"physiotherapy",m:"vật lý trị liệu",t:"n"},
-    {w:"inviting",m:"hấp dẫn, mời gọi",t:"adj"},
-    {w:"objective",m:"mục tiêu, khách quan",t:"n"},
-    {w:"resource",m:"tài nguyên, nguồn lực",t:"n"},
-    {w:"informative",m:"có ích, bổ ích",t:"adj"},
-    {w:"previously",m:"trước đây, trước đó",t:"adv"},
-    {w:"editorial",m:"biên tập, xã luận",t:"adj"},
-    {w:"prime",m:"tốt nhất, quan trọng nhất",t:"adj"},
-    {w:"spread",m:"lan rộng, phổ biến",t:"v"},
-    {w:"overall",m:"tổng thể, toàn diện",t:"adj"},
-    {w:"determine",m:"xác định, quyết định",t:"v"},
-    {w:"avoid",m:"tránh, né tránh",t:"v"},
-    {w:"sanctuary",m:"nơi ẩn náu, khu bảo tồn",t:"n"},
-    {w:"hectic",m:"bận rộn hối hả",t:"adj"},
-    {w:"bustle",m:"sự nhộn nhịp, ồn ào",t:"n"},
-    {w:"excursion",m:"chuyến đi, dã ngoại",t:"n"},
-    {w:"cover letter",m:"thư xin việc",t:"ph"},
-    {w:"shortage",m:"sự thiếu hụt",t:"n"},
-    {w:"extract",m:"chiết xuất, trích",t:"n"},
-    {w:"favorable",m:"thuận lợi, có lợi",t:"adj"},
-    {w:"crash",m:"hỏng, sập",t:"v"},
-    {w:"compatible",m:"tương thích",t:"adj"},
-    {w:"thrive",m:"phát triển mạnh, thịnh vượng",t:"v"},
-    {w:"figure out",m:"tìm ra, hiểu ra",t:"ph"},
-    {w:"asset",m:"tài sản",t:"n"},
-    {w:"supportive",m:"hỗ trợ, ủng hộ",t:"adj"},
-    {w:"presence",m:"sự có mặt, hiện diện",t:"n"},
-    {w:"persevere",m:"kiên trì, bền lòng",t:"v"},
-    {w:"explore",m:"khám phá, điều tra",t:"v"},
-    {w:"primarily",m:"chủ yếu, trước hết",t:"adv"},
-    {w:"breach",m:"vi phạm, phá vỡ",t:"n"},
-    {w:"first aid",m:"sơ cứu",t:"ph"},
-    {w:"specific",m:"cụ thể, đặc thù",t:"adj"},
-    {w:"administrative",m:"hành chính",t:"adj"},
-    {w:"possess",m:"sở hữu, có",t:"v"},
-    {w:"subordinate",m:"nhân viên cấp dưới",t:"n"},
-    {w:"crucially",m:"quan trọng, then chốt",t:"adv"},
-    {w:"proficiency",m:"sự thành thạo, trình độ",t:"n"},
-    {w:"expenditure",m:"chi tiêu, khoản chi",t:"n"},
-    {w:"statistical",m:"thống kê",t:"adj"},
-    {w:"industrial",m:"công nghiệp",t:"adj"},
-    {w:"description",m:"mô tả, miêu tả",t:"n"},
-    {w:"dependent",m:"phụ thuộc",t:"adj"},
-    {w:"in stock",m:"còn hàng",t:"ph"},
-    {w:"unfamiliar",m:"không quen thuộc",t:"adj"},
-    {w:"questionnaire",m:"bảng câu hỏi, phiếu khảo sát",t:"n"},
-    {w:"introductory",m:"giới thiệu, mở đầu",t:"adj"},
-    {w:"subsequent",m:"tiếp theo, sau đó",t:"adj"},
-    {w:"waive",m:"miễn, bỏ qua",t:"v"},
-    {w:"prospective",m:"tương lai, tiềm năng",t:"adj"},
-    {w:"confidential",m:"bí mật, mật",t:"adj"},
-    {w:"certified",m:"được chứng nhận, có chứng chỉ",t:"adj"},
-    {w:"withdraw",m:"rút tiền, rút lui",t:"v"},
-    {w:"owed",m:"nợ, có nghĩa vụ trả",t:"adj"},
-    {w:"participant",m:"người tham gia",t:"n"},
-    {w:"steady",m:"ổn định, đều đặn",t:"adj"},
-    {w:"acceptable",m:"chấp nhận được",t:"adj"},
-    {w:"capacity",m:"sức chứa, năng lực",t:"n"},
-    {w:"authorize",m:"ủy quyền, cho phép",t:"v"},
-    {w:"faulty",m:"có lỗi, khiếm khuyết",t:"adj"},
-    {w:"personnel",m:"nhân sự, nhân viên",t:"n"}
-  ],
-  // TEST 06
-  [
-    {w:"composer",m:"nhạc sĩ, người sáng tác",t:"n"},
-    {w:"politeness",m:"sự lịch sự, nhã nhặn",t:"n"},
-    {w:"practical",m:"thực tế, thực hành",t:"adj"},
-    {w:"workstation",m:"trạm làm việc",t:"n"},
-    {w:"latest",m:"mới nhất, gần đây nhất",t:"adj"},
-    {w:"quarterly",m:"hàng quý",t:"adj"},
-    {w:"stakeholder",m:"cổ đông, bên liên quan",t:"n"},
-    {w:"biographer",m:"nhà viết tiểu sử",t:"n"},
-    {w:"distinctive",m:"đặc trưng, nổi bật",t:"adj"},
-    {w:"stationery",m:"văn phòng phẩm",t:"n"},
-    {w:"insurance",m:"bảo hiểm",t:"n"},
-    {w:"associated",m:"liên quan, có liên hệ",t:"adj"},
-    {w:"ensure",m:"đảm bảo, chắc chắn",t:"v"},
-    {w:"exterior",m:"bên ngoài, ngoại thất",t:"adj"},
-    {w:"incorporate",m:"kết hợp, tích hợp",t:"v"},
-    {w:"pleasure",m:"niềm vui, sự thích thú",t:"n"},
-    {w:"corporate",m:"doanh nghiệp, công ty",t:"adj"},
-    {w:"appliance",m:"thiết bị gia dụng",t:"n"},
-    {w:"innovative",m:"sáng tạo, đổi mới",t:"adj"},
-    {w:"geographic",m:"địa lý",t:"adj"},
-    {w:"electronics",m:"điện tử",t:"n"},
-    {w:"patience",m:"sự kiên nhẫn",t:"n"},
-    {w:"uneven",m:"không đều, lồi lõm",t:"adj"},
-    {w:"pavement",m:"vỉa hè, mặt đường",t:"n"},
-    {w:"hygienist",m:"chuyên viên vệ sinh",t:"n"},
-    {w:"handle",m:"xử lý, quản lý",t:"v"},
-    {w:"benefit",m:"lợi ích, có lợi",t:"n"},
-    {w:"streamline",m:"tinh gọn, đơn giản hóa",t:"v"},
-    {w:"unusually",m:"bất thường, khác lạ",t:"adv"},
-    {w:"moderation",m:"sự điều tiết, vừa phải",t:"n"},
-    {w:"regularly",m:"thường xuyên, định kỳ",t:"adv"},
-    {w:"landscape",m:"cảnh quan, phong cảnh",t:"n"},
-    {w:"optimal",m:"tối ưu, lý tưởng",t:"adj"},
-    {w:"reasonable",m:"hợp lý, phải chăng",t:"adj"},
-    {w:"pathway",m:"con đường, lối đi",t:"n"},
-    {w:"rustic",m:"mộc mạc, thôn quê",t:"adj"},
-    {w:"constitute",m:"tạo thành, cấu thành",t:"v"},
-    {w:"fulfill",m:"hoàn thành, thực hiện",t:"v"},
-    {w:"specification",m:"thông số kỹ thuật",t:"n"},
-    {w:"paperwork",m:"giấy tờ, hồ sơ",t:"n"},
-    {w:"security",m:"an ninh, bảo mật",t:"n"},
-    {w:"intricate",m:"phức tạp, rắc rối",t:"adj"},
-    {w:"unprecedented",m:"chưa từng có, chưa có tiền lệ",t:"adj"},
-    {w:"tactile",m:"xúc giác, cảm ứng",t:"adj"},
-    {w:"exploit",m:"khai thác, tận dụng",t:"v"},
-    {w:"layover",m:"dừng chân quá cảnh",t:"n"},
-    {w:"amenity",m:"tiện nghi, tiện ích",t:"n"},
-    {w:"awareness",m:"nhận thức, ý thức",t:"n"},
-    {w:"conserve",m:"tiết kiệm, bảo tồn",t:"v"},
-    {w:"fundamental",m:"cơ bản, nền tảng",t:"adj"},
-    {w:"specified",m:"được chỉ định, cụ thể",t:"adj"},
-    {w:"eliminate",m:"loại bỏ, xóa bỏ",t:"v"},
-    {w:"reduction",m:"sự giảm, cắt giảm",t:"n"},
-    {w:"contribution",m:"sự đóng góp",t:"n"},
-    {w:"alternate",m:"thay thế, luân phiên",t:"adj"},
-    {w:"confident",m:"tự tin, chắc chắn",t:"adj"},
-    {w:"incur",m:"gây ra, phát sinh",t:"v"},
-    {w:"offset",m:"bù đắp, cân bằng",t:"v"},
-    {w:"placement",m:"sắp xếp, bố trí",t:"n"},
-    {w:"integral",m:"thiết yếu, không thể thiếu",t:"adj"},
-    {w:"guidance",m:"hướng dẫn, chỉ dẫn",t:"n"},
-    {w:"botanical",m:"thực vật học",t:"adj"},
-    {w:"society",m:"hội, hiệp hội",t:"n"},
-    {w:"theme",m:"chủ đề",t:"n"},
-    {w:"paradise",m:"thiên đường",t:"n"},
-    {w:"ambitious",m:"tham vọng, đầy hoài bão",t:"adj"},
-    {w:"cultivate",m:"canh tác, nuôi dưỡng",t:"v"},
-    {w:"privilege",m:"đặc quyền, vinh dự",t:"n"},
-    {w:"wildlife",m:"động vật hoang dã",t:"n"},
-    {w:"cordially",m:"thân mật, trân trọng",t:"adv"},
-    {w:"nourish",m:"nuôi dưỡng, cung cấp dinh dưỡng",t:"v"},
-    {w:"deterrence",m:"sự ngăn chặn, phòng ngừa",t:"n"},
-    {w:"harmful",m:"có hại, gây hại",t:"adj"},
-    {w:"recreation",m:"giải trí, vui chơi",t:"n"},
-    {w:"athletic",m:"thể thao, thể lực",t:"adj"},
-    {w:"adequate",m:"đủ, thích hợp",t:"adj"},
-    {w:"suitable",m:"phù hợp, thích hợp",t:"adj"},
-    {w:"promptly",m:"đúng giờ, nhanh chóng",t:"adv"},
-    {w:"joint",m:"chung, liên kết",t:"adj"},
-    {w:"profitable",m:"sinh lợi, có lãi",t:"adj"}
-  ],
-  // TEST 07
-  [
-    {w:"commute",m:"đi làm hàng ngày",t:"v"},
-    {w:"understaffed",m:"thiếu nhân lực",t:"adj"},
-    {w:"keep fit",m:"giữ sức khỏe",t:"ph"},
-    {w:"completion",m:"sự hoàn thành",t:"n"},
-    {w:"concern",m:"lo ngại, mối lo",t:"n"},
-    {w:"tuition",m:"học phí",t:"n"},
-    {w:"enroll in",m:"đăng ký vào",t:"ph"},
-    {w:"evaluate",m:"đánh giá",t:"v"},
-    {w:"milestone",m:"cột mốc, dấu mốc",t:"n"},
-    {w:"responsive",m:"phản hồi nhanh, nhạy bén",t:"adj"},
-    {w:"chemistry",m:"hóa học",t:"n"},
-    {w:"rapid",m:"nhanh chóng, mau lẹ",t:"adj"},
-    {w:"hospitality",m:"dịch vụ khách hàng, hiếu khách",t:"n"},
-    {w:"payroll",m:"bảng lương, quỹ lương",t:"n"},
-    {w:"time sheet",m:"bảng chấm công",t:"ph"},
-    {w:"container",m:"hộp, thùng chứa",t:"n"},
-    {w:"fancy",m:"thích, ưa",t:"v"},
-    {w:"savour",m:"thưởng thức, thưởng vị",t:"v"},
-    {w:"socialise",m:"giao lưu, kết giao",t:"v"},
-    {w:"reserve",m:"đặt trước, dự trữ",t:"v"},
-    {w:"opening",m:"vị trí tuyển dụng, cơ hội",t:"n"},
-    {w:"renewal",m:"gia hạn, đổi mới",t:"n"},
-    {w:"assume",m:"giả định, đảm nhận",t:"v"},
-    {w:"tenant",m:"người thuê, người thuê nhà",t:"n"},
-    {w:"realty",m:"bất động sản",t:"n"},
-    {w:"peninsula",m:"bán đảo",t:"n"},
-    {w:"moderately",m:"ở mức vừa phải",t:"adv"},
-    {w:"scatter",m:"làm tản mác, rải rác",t:"v"},
-    {w:"inexpensive",m:"rẻ, không đắt",t:"adj"},
-    {w:"flock to",m:"đổ về, kéo đến",t:"ph"},
-    {w:"alert",m:"cảnh báo, thông báo",t:"n"},
-    {w:"electronically",m:"bằng điện tử",t:"adv"},
-    {w:"exclusively",m:"độc quyền, dành riêng",t:"adv"},
-    {w:"creamery",m:"cửa hàng sữa, lò bơ",t:"n"},
-    {w:"physician",m:"bác sĩ",t:"n"},
-    {w:"remind",m:"nhắc nhở",t:"v"},
-    {w:"time off",m:"nghỉ phép, thời gian tự do",t:"ph"},
-    {w:"adjust",m:"điều chỉnh",t:"v"},
-    {w:"custodian",m:"người quản lý, bảo vệ",t:"n"},
-    {w:"testimonial",m:"lời chứng thực, nhận xét",t:"n"},
-    {w:"satisfaction",m:"sự hài lòng",t:"n"},
-    {w:"detailed",m:"chi tiết, tỉ mỉ",t:"adj"},
-    {w:"reputation",m:"danh tiếng, uy tín",t:"n"},
-    {w:"identify",m:"xác định, nhận biết",t:"v"},
-    {w:"persuade",m:"thuyết phục",t:"v"},
-    {w:"imminent",m:"sắp xảy ra, cận kề",t:"adj"},
-    {w:"undoubtedly",m:"không nghi ngờ, chắc chắn",t:"adv"},
-    {w:"visible",m:"dễ thấy, rõ ràng",t:"adj"},
-    {w:"collaboration",m:"hợp tác, cộng tác",t:"n"},
-    {w:"corporation",m:"công ty, tập đoàn",t:"n"},
-    {w:"nonprofit",m:"phi lợi nhuận",t:"adj"},
-    {w:"participation",m:"sự tham gia",t:"n"},
-    {w:"involve",m:"liên quan, bao gồm",t:"v"},
-    {w:"dedicate",m:"dành cho, cống hiến",t:"v"},
-    {w:"spearhead",m:"đi đầu, lãnh đạo",t:"v"},
-    {w:"subcompact",m:"xe cỡ nhỏ",t:"n"},
-    {w:"stunning",m:"tuyệt vời, gây kinh ngạc",t:"adj"},
-    {w:"abundant",m:"dồi dào, phong phú",t:"adj"},
-    {w:"secondhand",m:"đã qua sử dụng",t:"adj"},
-    {w:"credential",m:"bằng cấp, chứng chỉ",t:"n"},
-    {w:"reliable",m:"đáng tin cậy",t:"adj"},
-    {w:"unsightly",m:"xấu xí, mất thẩm mỹ",t:"adj"},
-    {w:"merchandise",m:"hàng hóa",t:"n"},
-    {w:"possession",m:"quyền sở hữu, tài sản",t:"n"},
-    {w:"drastically",m:"đáng kể, mạnh mẽ",t:"adv"},
-    {w:"informed",m:"có thông tin, am hiểu",t:"adj"},
-    {w:"vast",m:"rộng lớn, to lớn",t:"adj"},
-    {w:"bypass",m:"bỏ qua, vòng tránh",t:"v"},
-    {w:"deboard",m:"xuống xe/tàu",t:"v"},
-    {w:"voucher",m:"phiếu, chứng từ",t:"n"},
-    {w:"demonstration",m:"buổi trình diễn, biểu tình",t:"n"},
-    {w:"unintentionally",m:"vô tình, không cố ý",t:"adv"},
-    {w:"discard",m:"vứt bỏ, loại bỏ",t:"v"},
-    {w:"lightweight",m:"nhẹ, trọng lượng nhẹ",t:"adj"},
-    {w:"disposable",m:"dùng một lần",t:"adj"},
-    {w:"receptacle",m:"vật chứa, thùng đựng",t:"n"},
-    {w:"overdue",m:"quá hạn, chậm trễ",t:"adj"},
-    {w:"withhold",m:"giữ lại, không công bố",t:"v"},
-    {w:"malfunction",m:"trục trặc, hoạt động kém",t:"v"},
-    {w:"expedite",m:"xử lý nhanh, đẩy nhanh",t:"v"}
-  ],
-  // TEST 08
-  [
-    {w:"significantly",m:"đáng kể, quan trọng",t:"adv"},
-    {w:"sturdy",m:"chắc chắn, bền bỉ",t:"adj"},
-    {w:"brief",m:"ngắn gọn, tóm tắt",t:"adj"},
-    {w:"functional",m:"hoạt động được, thực dụng",t:"adj"},
-    {w:"generate",m:"tạo ra, phát sinh",t:"v"},
-    {w:"extensively",m:"rộng rãi, toàn diện",t:"adv"},
-    {w:"proceed",m:"tiến hành, tiếp tục",t:"v"},
-    {w:"territory",m:"lãnh thổ, khu vực",t:"n"},
-    {w:"protocol",m:"quy trình, giao thức",t:"n"},
-    {w:"simplify",m:"đơn giản hóa",t:"v"},
-    {w:"directions",m:"chỉ đường, hướng dẫn",t:"n"},
-    {w:"laboratory",m:"phòng thí nghiệm",t:"n"},
-    {w:"undergraduate",m:"sinh viên đại học",t:"n"},
-    {w:"admission",m:"nhập học, sự thừa nhận",t:"n"},
-    {w:"semester",m:"học kỳ",t:"n"},
-    {w:"transcript",m:"bảng điểm",t:"n"},
-    {w:"delighted",m:"rất vui, hài lòng",t:"adj"},
-    {w:"tendency",m:"xu hướng, khuynh hướng",t:"n"},
-    {w:"disclose",m:"tiết lộ, công bố",t:"v"},
-    {w:"hesitate",m:"do dự, ngần ngại",t:"v"},
-    {w:"candid",m:"thẳng thắn, chân thật",t:"adj"},
-    {w:"unsuitable",m:"không phù hợp",t:"adj"},
-    {w:"compact",m:"nhỏ gọn, súc tích",t:"adj"},
-    {w:"beautify",m:"làm đẹp",t:"v"},
-    {w:"integrity",m:"tính toàn vẹn, liêm chính",t:"n"},
-    {w:"extra",m:"thêm, dự phòng",t:"adj"},
-    {w:"residential",m:"dân cư, nhà ở",t:"adj"},
-    {w:"paved",m:"được trải nhựa",t:"adj"},
-    {w:"border",m:"tiếp giáp, biên giới",t:"v"},
-    {w:"subsidiary",m:"công ty con, phụ trợ",t:"n"},
-    {w:"budget",m:"ngân sách",t:"n"},
-    {w:"distribution",m:"phân phối",t:"n"},
-    {w:"researcher",m:"nhà nghiên cứu",t:"n"},
-    {w:"capability",m:"năng lực, khả năng",t:"n"},
-    {w:"vacancy",m:"vị trí trống, phòng trống",t:"n"},
-    {w:"cabin",m:"khoang máy bay, cabin",t:"n"},
-    {w:"compartment",m:"ngăn, khoang",t:"n"},
-    {w:"dimension",m:"kích thước, chiều",t:"n"},
-    {w:"permission",m:"sự cho phép",t:"n"},
-    {w:"foster",m:"thúc đẩy, nuôi dưỡng",t:"v"},
-    {w:"roughly",m:"khoảng, đại khái",t:"adv"},
-    {w:"unexpected",m:"bất ngờ, không ngờ",t:"adj"},
-    {w:"fulfillment",m:"sự hoàn thành, thực hiện",t:"n"},
-    {w:"lodging",m:"chỗ ở, nơi nghỉ trọ",t:"n"},
-    {w:"intent",m:"ý định, mục đích",t:"n"},
-    {w:"directly",m:"trực tiếp, thẳng",t:"adv"},
-    {w:"instructions",m:"hướng dẫn, chỉ dẫn",t:"n"},
-    {w:"go over",m:"xem xét lại, ôn tập",t:"ph"},
-    {w:"convinced",m:"bị thuyết phục",t:"adj"},
-    {w:"personality",m:"tính cách, cá tính",t:"n"},
-    {w:"structure",m:"cấu trúc, tổ chức",t:"v"},
-    {w:"memorable",m:"đáng nhớ",t:"adj"},
-    {w:"politician",m:"chính trị gia",t:"n"},
-    {w:"numerous",m:"nhiều, đông đảo",t:"adj"},
-    {w:"straightforward",m:"thẳng thắn, rõ ràng",t:"adj"},
-    {w:"fascinating",m:"hấp dẫn, cuốn hút",t:"adj"},
-    {w:"portrait",m:"chân dung",t:"n"},
-    {w:"enigmatic",m:"bí ẩn, khó hiểu",t:"adj"},
-    {w:"anecdote",m:"giai thoại, câu chuyện nhỏ",t:"n"},
-    {w:"shortcoming",m:"nhược điểm, thiếu sót",t:"n"},
-    {w:"credible",m:"đáng tin cậy",t:"adj"},
-    {w:"fictional",m:"hư cấu, tưởng tượng",t:"adj"},
-    {w:"quaint",m:"cổ kính, thú vị",t:"adj"},
-    {w:"criticism",m:"sự phê bình",t:"n"},
-    {w:"surrounding",m:"môi trường xung quanh",t:"n"},
-    {w:"minutes",m:"biên bản cuộc họp",t:"n"},
-    {w:"earmark",m:"phân bổ, dành riêng",t:"v"},
-    {w:"adjustment",m:"điều chỉnh",t:"n"},
-    {w:"recruitment",m:"tuyển dụng",t:"n"},
-    {w:"boulevard",m:"đại lộ",t:"n"},
-    {w:"adjournment",m:"bế mạc, hoãn",t:"n"},
-    {w:"utilities",m:"tiện ích công cộng",t:"n"},
-    {w:"easygoing",m:"dễ chịu, thoải mái",t:"adj"},
-    {w:"reasonably",m:"khá, hợp lý",t:"adv"},
-    {w:"satisfy",m:"làm hài lòng, thỏa mãn",t:"v"},
-    {w:"attune",m:"điều chỉnh, đồng bộ",t:"v"},
-    {w:"resist",m:"chịu đựng, chống lại",t:"v"},
-    {w:"adhere",m:"bám dính, tuân thủ",t:"v"},
-    {w:"striped",m:"có sọc",t:"adj"},
-    {w:"outstanding",m:"xuất sắc, nổi bật",t:"adj"}
-  ],
-  // TEST 09
-  [
-    {w:"vacant",m:"trống, không có người",t:"adj"},
-    {w:"promotion",m:"thăng chức, khuyến mãi",t:"n"},
-    {w:"consumption",m:"sự tiêu thụ",t:"n"},
-    {w:"superintendent",m:"người giám sát, quản lý",t:"n"},
-    {w:"renovation",m:"cải tạo, sửa chữa",t:"n"},
-    {w:"manufacturer",m:"nhà sản xuất",t:"n"},
-    {w:"consideration",m:"sự cân nhắc, xem xét",t:"n"},
-    {w:"critic",m:"nhà phê bình",t:"n"},
-    {w:"impressive",m:"ấn tượng, gây ấn tượng",t:"adj"},
-    {w:"choreography",m:"biên đạo múa",t:"n"},
-    {w:"ongoing",m:"đang diễn ra, liên tục",t:"adj"},
-    {w:"household",m:"gia đình, hộ gia đình",t:"n"},
-    {w:"automotive",m:"ô tô, xe hơi",t:"adj"},
-    {w:"eligible",m:"đủ điều kiện, có tư cách",t:"adj"},
-    {w:"vendor",m:"người bán hàng",t:"n"},
-    {w:"variation",m:"biến thể, sự thay đổi",t:"n"},
-    {w:"imperfection",m:"khiếm khuyết, thiếu sót",t:"n"},
-    {w:"narrow",m:"hẹp, thu hẹp",t:"adj"},
-    {w:"detach",m:"tách ra, tháo rời",t:"v"},
-    {w:"abrasive",m:"chất mài mòn",t:"adj"},
-    {w:"residue",m:"phần dư, cặn",t:"n"},
-    {w:"submerge",m:"nhúng xuống nước",t:"v"},
-    {w:"utensil",m:"dụng cụ bếp",t:"n"},
-    {w:"separately",m:"riêng biệt",t:"adv"},
-    {w:"entrust",m:"giao phó, ủy thác",t:"v"},
-    {w:"convey",m:"truyền đạt, chuyển tải",t:"v"},
-    {w:"timeless",m:"vượt thời gian, bất hủ",t:"adj"},
-    {w:"precision",m:"độ chính xác",t:"n"},
-    {w:"costly",m:"tốn kém, đắt đỏ",t:"adj"},
-    {w:"initially",m:"ban đầu, lúc đầu",t:"adv"},
-    {w:"acquisition",m:"sự thâu tóm, mua lại",t:"n"},
-    {w:"insider",m:"người trong cuộc",t:"n"},
-    {w:"speculate",m:"suy đoán, đầu cơ",t:"v"},
-    {w:"iconic",m:"mang tính biểu tượng",t:"adj"},
-    {w:"reliably",m:"đáng tin cậy, ổn định",t:"adv"},
-    {w:"fate",m:"số phận, vận mệnh",t:"n"},
-    {w:"retirement",m:"về hưu, nghỉ hưu",t:"n"},
-    {w:"deactivation",m:"vô hiệu hóa",t:"n"},
-    {w:"renew",m:"gia hạn, đổi mới",t:"v"},
-    {w:"displeasure",m:"sự không hài lòng",t:"n"},
-    {w:"promise",m:"có vẻ hứa hẹn",t:"v"},
-    {w:"sufficient",m:"đủ, thỏa mãn",t:"adj"},
-    {w:"regard",m:"coi, đánh giá",t:"v"},
-    {w:"assistance",m:"sự trợ giúp, hỗ trợ",t:"n"},
-    {w:"unveil",m:"công bố, tiết lộ",t:"v"},
-    {w:"advancement",m:"sự tiến bộ, thăng tiến",t:"n"},
-    {w:"glimpse",m:"thoáng thấy",t:"n"},
-    {w:"decay",m:"suy tàn, mục nát",t:"v"},
-    {w:"architectural",m:"kiến trúc",t:"adj"},
-    {w:"transition",m:"sự chuyển đổi",t:"n"},
-    {w:"constructive",m:"mang tính xây dựng",t:"adj"},
-    {w:"showcase",m:"giới thiệu, trưng bày",t:"v"},
-    {w:"notable",m:"đáng chú ý, nổi bật",t:"adj"},
-    {w:"concrete",m:"cụ thể, rõ ràng",t:"adj"},
-    {w:"overcome",m:"vượt qua, khắc phục",t:"v"},
-    {w:"preventive",m:"phòng ngừa",t:"adj"},
-    {w:"gauge",m:"đánh giá, đo",t:"v"},
-    {w:"respective",m:"tương ứng, riêng từng",t:"adj"},
-    {w:"compensate",m:"bồi thường, đền bù",t:"v"},
-    {w:"persistent",m:"kiên trì, bền bỉ",t:"adj"},
-    {w:"narrative",m:"câu chuyện, lời kể",t:"n"},
-    {w:"adjoining",m:"tiếp giáp, kề bên",t:"adj"},
-    {w:"heritage",m:"di sản văn hóa",t:"n"},
-    {w:"vintage",m:"cổ điển, xưa",t:"adj"},
-    {w:"purified",m:"được lọc sạch",t:"adj"},
-    {w:"whimsical",m:"kỳ lạ, ngộ nghĩnh",t:"adj"},
-    {w:"infuse",m:"rót vào, thấm đẫm",t:"v"},
-    {w:"biweekly",m:"hai tuần một lần",t:"adj"},
-    {w:"affordably",m:"với giá phải chăng",t:"adv"},
-    {w:"crease",m:"nếp nhăn, vết gấp",t:"n"},
-    {w:"encyclopaedia",m:"bách khoa toàn thư",t:"n"},
-    {w:"enquiry",m:"yêu cầu thông tin",t:"n"},
-    {w:"inherit",m:"thừa kế",t:"v"},
-    {w:"onboarding",m:"quy trình tiếp nhận nhân viên",t:"n"},
-    {w:"interact",m:"tương tác",t:"v"},
-    {w:"enrollment",m:"đăng ký, ghi danh",t:"n"},
-    {w:"breathtaking",m:"ngoạn mục, tuyệt đẹp",t:"adj"},
-    {w:"certification",m:"chứng nhận, bằng cấp",t:"n"},
-    {w:"precondition",m:"điều kiện tiên quyết",t:"n"},
-    {w:"authority",m:"cơ quan có thẩm quyền",t:"n"}
-  ],
-  // TEST 10
-  [
-    {w:"commend",m:"khen ngợi, ca ngợi",t:"v"},
-    {w:"garment",m:"quần áo, trang phục",t:"n"},
-    {w:"patron",m:"khách hàng, người bảo trợ",t:"n"},
-    {w:"majority",m:"phần lớn, đa số",t:"n"},
-    {w:"quarter",m:"quý tài chính",t:"n"},
-    {w:"diplomat",m:"nhà ngoại giao",t:"n"},
-    {w:"removal",m:"sự loại bỏ, dọn dẹp",t:"n"},
-    {w:"organizer",m:"người tổ chức",t:"n"},
-    {w:"sound",m:"vững chắc, đáng tin",t:"adj"},
-    {w:"aspiring",m:"có hoài bão, đang cố gắng",t:"adj"},
-    {w:"flourishing",m:"thịnh vượng, phát triển",t:"adj"},
-    {w:"finalize",m:"hoàn thiện, kết thúc",t:"v"},
-    {w:"caution",m:"cảnh báo, thận trọng",t:"v"},
-    {w:"inferior",m:"kém hơn, thấp hơn",t:"adj"},
-    {w:"adjustable",m:"có thể điều chỉnh",t:"adj"},
-    {w:"argument",m:"lập luận, tranh luận",t:"n"},
-    {w:"shrink",m:"thu nhỏ, giảm",t:"v"},
-    {w:"collapsible",m:"có thể gấp lại",t:"adj"},
-    {w:"durable",m:"bền, chịu được",t:"adj"},
-    {w:"replacement",m:"sự thay thế",t:"n"},
-    {w:"wholesaler",m:"nhà bán buôn",t:"n"},
-    {w:"whisper",m:"thì thầm",t:"v"},
-    {w:"illusion",m:"ảo giác, ảo tưởng",t:"n"},
-    {w:"argue",m:"lập luận, tranh luận",t:"v"},
-    {w:"plotline",m:"cốt truyện",t:"n"},
-    {w:"abundance",m:"sự dồi dào, phong phú",t:"n"},
-    {w:"challenging",m:"khó khăn, thách thức",t:"adj"},
-    {w:"recipe",m:"công thức nấu ăn",t:"n"},
-    {w:"separate",m:"riêng biệt, tách rời",t:"adj"},
-    {w:"promotional",m:"quảng cáo, khuyến mãi",t:"adj"},
-    {w:"apparel",m:"trang phục, quần áo",t:"n"},
-    {w:"involvement",m:"sự tham gia, liên quan",t:"n"},
-    {w:"invention",m:"phát minh, sáng chế",t:"n"},
-    {w:"timely",m:"kịp thời, đúng lúc",t:"adj"},
-    {w:"customize",m:"tùy chỉnh, cá nhân hóa",t:"v"},
-    {w:"punctuality",m:"đúng giờ, tính đúng giờ",t:"n"},
-    {w:"performance",m:"hiệu suất, màn trình diễn",t:"n"},
-    {w:"tricky",m:"phức tạp, khó nhằn",t:"adj"},
-    {w:"stop by",m:"ghé qua",t:"ph"},
-    {w:"compile",m:"tổng hợp, biên soạn",t:"v"},
-    {w:"notification",m:"thông báo",t:"n"},
-    {w:"manuscript",m:"bản thảo, văn bản gốc",t:"n"},
-    {w:"margin",m:"lề, biên độ",t:"n"},
-    {w:"ignore",m:"bỏ qua, không để ý",t:"v"},
-    {w:"modification",m:"sửa đổi, thay đổi",t:"n"},
-    {w:"establish",m:"thiết lập, thành lập",t:"v"},
-    {w:"diverse",m:"đa dạng, phong phú",t:"adj"},
-    {w:"negotiate",m:"đàm phán, thương lượng",t:"v"},
-    {w:"exceptionally",m:"đặc biệt, ngoại lệ",t:"adv"},
-    {w:"exposure",m:"tiếp xúc, phơi bày",t:"n"},
-    {w:"triumph",m:"chiến thắng, thành công",t:"n"},
-    {w:"criteria",m:"tiêu chí, tiêu chuẩn",t:"n"},
-    {w:"exceptional",m:"xuất sắc, đặc biệt",t:"adj"},
-    {w:"extremely",m:"cực kỳ, vô cùng",t:"adv"},
-    {w:"forefront",m:"tiên phong, hàng đầu",t:"n"},
-    {w:"endeavour",m:"nỗ lực, cố gắng",t:"n"},
-    {w:"spotless",m:"không tì vết, sạch bóng",t:"adj"},
-    {w:"subsequently",m:"sau đó, tiếp theo",t:"adv"},
-    {w:"disruption",m:"sự gián đoạn, phá vỡ",t:"n"},
-    {w:"embrace",m:"chấp nhận, ôm",t:"v"},
-    {w:"life-size",m:"kích thước thật",t:"adj"},
-    {w:"synthetic",m:"tổng hợp, nhân tạo",t:"adj"},
-    {w:"perimeter",m:"chu vi, vùng xung quanh",t:"n"},
-    {w:"dismantle",m:"tháo dỡ, giải thể",t:"v"},
-    {w:"promising",m:"đầy hứa hẹn, tiềm năng",t:"adj"},
-    {w:"symbolise",m:"tượng trưng, biểu tượng",t:"v"},
-    {w:"cement",m:"củng cố, gắn kết",t:"v"},
-    {w:"flavourful",m:"đậm đà, ngon",t:"adj"},
-    {w:"shred",m:"thái sợi, xé nhỏ",t:"v"},
-    {w:"institute",m:"viện nghiên cứu, tổ chức",t:"n"},
-    {w:"disease",m:"bệnh, dịch bệnh",t:"n"},
-    {w:"quality",m:"chất lượng cao",t:"adj"},
-    {w:"appreciative",m:"biết ơn, trân trọng",t:"adj"},
-    {w:"consignment",m:"hàng ký gửi, lô hàng",t:"n"},
-    {w:"assess",m:"đánh giá, ước tính",t:"v"},
-    {w:"deduct",m:"khấu trừ, trừ",t:"v"},
-    {w:"stipulate",m:"quy định, đặt điều kiện",t:"v"},
-    {w:"identification",m:"giấy tờ tùy thân",t:"n"},
-    {w:"liability",m:"trách nhiệm pháp lý",t:"n"},
-    {w:"caterer",m:"dịch vụ cung cấp thức ăn",t:"n"}
-  ]
-];
+      // ═══════════════════════════════════════════════
+      //  STATE
+      // ═══════════════════════════════════════════════
+      let state = { type: "all", test: 0, q: "", starred: new Set() };
 
-// Flatten with test index
-const ALL = [];
-TESTS.forEach((test, ti) => test.forEach((w, wi) => ALL.push({...w, test: ti+1, idx: wi})));
+      // ═══════════════════════════════════════════════
+      //  TABS
+      // ═══════════════════════════════════════════════
+      const COLORS = [
+        "linear-gradient(135deg,#4f8fff,#7c3aed)",
+        "linear-gradient(135deg,#ff6b6b,#f59e0b)",
+        "linear-gradient(135deg,#43e97b,#38f9d7)",
+        "linear-gradient(135deg,#fa8231,#f53b57)",
+        "linear-gradient(135deg,#a78bfa,#ec4899)",
+        "linear-gradient(135deg,#00b4d8,#0077b6)",
+        "linear-gradient(135deg,#f7971e,#ffd200)",
+        "linear-gradient(135deg,#11998e,#38ef7d)",
+        "linear-gradient(135deg,#ee0979,#ff6a00)",
+        "linear-gradient(135deg,#8e2de2,#4a00e0)",
+      ];
 
-// ═══════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════
-let state = { type:'all', test:0, q:'', starred: new Set() };
+      function buildTabs() {
+        const wrap = document.getElementById("test-tabs");
+        for (let i = 1; i <= 10; i++) {
+          const btn = document.createElement("button");
+          btn.className = "ttab";
+          btn.dataset.test = i;
+          btn.textContent = `Test ${i}`;
+          btn.onclick = function () {
+            setTest(i, this);
+          };
+          wrap.appendChild(btn);
+        }
+      }
 
-// ═══════════════════════════════════════════════
-//  TABS
-// ═══════════════════════════════════════════════
-const COLORS = [
-  'linear-gradient(135deg,#4f8fff,#7c3aed)',
-  'linear-gradient(135deg,#ff6b6b,#f59e0b)',
-  'linear-gradient(135deg,#43e97b,#38f9d7)',
-  'linear-gradient(135deg,#fa8231,#f53b57)',
-  'linear-gradient(135deg,#a78bfa,#ec4899)',
-  'linear-gradient(135deg,#00b4d8,#0077b6)',
-  'linear-gradient(135deg,#f7971e,#ffd200)',
-  'linear-gradient(135deg,#11998e,#38ef7d)',
-  'linear-gradient(135deg,#ee0979,#ff6a00)',
-  'linear-gradient(135deg,#8e2de2,#4a00e0)',
-];
+      function setTest(t, el) {
+        state.test = t;
+        document.querySelectorAll(".ttab").forEach((b) => {
+          b.classList.remove("on");
+          b.style.background = "";
+        });
+        el.classList.add("on");
+        if (t === 0) el.style.background = COLORS[0];
+        else el.style.background = COLORS[(t - 1) % COLORS.length];
+        updateTitle();
+        render();
+      }
 
-function buildTabs() {
-  const wrap = document.getElementById('test-tabs');
-  for (let i = 1; i <= 10; i++) {
-    const btn = document.createElement('button');
-    btn.className = 'ttab';
-    btn.dataset.test = i;
-    btn.textContent = `Test ${i}`;
-    btn.onclick = function(){ setTest(i, this); };
-    wrap.appendChild(btn);
-  }
-}
+      // ═══════════════════════════════════════════════
+      //  TYPE FILTER
+      // ═══════════════════════════════════════════════
+      function setType(tp, el) {
+        state.type = tp;
+        document
+          .querySelectorAll("#type-chips .chip")
+          .forEach((b) => b.classList.remove("on"));
+        el.classList.add("on");
+        render();
+      }
 
-function setTest(t, el) {
-  state.test = t;
-  document.querySelectorAll('.ttab').forEach(b => {
-    b.classList.remove('on');
-    b.style.background = '';
-  });
-  el.classList.add('on');
-  if (t === 0) el.style.background = COLORS[0];
-  else el.style.background = COLORS[(t-1) % COLORS.length];
-  updateTitle();
-  render();
-}
+      // ═══════════════════════════════════════════════
+      //  FILTER + RENDER
+      // ═══════════════════════════════════════════════
+      function getFiltered() {
+        const q = state.q.toLowerCase();
+        return ALL.filter((item) => {
+          if (state.test !== 0 && item.test !== state.test) return false;
+          if (state.type === "starred")
+            return state.starred.has(item.test + "-" + item.idx);
+          if (state.type !== "all" && item.t !== state.type) return false;
+          if (q)
+            return (
+              item.w.toLowerCase().includes(q) ||
+              item.m.toLowerCase().includes(q)
+            );
+          return true;
+        });
+      }
 
-// ═══════════════════════════════════════════════
-//  TYPE FILTER
-// ═══════════════════════════════════════════════
-function setType(tp, el) {
-  state.type = tp;
-  document.querySelectorAll('#type-chips .chip').forEach(b => b.classList.remove('on'));
-  el.classList.add('on');
-  render();
-}
+      const TYPE_LABELS = {
+        v: "Động từ",
+        n: "Danh từ",
+        adj: "Tính từ",
+        adv: "Trạng từ",
+        ph: "Cụm từ",
+      };
 
-// ═══════════════════════════════════════════════
-//  FILTER + RENDER
-// ═══════════════════════════════════════════════
-function getFiltered() {
-  const q = state.q.toLowerCase();
-  return ALL.filter(item => {
-    if (state.test !== 0 && item.test !== state.test) return false;
-    if (state.type === 'starred') return state.starred.has(item.test + '-' + item.idx);
-    if (state.type !== 'all' && item.t !== state.type) return false;
-    if (q) return item.w.toLowerCase().includes(q) || item.m.toLowerCase().includes(q);
-    return true;
-  });
-}
+      function playPron(encodedWord) {
+        const word = decodeURIComponent(encodedWord);
+        if (!("speechSynthesis" in window)) {
+          alert("Trình duyệt của bạn chưa hỗ trợ phát âm tự động.");
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(word);
+        utter.lang = "en-US";
+        utter.rate = 0.95;
+        utter.pitch = 1;
+        window.speechSynthesis.speak(utter);
+      }
 
-const TYPE_LABELS = {v:'Động từ',n:'Danh từ',adj:'Tính từ',adv:'Trạng từ',ph:'Cụm từ'};
+      function render() {
+        const data = getFiltered();
+        const tbody = document.getElementById("tbody");
+        const nr = document.getElementById("no-results");
+        document.getElementById("g-showing").textContent = data.length;
 
-function render() {
-  const data = getFiltered();
-  const tbody = document.getElementById('tbody');
-  const nr = document.getElementById('no-results');
-  document.getElementById('g-showing').textContent = data.length;
+        if (!data.length) {
+          tbody.innerHTML = "";
+          nr.style.display = "block";
+          return;
+        }
+        nr.style.display = "none";
 
-  if (!data.length) { tbody.innerHTML = ''; nr.style.display = 'block'; return; }
-  nr.style.display = 'none';
-
-  tbody.innerHTML = data.map((item, i) => {
-    const key = item.test + '-' + item.idx;
-    const isS = state.starred.has(key);
-    return `<tr style="animation-delay:${Math.min(i*8,300)}ms">
+        tbody.innerHTML = data
+          .map((item, i) => {
+            const key = item.test + "-" + item.idx;
+            const isS = state.starred.has(key);
+            return `<tr style="animation-delay:${Math.min(i * 8, 300)}ms">
       <td>${i + 1}</td>
-      <td><span class="word">${item.w}</span><br><small style="color:var(--muted);font-size:11px">Test ${item.test} · #${item.idx+1}</small></td>
+      <td><span class="word">${item.w}</span> <button class="speak-btn" onclick="playPron('${encodeURIComponent(item.w)}')">🔊</button><br><small style="color:var(--muted);font-size:11px">Test ${item.test} · #${item.idx + 1}</small></td>
       <td><span class="meaning">${item.m}</span></td>
-      <td><span class="tag ${item.t}">${TYPE_LABELS[item.t]||item.t}</span></td>
-      <td><button class="star-btn ${isS?'on':''}" onclick="toggleStar('${key}',this)">${isS?'⭐':'☆'}</button></td>
+      <td><span class="tag ${item.t}">${TYPE_LABELS[item.t] || item.t}</span></td>
+      <td><button class="star-btn ${isS ? "on" : ""}" onclick="toggleStar('${key}',this)">${isS ? "⭐" : "☆"}</button></td>
     </tr>`;
-  }).join('');
-}
+          })
+          .join("");
+      }
 
-function updateTitle() {
-  const t = state.test;
-  document.getElementById('sec-title').innerHTML = t === 0
-    ? `Tất cả <span id="sec-sub">10 Tests · 800 từ</span>`
-    : `TEST 0${t < 10 ? '' : ''}${t} <span id="sec-sub">80 từ vựng</span>`;
-}
+      function updateTitle() {
+        const t = state.test;
+        document.getElementById("sec-title").innerHTML =
+          t === 0
+            ? `Tất cả <span id="sec-sub">10 Tests · 800 từ</span>`
+            : `TEST 0${t < 10 ? "" : ""}${t} <span id="sec-sub">80 từ vựng</span>`;
+      }
 
-document.getElementById('search').addEventListener('input', e => { state.q = e.target.value; render(); });
+      document.getElementById("search").addEventListener("input", (e) => {
+        state.q = e.target.value;
+        render();
+      });
 
-// ═══════════════════════════════════════════════
-//  STAR
-// ═══════════════════════════════════════════════
-function toggleStar(key, btn) {
-  if (state.starred.has(key)) { state.starred.delete(key); btn.classList.remove('on'); btn.textContent = '☆'; }
-  else { state.starred.add(key); btn.classList.add('on'); btn.textContent = '⭐'; }
-  document.getElementById('g-starred').textContent = state.starred.size;
-  if (state.type === 'starred') render();
-}
+      // ═══════════════════════════════════════════════
+      //  STAR
+      // ═══════════════════════════════════════════════
+      function toggleStar(key, btn) {
+        if (state.starred.has(key)) {
+          state.starred.delete(key);
+          btn.classList.remove("on");
+          btn.textContent = "☆";
+        } else {
+          state.starred.add(key);
+          btn.classList.add("on");
+          btn.textContent = "⭐";
+        }
+        document.getElementById("g-starred").textContent = state.starred.size;
+        if (state.type === "starred") render();
+      }
 
-// ═══════════════════════════════════════════════
-//  QUIZ
-// ═══════════════════════════════════════════════
-let Q = { data:[], idx:0, score:0, done:false };
+      // ═══════════════════════════════════════════════
+      //  QUIZ
+      // ═══════════════════════════════════════════════
+      let Q = { data: [], idx: 0, score: 0, done: false };
 
-function startQuiz() {
-  const pool = getFiltered();
-  if (pool.length < 4) { alert('Cần ít nhất 4 từ để bắt đầu quiz!'); return; }
-  Q.data = shuffle([...pool]).slice(0, Math.min(20, pool.length));
-  Q.idx = 0; Q.score = 0; Q.done = false;
-  document.getElementById('quiz-overlay').classList.add('show');
-  showQ();
-}
+      function startQuiz() {
+        const pool = getFiltered();
+        if (pool.length < 4) {
+          alert("Cần ít nhất 4 từ để bắt đầu quiz!");
+          return;
+        }
+        Q.data = shuffle([...pool]).slice(0, Math.min(20, pool.length));
+        Q.idx = 0;
+        Q.score = 0;
+        Q.done = false;
+        document.getElementById("quiz-overlay").classList.add("show");
+        showQ();
+      }
 
-function showQ() {
-  if (Q.idx >= Q.data.length) { showResult(); return; }
-  const item = Q.data[Q.idx];
-  const wrongs = shuffle(ALL.filter(v => v.w !== item.w)).slice(0, 3);
-  const opts = shuffle([item, ...wrongs]);
-  const pct = Math.round(Q.idx / Q.data.length * 100);
-  document.getElementById('qcard').innerHTML = `
-    <div class="qprogress">Câu ${Q.idx+1} / ${Q.data.length} · ✅ ${Q.score}</div>
+      function showQ() {
+        if (Q.idx >= Q.data.length) {
+          showResult();
+          return;
+        }
+        const item = Q.data[Q.idx];
+        const wrongs = shuffle(ALL.filter((v) => v.w !== item.w)).slice(0, 3);
+        const opts = shuffle([item, ...wrongs]);
+        const pct = Math.round((Q.idx / Q.data.length) * 100);
+        document.getElementById("qcard").innerHTML = `
+    <div class="qprogress">Câu ${Q.idx + 1} / ${Q.data.length} · ✅ ${Q.score}</div>
     <div class="qbar"><div class="qbar-fill" style="width:${pct}%"></div></div>
     <div class="qword">${item.w}</div>
     <div class="qhint">Test ${item.test} · Chọn nghĩa đúng</div>
     <div class="qopts">
-      ${opts.map(o=>`<button class="qopt" onclick="answer(this,'${o.w}','${item.w}')">${o.m}</button>`).join('')}
+      ${opts.map((o) => `<button class="qopt" onclick="answer(this,'${o.w}','${item.w}')">${o.m}</button>`).join("")}
     </div>`;
-}
+      }
 
-function answer(btn, chosen, correct) {
-  if (Q.done) return; Q.done = true;
-  document.querySelectorAll('.qopt').forEach(b => {
-    const word = ALL.find(v => v.m === b.textContent);
-    if (word && word.w === correct) b.classList.add('correct');
-  });
-  if (chosen === correct) { btn.classList.add('correct'); Q.score++; }
-  else btn.classList.add('wrong');
-  setTimeout(() => { Q.idx++; Q.done = false; showQ(); }, 900);
-}
+      function answer(btn, chosen, correct) {
+        if (Q.done) return;
+        Q.done = true;
+        document.querySelectorAll(".qopt").forEach((b) => {
+          const word = ALL.find((v) => v.m === b.textContent);
+          if (word && word.w === correct) b.classList.add("correct");
+        });
+        if (chosen === correct) {
+          btn.classList.add("correct");
+          Q.score++;
+        } else btn.classList.add("wrong");
+        setTimeout(() => {
+          Q.idx++;
+          Q.done = false;
+          showQ();
+        }, 900);
+      }
 
-function showResult() {
-  const pct = Math.round(Q.score / Q.data.length * 100);
-  const e = pct >= 80 ? '🎉' : pct >= 60 ? '💪' : '📚';
-  const msg = pct >= 80 ? 'Xuất sắc!' : pct >= 60 ? 'Tốt lắm!' : 'Cần ôn thêm!';
-  document.getElementById('qcard').innerHTML = `
+      function showResult() {
+        const pct = Math.round((Q.score / Q.data.length) * 100);
+        const e = pct >= 80 ? "🎉" : pct >= 60 ? "💪" : "📚";
+        const msg =
+          pct >= 80 ? "Xuất sắc!" : pct >= 60 ? "Tốt lắm!" : "Cần ôn thêm!";
+        document.getElementById("qcard").innerHTML = `
     <div style="font-size:52px">${e}</div>
     <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:12px 0 4px">${msg}</div>
     <div class="result-score">${Q.score}/${Q.data.length}</div>
@@ -1229,24 +1858,31 @@ function showResult() {
       <button class="qbtn primary" onclick="startQuiz()">🔁 Chơi lại</button>
       <button class="qbtn" onclick="closeQuiz()">✕ Đóng</button>
     </div>`;
-}
+      }
 
-function closeQuiz() { document.getElementById('quiz-overlay').classList.remove('show'); }
-document.getElementById('quiz-overlay').addEventListener('click', e => { if (e.target.id==='quiz-overlay') closeQuiz(); });
+      function closeQuiz() {
+        document.getElementById("quiz-overlay").classList.remove("show");
+      }
+      document.getElementById("quiz-overlay").addEventListener("click", (e) => {
+        if (e.target.id === "quiz-overlay") closeQuiz();
+      });
 
-// ═══════════════════════════════════════════════
-//  UTILS
-// ═══════════════════════════════════════════════
-function shuffle(a) {
-  for (let i = a.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-  return a;
-}
+      // ═══════════════════════════════════════════════
+      //  UTILS
+      // ═══════════════════════════════════════════════
+      function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
 
-// ═══════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════
-buildTabs();
-render();
-</script>
-</body>
+      // ═══════════════════════════════════════════════
+      //  INIT
+      // ═══════════════════════════════════════════════
+      buildTabs();
+      render();
+    </script>
+  </body>
 </html>
