@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOEIC Vol.5 – 10 Tests Vocabulary</title>
+    <title>TOEIC Vol.5 – LC & RC Vocabulary · 1600 từ</title>
+    <meta name="description" content="Ôn tập 1600 từ vựng TOEIC ETS Vol.5 phần Listening và Reading với flashcard, phiên âm IPA, quiz luyện tập" />
     <link
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@600;700;800&display=swap"
       rel="stylesheet"
@@ -23,15 +24,11 @@
         --text: #dde3f8;
         --muted: #6b77a0;
         --muted2: #8892b8;
+        --lc-color: #ff6b6b;
+        --rc-color: #4f8fff;
       }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
       body {
         background: var(--bg);
         color: var(--text);
@@ -41,8 +38,6 @@
         min-height: 100vh;
         overflow-x: hidden;
       }
-
-      /* Ambient glow */
       .glow-orb {
         position: fixed;
         border-radius: 50%;
@@ -51,605 +46,224 @@
         z-index: 0;
         opacity: 0.18;
       }
-      .glow-orb.a {
-        width: 600px;
-        height: 600px;
-        background: #4f8fff;
-        top: -200px;
-        left: -200px;
-      }
-      .glow-orb.b {
-        width: 500px;
-        height: 500px;
-        background: #7c3aed;
-        top: 50%;
-        right: -200px;
-      }
-
-      /* Noise overlay */
+      .glow-orb.a { width:600px; height:600px; background:#4f8fff; top:-200px; left:-200px; }
+      .glow-orb.b { width:500px; height:500px; background:#7c3aed; top:50%; right:-200px; }
       body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 0;
+        content:"";
+        position:fixed;
+        inset:0;
+        background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events:none;
+        z-index:0;
       }
+      .app { position:relative; z-index:1; max-width:1200px; margin:0 auto; padding:0 16px 80px; }
 
-      .app {
-        position: relative;
-        z-index: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 16px 80px;
-      }
-
-      /* ── HEADER ── */
-      header {
-        text-align: center;
-        padding: 56px 0 40px;
-        animation: fadeDown 0.7s ease both;
-      }
+      /* HEADER */
+      header { text-align:center; padding:56px 0 40px; animation:fadeDown 0.7s ease both; }
       .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: linear-gradient(135deg, #4f8fff18, #a78bfa18);
-        border: 1px solid #4f8fff33;
-        color: var(--accent);
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        padding: 6px 18px;
-        border-radius: 999px;
-        margin-bottom: 20px;
+        display:inline-flex; align-items:center; gap:8px;
+        background:linear-gradient(135deg,#4f8fff18,#a78bfa18);
+        border:1px solid #4f8fff33;
+        color:var(--accent);
+        font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+        padding:6px 18px; border-radius:999px; margin-bottom:20px;
       }
-      .eyebrow::before {
-        content: "◆";
-        font-size: 8px;
-      }
-      h1 {
-        font-family: "Lexend", sans-serif;
-        font-size: clamp(32px, 6vw, 64px);
-        font-weight: 800;
-        letter-spacing: -1px;
-        line-height: 1.1;
-      }
-      h1 em {
-        font-style: normal;
-        background: linear-gradient(135deg, #4f8fff, #a78bfa);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .tagline {
-        margin-top: 14px;
-        color: var(--muted2);
-        font-size: 16px;
-      }
+      .eyebrow::before { content:"◆"; font-size:8px; }
+      h1 { font-family:"Lexend",sans-serif; font-size:clamp(32px,6vw,64px); font-weight:800; letter-spacing:-1px; line-height:1.1; }
+      h1 em { font-style:normal; background:linear-gradient(135deg,#4f8fff,#a78bfa); background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+      .tagline { margin-top:14px; color:var(--muted2); font-size:16px; }
 
-      /* ── GLOBAL STATS ── */
-      .global-stats {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 36px;
-        animation: fadeDown 0.7s 0.1s ease both;
-      }
-      .gstat {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 14px 24px;
-        text-align: center;
-        min-width: 100px;
-      }
-      .gstat-n {
-        font-family: "Lexend", sans-serif;
-        font-size: 26px;
-        font-weight: 800;
-      }
-      .gstat-n.blue {
-        color: var(--accent);
-      }
-      .gstat-n.gold {
-        color: var(--gold);
-      }
-      .gstat-n.green {
-        color: var(--accent3);
-      }
-      .gstat-l {
-        font-size: 11px;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 2px;
-      }
+      /* GLOBAL STATS */
+      .global-stats { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; animation:fadeDown 0.7s 0.1s ease both; }
+      .gstat { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px 24px; text-align:center; min-width:100px; }
+      .gstat-n { font-family:"Lexend",sans-serif; font-size:26px; font-weight:800; }
+      .gstat-n.blue { color:var(--accent); }
+      .gstat-n.gold { color:var(--gold); }
+      .gstat-n.green { color:var(--accent3); }
+      .gstat-n.red { color:var(--accent2); }
+      .gstat-l { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
 
-      /* ── CONTROLS BAR ── */
-      .controls {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 32px;
-        animation: fadeDown 0.7s 0.15s ease both;
+      /* SECTION TOGGLE (LC/RC) */
+      .section-toggle { display:flex; justify-content:center; gap:10px; margin-bottom:28px; animation:fadeDown 0.7s 0.12s ease both; }
+      .sec-btn {
+        padding:14px 32px; border-radius:14px; border:2px solid var(--border2);
+        background:var(--card); color:var(--muted); font-family:"Lexend",sans-serif;
+        font-size:15px; font-weight:700; cursor:pointer; transition:all 0.25s;
+        display:flex; align-items:center; gap:10px;
       }
-      .search-wrap {
-        position: relative;
-        flex: 1;
-        min-width: 240px;
-        max-width: 380px;
-      }
-      .search-wrap svg {
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--muted);
-        pointer-events: none;
-      }
+      .sec-btn:hover { border-color:var(--accent); color:var(--text); }
+      .sec-btn.active-lc { background:linear-gradient(135deg,#ff6b6b,#f59e0b); border-color:transparent; color:#fff; }
+      .sec-btn.active-rc { background:linear-gradient(135deg,#4f8fff,#7c3aed); border-color:transparent; color:#fff; }
+      .sec-btn .sec-icon { font-size:20px; }
+      .sec-btn .sec-count { font-size:11px; opacity:0.8; font-weight:400; font-family:"Be Vietnam Pro",sans-serif; }
+
+      /* CONTROLS */
+      .controls { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:32px; animation:fadeDown 0.7s 0.15s ease both; }
+      .search-wrap { position:relative; flex:1; min-width:240px; max-width:380px; }
+      .search-wrap svg { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted); pointer-events:none; }
       input[type="text"] {
-        width: 100%;
-        background: var(--card);
-        border: 1px solid var(--border2);
-        color: var(--text);
-        font-family: "Be Vietnam Pro", sans-serif;
-        font-size: 14px;
-        padding: 12px 14px 12px 42px;
-        border-radius: 12px;
-        outline: none;
-        transition: border-color 0.2s;
+        width:100%; background:var(--card); border:1px solid var(--border2); color:var(--text);
+        font-family:"Be Vietnam Pro",sans-serif; font-size:14px;
+        padding:12px 14px 12px 42px; border-radius:12px; outline:none; transition:border-color 0.2s;
       }
-      input[type="text"]:focus {
-        border-color: var(--accent);
-      }
-      input[type="text"]::placeholder {
-        color: var(--muted);
-      }
-
-      .btn-row {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      input[type="text"]:focus { border-color:var(--accent); }
+      input[type="text"]::placeholder { color:var(--muted); }
+      .btn-row { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
       .chip {
-        background: var(--card);
-        border: 1px solid var(--border2);
-        color: var(--muted);
-        font-family: "Be Vietnam Pro", sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        padding: 9px 16px;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: all 0.18s;
-        white-space: nowrap;
+        background:var(--card); border:1px solid var(--border2); color:var(--muted);
+        font-family:"Be Vietnam Pro",sans-serif; font-size:12px; font-weight:600;
+        padding:9px 16px; border-radius:999px; cursor:pointer; transition:all 0.18s; white-space:nowrap;
       }
-      .chip:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-      .chip.on {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: #fff;
-      }
-      .chip.gold-chip.on {
-        background: var(--gold);
-        border-color: var(--gold);
-        color: #000;
-      }
-      .quiz-chip {
-        background: linear-gradient(135deg, #4f8fff, #7c3aed);
-        border: none;
-        color: #fff;
-        font-weight: 700;
-      }
-      .quiz-chip:hover {
-        opacity: 0.85;
-        color: #fff;
-      }
+      .chip:hover { border-color:var(--accent); color:var(--accent); }
+      .chip.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+      .chip.gold-chip.on { background:var(--gold); border-color:var(--gold); color:#000; }
+      .quiz-chip { background:linear-gradient(135deg,#4f8fff,#7c3aed); border:none; color:#fff; font-weight:700; }
+      .quiz-chip:hover { opacity:0.85; color:#fff; }
+      .flash-chip { background:linear-gradient(135deg,#43e97b,#38f9d7); border:none; color:#000; font-weight:700; }
+      .flash-chip:hover { opacity:0.85; color:#000; }
 
-      /* ── TEST TABS ── */
-      .test-tabs {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 28px;
-        animation: fadeDown 0.7s 0.2s ease both;
-      }
+      /* TEST TABS */
+      .test-tabs { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-bottom:28px; animation:fadeDown 0.7s 0.2s ease both; }
       .ttab {
-        background: var(--card);
-        border: 1px solid var(--border);
-        color: var(--muted);
-        font-family: "Lexend", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        padding: 10px 18px;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.2s;
+        background:var(--card); border:1px solid var(--border); color:var(--muted);
+        font-family:"Lexend",sans-serif; font-size:13px; font-weight:700;
+        padding:10px 18px; border-radius:10px; cursor:pointer; transition:all 0.2s;
       }
-      .ttab:hover {
-        border-color: var(--border2);
-        color: var(--text);
-      }
-      .ttab.on {
-        color: #fff;
-        border-color: transparent;
-      }
+      .ttab:hover { border-color:var(--border2); color:var(--text); }
+      .ttab.on { color:#fff; border-color:transparent; }
 
-      /* ── TABLE SECTION ── */
-      .table-section {
-        animation: fadeUp 0.5s 0.25s ease both;
-      }
-      .section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .section-title {
-        font-family: "Lexend", sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-      }
-      .section-title span {
-        font-size: 14px;
-        color: var(--muted);
-        font-weight: 400;
-        font-family: "Be Vietnam Pro", sans-serif;
-        margin-left: 8px;
-      }
-      .showing-info {
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .table-wrap {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        overflow: hidden;
-        margin-bottom: 20px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      thead tr {
-        background: linear-gradient(90deg, #161c30, #141828);
-        border-bottom: 1px solid var(--border);
-      }
-      th {
-        font-family: "Lexend", sans-serif;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        text-transform: uppercase;
-        color: var(--muted);
-        padding: 16px 20px;
-        text-align: left;
-      }
-      th:first-child {
-        width: 50px;
-        text-align: center;
-      }
-      th:last-child {
-        width: 60px;
-        text-align: center;
-      }
-
-      tbody tr {
-        border-bottom: 1px solid var(--border);
-        transition: background 0.15s;
-        animation: rowIn 0.3s ease both;
-      }
-      tbody tr:last-child {
-        border-bottom: none;
-      }
-      tbody tr:hover {
-        background: #1a2038;
-      }
-
-      td {
-        padding: 13px 20px;
-        font-size: 14px;
-        vertical-align: middle;
-      }
-      td:first-child {
-        text-align: center;
-        color: var(--muted);
-        font-size: 11px;
-        font-family: "Lexend", sans-serif;
-        font-weight: 700;
-      }
-      td:last-child {
-        text-align: center;
-      }
-
-      .word {
-        font-weight: 700;
-        font-size: 15px;
-        color: #fff;
-        letter-spacing: 0.2px;
-      }
-      .meaning {
-        color: var(--gold);
-        font-weight: 500;
-      }
+      /* TABLE */
+      .table-section { animation:fadeUp 0.5s 0.25s ease both; }
+      .section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
+      .section-title { font-family:"Lexend",sans-serif; font-size:22px; font-weight:800; }
+      .section-title span { font-size:14px; color:var(--muted); font-weight:400; font-family:"Be Vietnam Pro",sans-serif; margin-left:8px; }
+      .showing-info { color:var(--muted); font-size:13px; }
+      .table-wrap { background:var(--card); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:20px; }
+      table { width:100%; border-collapse:collapse; }
+      thead tr { background:linear-gradient(90deg,#161c30,#141828); border-bottom:1px solid var(--border); }
+      th { font-family:"Lexend",sans-serif; font-size:10px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:16px 20px; text-align:left; }
+      th:first-child { width:50px; text-align:center; }
+      th:last-child { width:60px; text-align:center; }
+      tbody tr { border-bottom:1px solid var(--border); transition:background 0.15s; animation:rowIn 0.3s ease both; }
+      tbody tr:last-child { border-bottom:none; }
+      tbody tr:hover { background:#1a2038; }
+      td { padding:13px 20px; font-size:14px; vertical-align:middle; }
+      td:first-child { text-align:center; color:var(--muted); font-size:11px; font-family:"Lexend",sans-serif; font-weight:700; }
+      td:last-child { text-align:center; }
+      .word { font-weight:700; font-size:15px; color:#fff; letter-spacing:0.2px; }
+      .phonetic { color:var(--purple); font-size:12px; font-style:italic; margin-left:6px; opacity:0.85; }
+      .meaning { color:var(--gold); font-weight:500; }
       .speak-btn {
-        background: #1a2038;
-        border: 1px solid var(--border2);
-        color: var(--text);
-        font-size: 12px;
-        line-height: 1;
-        padding: 6px 8px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.18s;
+        background:#1a2038; border:1px solid var(--border2); color:var(--text);
+        font-size:12px; line-height:1; padding:6px 8px; border-radius:8px;
+        cursor:pointer; transition:all 0.18s;
       }
-      .speak-btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-      .tag {
-        display: inline-block;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        padding: 3px 8px;
-        border-radius: 6px;
-        border: 1px solid;
-      }
-      .tag.v {
-        color: #4f8fff;
-        border-color: #4f8fff33;
-        background: #4f8fff0d;
-      }
-      .tag.n {
-        color: #43e97b;
-        border-color: #43e97b33;
-        background: #43e97b0d;
-      }
-      .tag.adj {
-        color: #ffc947;
-        border-color: #ffc94733;
-        background: #ffc9470d;
-      }
-      .tag.adv {
-        color: #ff6b6b;
-        border-color: #ff6b6b33;
-        background: #ff6b6b0d;
-      }
-      .tag.ph {
-        color: #a78bfa;
-        border-color: #a78bfa33;
-        background: #a78bfa0d;
-      }
+      .speak-btn:hover { border-color:var(--accent); color:var(--accent); }
+      .tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; padding:3px 8px; border-radius:6px; border:1px solid; }
+      .tag.v { color:#4f8fff; border-color:#4f8fff33; background:#4f8fff0d; }
+      .tag.n { color:#43e97b; border-color:#43e97b33; background:#43e97b0d; }
+      .tag.adj { color:#ffc947; border-color:#ffc94733; background:#ffc9470d; }
+      .tag.adv { color:#ff6b6b; border-color:#ff6b6b33; background:#ff6b6b0d; }
+      .tag.ph { color:#a78bfa; border-color:#a78bfa33; background:#a78bfa0d; }
+      .star-btn { background:none; border:none; cursor:pointer; font-size:17px; padding:4px 6px; border-radius:6px; transition:transform 0.15s; color:var(--border2); }
+      .star-btn:hover { transform:scale(1.3); }
+      .star-btn.on { color:var(--gold); }
+      .no-results { text-align:center; padding:60px 20px; color:var(--muted); display:none; }
+      .no-results span { font-size:36px; display:block; margin-bottom:12px; }
 
-      .star-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 17px;
-        padding: 4px 6px;
-        border-radius: 6px;
-        transition: transform 0.15s;
-        color: var(--border2);
-      }
-      .star-btn:hover {
-        transform: scale(1.3);
-        background: none;
-      }
-      .star-btn.on {
-        color: var(--gold);
-      }
-
-      .no-results {
-        text-align: center;
-        padding: 60px 20px;
-        color: var(--muted);
-        display: none;
-      }
-      .no-results span {
-        font-size: 36px;
-        display: block;
-        margin-bottom: 12px;
-      }
-
-      /* ── QUIZ OVERLAY ── */
+      /* QUIZ OVERLAY */
       #quiz-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: #080b14ee;
-        backdrop-filter: blur(12px);
-        z-index: 200;
-        align-items: center;
-        justify-content: center;
-        animation: fadeIn 0.3s ease;
+        display:none; position:fixed; inset:0; background:#080b14ee;
+        backdrop-filter:blur(12px); z-index:200; align-items:center; justify-content:center;
+        animation:fadeIn 0.3s ease;
       }
-      #quiz-overlay.show {
-        display: flex;
-      }
+      #quiz-overlay.show { display:flex; }
       .qcard {
-        background: var(--card);
-        border: 1px solid var(--border2);
-        border-radius: 28px;
-        padding: 48px 40px;
-        max-width: 520px;
-        width: 92%;
-        text-align: center;
-        box-shadow: 0 40px 120px #00000090;
-        animation: scaleIn 0.35s ease;
+        background:var(--card); border:1px solid var(--border2); border-radius:28px;
+        padding:48px 40px; max-width:520px; width:92%; text-align:center;
+        box-shadow:0 40px 120px #00000090; animation:scaleIn 0.35s ease;
       }
-      .qprogress {
-        font-size: 11px;
-        color: var(--muted);
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-      }
-      .qbar {
-        height: 4px;
-        background: var(--border);
-        border-radius: 99px;
-        margin-bottom: 28px;
-        overflow: hidden;
-      }
-      .qbar-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #4f8fff, #a78bfa);
-        border-radius: 99px;
-        transition: width 0.4s ease;
-      }
-      .qword {
-        font-family: "Lexend", sans-serif;
-        font-size: clamp(28px, 5vw, 42px);
-        font-weight: 800;
-        color: #fff;
-        margin-bottom: 6px;
-        word-break: break-word;
-      }
-      .qhint {
-        font-size: 13px;
-        color: var(--muted);
-        margin-bottom: 28px;
-      }
-      .qopts {
-        display: grid;
-        gap: 10px;
-      }
+      .qprogress { font-size:11px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:14px; }
+      .qbar { height:4px; background:var(--border); border-radius:99px; margin-bottom:28px; overflow:hidden; }
+      .qbar-fill { height:100%; background:linear-gradient(90deg,#4f8fff,#a78bfa); border-radius:99px; transition:width 0.4s ease; }
+      .qword { font-family:"Lexend",sans-serif; font-size:clamp(28px,5vw,42px); font-weight:800; color:#fff; margin-bottom:6px; word-break:break-word; }
+      .qhint { font-size:13px; color:var(--muted); margin-bottom:28px; }
+      .qopts { display:grid; gap:10px; }
       .qopt {
-        background: #1a2038;
-        border: 1px solid var(--border2);
-        color: var(--text);
-        font-family: "DM Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        padding: 14px 18px;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.18s;
-        text-align: left;
+        background:#1a2038; border:1px solid var(--border2); color:var(--text);
+        font-family:"Be Vietnam Pro",sans-serif; font-size:14px; font-weight:500;
+        padding:14px 18px; border-radius:12px; cursor:pointer; transition:all 0.18s; text-align:left;
       }
-      .qopt:hover {
-        background: #202840;
-        border-color: var(--accent);
-      }
-      .qopt.correct {
-        background: #43e97b15;
-        border-color: var(--accent3);
-        color: var(--accent3);
-      }
-      .qopt.wrong {
-        background: #ff6b6b15;
-        border-color: var(--accent2);
-        color: var(--accent2);
-      }
-      .result-score {
-        font-family: "Lexend", sans-serif;
-        font-size: 72px;
-        font-weight: 800;
-        color: var(--accent3);
-        margin: 10px 0;
-      }
-      .qbtn-row {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-        margin-top: 20px;
-        flex-wrap: wrap;
-      }
+      .qopt:hover { background:#202840; border-color:var(--accent); }
+      .qopt.correct { background:#43e97b15; border-color:var(--accent3); color:var(--accent3); }
+      .qopt.wrong { background:#ff6b6b15; border-color:var(--accent2); color:var(--accent2); }
+      .result-score { font-family:"Lexend",sans-serif; font-size:72px; font-weight:800; color:var(--accent3); margin:10px 0; }
+      .qbtn-row { display:flex; gap:12px; justify-content:center; margin-top:20px; flex-wrap:wrap; }
       .qbtn {
-        background: var(--border);
-        border: none;
-        color: var(--muted2);
-        font-family: "Be Vietnam Pro", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        padding: 13px 26px;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.18s;
+        background:var(--border); border:none; color:var(--muted2);
+        font-family:"Be Vietnam Pro",sans-serif; font-size:14px; font-weight:600;
+        padding:13px 26px; border-radius:12px; cursor:pointer; transition:all 0.18s;
       }
-      .qbtn:hover {
-        background: var(--accent);
-        color: #fff;
-      }
-      .qbtn.primary {
-        background: linear-gradient(135deg, #4f8fff, #7c3aed);
-        color: #fff;
-      }
+      .qbtn:hover { background:var(--accent); color:#fff; }
+      .qbtn.primary { background:linear-gradient(135deg,#4f8fff,#7c3aed); color:#fff; }
 
-      /* ── ANIMATIONS ── */
-      @keyframes fadeDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
+      /* FLASHCARD OVERLAY */
+      #flash-overlay {
+        display:none; position:fixed; inset:0; background:#080b14ee;
+        backdrop-filter:blur(12px); z-index:200; align-items:center; justify-content:center;
+        animation:fadeIn 0.3s ease; flex-direction:column; gap:20px;
       }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
+      #flash-overlay.show { display:flex; }
+      .flash-progress { color:var(--muted); font-size:13px; letter-spacing:1px; }
+      .flashcard-container { perspective:800px; width:92%; max-width:480px; height:320px; cursor:pointer; }
+      .flashcard {
+        position:relative; width:100%; height:100%; transition:transform 0.6s;
+        transform-style:preserve-3d;
       }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+      .flashcard.flipped { transform:rotateY(180deg); }
+      .flash-face {
+        position:absolute; inset:0; backface-visibility:hidden;
+        border-radius:28px; display:flex; flex-direction:column;
+        align-items:center; justify-content:center; padding:40px;
+        border:1px solid var(--border2); box-shadow:0 40px 120px #00000090;
       }
-      @keyframes scaleIn {
-        from {
-          opacity: 0;
-          transform: scale(0.9);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
+      .flash-front {
+        background:linear-gradient(145deg,#141828,#1a2040);
       }
-      @keyframes rowIn {
-        from {
-          opacity: 0;
-          transform: translateX(-6px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
+      .flash-back {
+        background:linear-gradient(145deg,#1a1830,#201840);
+        transform:rotateY(180deg);
       }
+      .flash-word { font-family:"Lexend",sans-serif; font-size:clamp(28px,6vw,48px); font-weight:800; color:#fff; margin-bottom:8px; }
+      .flash-ipa { color:var(--purple); font-size:16px; margin-bottom:12px; }
+      .flash-type { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; }
+      .flash-meaning { font-size:24px; font-weight:600; color:var(--gold); margin-bottom:12px; }
+      .flash-test-info { font-size:12px; color:var(--muted); }
+      .flash-hint { color:var(--muted); font-size:12px; margin-top:8px; }
+      .flash-controls { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+      .flash-btn {
+        background:var(--card); border:1px solid var(--border2); color:var(--text);
+        font-family:"Be Vietnam Pro",sans-serif; font-size:14px; font-weight:600;
+        padding:12px 24px; border-radius:12px; cursor:pointer; transition:all 0.18s;
+      }
+      .flash-btn:hover { border-color:var(--accent); color:var(--accent); }
+      .flash-btn.primary { background:linear-gradient(135deg,#43e97b,#38f9d7); border:none; color:#000; }
+      .flash-btn.danger { background:linear-gradient(135deg,#ff6b6b,#f59e0b); border:none; color:#fff; }
 
-      /* ── RESPONSIVE ── */
-      @media (max-width: 600px) {
-        th:nth-child(4),
-        td:nth-child(4) {
-          display: none;
-        }
-        .qcard {
-          padding: 32px 24px;
-        }
+      /* ANIMATIONS */
+      @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:none; } }
+      @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @keyframes scaleIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
+      @keyframes rowIn { from { opacity:0; transform:translateX(-6px); } to { opacity:1; transform:none; } }
+
+      /* RESPONSIVE */
+      @media (max-width:600px) {
+        th:nth-child(4), td:nth-child(4) { display:none; }
+        .qcard { padding:32px 24px; }
+        .flashcard-container { height:260px; }
+        .flash-word { font-size:28px; }
+        .sec-btn { padding:10px 20px; font-size:13px; }
       }
     </style>
   </head>
@@ -658,138 +272,947 @@
     <div class="glow-orb b"></div>
 
     <div class="app">
-      <!-- HEADER -->
       <header>
-        <div class="eyebrow">ETS TOEIC Vol. 5 · RC</div>
-        <h1>800 từ vựng<br /><em>10 Tests</em></h1>
-        <p class="tagline">Tra cứu · Lọc · Đánh dấu · Luyện Quiz</p>
+        <div class="eyebrow">ETS TOEIC Vol. 5 · LC & RC</div>
+        <h1>1600 từ vựng<br /><em>Listening & Reading</em></h1>
+        <p class="tagline">Phần nghe · Phần đọc · Flashcard · Phiên âm · Quiz</p>
       </header>
 
       <!-- GLOBAL STATS -->
       <div class="global-stats">
-        <div class="gstat">
-          <div class="gstat-n blue">800</div>
-          <div class="gstat-l">Tổng từ</div>
-        </div>
-        <div class="gstat">
-          <div class="gstat-n gold" id="g-starred">0</div>
-          <div class="gstat-l">Đã đánh dấu</div>
-        </div>
-        <div class="gstat">
-          <div class="gstat-n green" id="g-showing">800</div>
-          <div class="gstat-l">Đang hiển thị</div>
-        </div>
+        <div class="gstat"><div class="gstat-n blue" id="g-total">1600</div><div class="gstat-l">Tổng từ</div></div>
+        <div class="gstat"><div class="gstat-n red" id="g-lc">800</div><div class="gstat-l">LC · Nghe</div></div>
+        <div class="gstat"><div class="gstat-n blue" id="g-rc">800</div><div class="gstat-l">RC · Đọc</div></div>
+        <div class="gstat"><div class="gstat-n gold" id="g-starred">0</div><div class="gstat-l">Đã đánh dấu</div></div>
+        <div class="gstat"><div class="gstat-n green" id="g-showing">1600</div><div class="gstat-l">Đang hiển thị</div></div>
+      </div>
+
+      <!-- LC / RC TOGGLE -->
+      <div class="section-toggle">
+        <button class="sec-btn active-lc" id="btn-lc" onclick="setSection('lc')">
+          <span class="sec-icon">🎧</span>
+          <div><strong>LISTENING</strong><br><span class="sec-count">800 từ · Phần nghe</span></div>
+        </button>
+        <button class="sec-btn" id="btn-rc" onclick="setSection('rc')">
+          <span class="sec-icon">📖</span>
+          <div><strong>READING</strong><br><span class="sec-count">800 từ · Phần đọc</span></div>
+        </button>
+        <button class="sec-btn" id="btn-all" onclick="setSection('all')">
+          <span class="sec-icon">📚</span>
+          <div><strong>TẤT CẢ</strong><br><span class="sec-count">1600 từ</span></div>
+        </button>
       </div>
 
       <!-- CONTROLS -->
       <div class="controls">
         <div class="search-wrap">
-          <svg
-            width="15"
-            height="15"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.35-4.35" />
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
-          <input
-            type="text"
-            id="search"
-            placeholder="Tìm từ tiếng Anh hoặc nghĩa tiếng Việt…"
-            oninput="render()"
-          />
+          <input type="text" id="search" placeholder="Tìm từ tiếng Anh hoặc nghĩa tiếng Việt…" />
         </div>
         <div class="btn-row" id="type-chips">
-          <button
-            class="chip on"
-            data-type="all"
-            onclick="setType('all', this)"
-          >
-            Tất cả
-          </button>
-          <button class="chip" data-type="v" onclick="setType('v', this)">
-            Động từ
-          </button>
-          <button class="chip" data-type="n" onclick="setType('n', this)">
-            Danh từ
-          </button>
-          <button class="chip" data-type="adj" onclick="setType('adj', this)">
-            Tính từ
-          </button>
-          <button class="chip" data-type="adv" onclick="setType('adv', this)">
-            Trạng từ
-          </button>
-          <button class="chip" data-type="ph" onclick="setType('ph', this)">
-            Cụm từ
-          </button>
-          <button
-            class="chip gold-chip"
-            data-type="starred"
-            onclick="setType('starred', this)"
-          >
-            ⭐ Đã đánh dấu
-          </button>
+          <button class="chip on" data-type="all" onclick="setType('all',this)">Tất cả</button>
+          <button class="chip" data-type="v" onclick="setType('v',this)">Động từ</button>
+          <button class="chip" data-type="n" onclick="setType('n',this)">Danh từ</button>
+          <button class="chip" data-type="adj" onclick="setType('adj',this)">Tính từ</button>
+          <button class="chip" data-type="adv" onclick="setType('adv',this)">Trạng từ</button>
+          <button class="chip" data-type="ph" onclick="setType('ph',this)">Cụm từ</button>
+          <button class="chip gold-chip" data-type="starred" onclick="setType('starred',this)">⭐ Đã đánh dấu</button>
         </div>
         <div class="btn-row">
-          <button class="chip quiz-chip" onclick="startQuiz()">
-            🎯 Quiz luyện tập
-          </button>
+          <button class="chip quiz-chip" onclick="startQuiz()">🎯 Quiz luyện tập</button>
+          <button class="chip flash-chip" onclick="startFlashcard()">🃏 Flashcard ôn tập</button>
         </div>
       </div>
 
       <!-- TEST TABS -->
       <div class="test-tabs" id="test-tabs">
-        <button
-          class="ttab on"
-          data-test="0"
-          onclick="setTest(0, this)"
-          style="background: linear-gradient(135deg, #4f8fff, #7c3aed)"
-        >
-          Tất cả
-        </button>
+        <button class="ttab on" data-test="0" onclick="setTest(0,this)" style="background:linear-gradient(135deg,#4f8fff,#7c3aed)">Tất cả</button>
       </div>
 
       <!-- TABLE -->
       <div class="table-section">
         <div class="section-header">
-          <div class="section-title" id="sec-title">
-            Tất cả <span id="sec-sub">10 Tests · 800 từ</span>
-          </div>
-          <div class="showing-info" id="showing-info">Hiển thị 800 từ</div>
+          <div class="section-title" id="sec-title">Tất cả <span id="sec-sub">10 Tests · 1600 từ</span></div>
+          <div class="showing-info" id="showing-info">Hiển thị 1600 từ</div>
         </div>
         <div class="table-wrap">
           <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Từ vựng</th>
-                <th>Nghĩa tiếng Việt</th>
-                <th>Loại từ</th>
-                <th>⭐</th>
-              </tr>
-            </thead>
+            <thead><tr>
+              <th>#</th>
+              <th>Từ vựng</th>
+              <th>Nghĩa tiếng Việt</th>
+              <th>Loại từ</th>
+              <th>⭐</th>
+            </tr></thead>
             <tbody id="tbody"></tbody>
           </table>
-          <div class="no-results" id="no-results">
-            <span>🔍</span>Không tìm thấy từ nào phù hợp
-          </div>
+          <div class="no-results" id="no-results"><span>🔍</span>Không tìm thấy từ nào phù hợp</div>
         </div>
       </div>
     </div>
 
     <!-- QUIZ -->
-    <div id="quiz-overlay">
-      <div class="qcard" id="qcard"></div>
+    <div id="quiz-overlay"><div class="qcard" id="qcard"></div></div>
+
+    <!-- FLASHCARD -->
+    <div id="flash-overlay">
+      <div class="flash-progress" id="flash-progress"></div>
+      <div class="flashcard-container" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="flash-face flash-front" id="flash-front"></div>
+          <div class="flash-face flash-back" id="flash-back"></div>
+        </div>
+      </div>
+      <div class="flash-controls">
+        <button class="flash-btn danger" onclick="flashMark('hard')">😓 Khó</button>
+        <button class="flash-btn" onclick="flashMark('ok')">🤔 Tạm ổn</button>
+        <button class="flash-btn primary" onclick="flashMark('easy')">✅ Dễ</button>
+      </div>
+      <div class="flash-controls" style="margin-top:-8px">
+        <button class="flash-btn" onclick="closeFlash()" style="font-size:12px;padding:8px 18px">✕ Đóng</button>
+      </div>
     </div>
 
     <script>
-      // ═══════════════════════════════════════════════
-      //  DATA — 800 words across 10 tests
-      // ═══════════════════════════════════════════════
-      const TESTS = [
+// ═══════════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════════
+const LC_TESTS = [
+  // TEST 01
+  [
+    {w:"carry",m:"mang, mang theo",t:"v"},
+    {w:"remove",m:"cởi ra, tháo ra",t:"v"},
+    {w:"pour",m:"rót, đổ",t:"v"},
+    {w:"beverage",m:"đồ uống",t:"n"},
+    {w:"light fixture",m:"thiết bị chiếu sáng",t:"ph"},
+    {w:"install",m:"lắp đặt",t:"v"},
+    {w:"warehouse",m:"nhà kho",t:"n"},
+    {w:"meeting minutes",m:"biên bản cuộc họp",t:"ph"},
+    {w:"accounting",m:"kế toán",t:"n"},
+    {w:"assistant",m:"trợ lý",t:"n"},
+    {w:"account",m:"tài khoản",t:"n"},
+    {w:"analyst",m:"nhà phân tích",t:"n"},
+    {w:"decoration",m:"đồ trang trí",t:"n"},
+    {w:"competent",m:"có năng lực, thành thạo",t:"adj"},
+    {w:"retreat",m:"chuyến nghỉ dưỡng / dã ngoại của công ty",t:"n"},
+    {w:"solve",m:"giải quyết",t:"v"},
+    {w:"departure",m:"sự khởi hành",t:"n"},
+    {w:"introduction",m:"lời giới thiệu / phần mở đầu",t:"n"},
+    {w:"retirement",m:"nghỉ hưu",t:"n"},
+    {w:"appointment",m:"cuộc hẹn",t:"n"},
+    {w:"borrow",m:"mượn",t:"v"},
+    {w:"brochure",m:"tờ quảng cáo / sách giới thiệu",t:"n"},
+    {w:"confirmation",m:"sự xác nhận",t:"n"},
+    {w:"process",m:"quy trình, quá trình",t:"n"},
+    {w:"expense",m:"chi phí",t:"n"},
+    {w:"finance",m:"tài chính",t:"n"},
+    {w:"correct",m:"đúng, chính xác",t:"adj"},
+    {w:"demonstration",m:"buổi trình diễn / minh họa",t:"n"},
+    {w:"charge",m:"sạc / tính phí",t:"v"},
+    {w:"device",m:"thiết bị",t:"n"},
+    {w:"cost",m:"tốn chi phí",t:"v"},
+    {w:"extra",m:"thêm, bổ sung",t:"n"},
+    {w:"in charge of",m:"chịu trách nhiệm về",t:"ph"},
+    {w:"crew",m:"đội làm việc",t:"n"},
+    {w:"available",m:"có sẵn",t:"adj"},
+    {w:"depend on",m:"phụ thuộc vào",t:"ph"},
+    {w:"addition",m:"sự bổ sung",t:"n"},
+    {w:"consider",m:"cân nhắc",t:"n"},
+    {w:"lower",m:"giảm, hạ xuống",t:"v"},
+    {w:"headquarters",m:"trụ sở chính",t:"n"},
+    {w:"book",m:"đặt chỗ",t:"v"},
+    {w:"regional",m:"thuộc khu vực",t:"adj"},
+    {w:"performance",m:"hiệu suất / buổi biểu diễn",t:"n"},
+    {w:"advance",m:"trước, trước đó",t:"n"},
+    {w:"payment",m:"thanh toán",t:"n"},
+    {w:"required",m:"bắt buộc",t:"adj"},
+    {w:"sign up for",m:"đăng ký",t:"ph"},
+    {w:"competition",m:"cuộc thi",t:"n"},
+    {w:"merchandise",m:"hàng hóa",t:"n"},
+    {w:"permit",m:"giấy phép",t:"n"},
+    {w:"agree",m:"đồng ý",t:"v"},
+    {w:"annual",m:"hàng năm",t:"adj"},
+    {w:"expand",m:"mở rộng",t:"v"},
+    {w:"take care of",m:"xử lý / chăm sóc",t:"ph"},
+    {w:"attendee",m:"người tham dự",t:"n"},
+    {w:"job opening",m:"vị trí tuyển dụng",t:"ph"},
+    {w:"author",m:"tác giả",t:"n"},
+    {w:"reserve",m:"đặt trước",t:"n"},
+    {w:"revise",m:"sửa đổi",t:"v"},
+    {w:"budget",m:"ngân sách",t:"n"},
+    {w:"get rid of",m:"loại bỏ",t:"ph"},
+    {w:"unfortunately",m:"thật không may",t:"adv"},
+    {w:"operation",m:"hoạt động / vận hành",t:"n"},
+    {w:"application",m:"đơn đăng ký / hồ sơ",t:"n"},
+    {w:"directions",m:"chỉ đường",t:"n"},
+    {w:"owner",m:"chủ sở hữu",t:"n"},
+    {w:"location",m:"địa điểm",t:"n"},
+    {w:"local",m:"địa phương",t:"adj"},
+    {w:"advantage",m:"lợi thế",t:"n"},
+    {w:"rental",m:"thuê",t:"n"},
+    {w:"release",m:"phát hành",t:"n"},
+    {w:"issue",m:"vấn đề",t:"n"},
+    {w:"secure",m:"đảm bảo / đạt được",t:"n"},
+    {w:"conduct",m:"tiến hành",t:"n"},
+    {w:"negotiate",m:"đàm phán",t:"n"},
+    {w:"maintenance",m:"bảo trì",t:"n"},
+    {w:"randomly",m:"ngẫu nhiên",t:"adv"},
+    {w:"malfunction",m:"trục trặc",t:"n"},
+    {w:"complete",m:"hoàn thành",t:"n"},
+    {w:"increase",m:"tăng lên",t:"n"}
+  ],
+  // TEST 02
+  [
+    {w:"hang",m:"treo, mắc",t:"v"},
+    {w:"luggage",m:"hành lý",t:"n"},
+    {w:"lean against",m:"dựa vào",t:"ph"},
+    {w:"railing",m:"lan can",t:"n"},
+    {w:"vehicle",m:"phương tiện / xe cộ",t:"n"},
+    {w:"stack",m:"xếp chồng",t:"n"},
+    {w:"reach for",m:"với tay lấy",t:"ph"},
+    {w:"shelf",m:"kệ, giá đỡ",t:"n"},
+    {w:"set up",m:"thiết lập, chuẩn bị",t:"ph"},
+    {w:"postpone",m:"hoãn lại",t:"v"},
+    {w:"proposal",m:"đề xuất / bản đề xuất",t:"n"},
+    {w:"convenient",m:"thuận tiện",t:"adj"},
+    {w:"take place",m:"diễn ra",t:"ph"},
+    {w:"last",m:"kéo dài",t:"n"},
+    {w:"rate",m:"giá, mức phí",t:"n"},
+    {w:"renovation",m:"cải tạo, sửa chữa",t:"n"},
+    {w:"material",m:"vật liệu",t:"n"},
+    {w:"fee",m:"phí, lệ phí",t:"n"},
+    {w:"discontinue",m:"ngừng, dừng lại",t:"n"},
+    {w:"instructor",m:"giảng viên / người hướng dẫn",t:"n"},
+    {w:"cafeteria",m:"căng tin / nhà ăn",t:"n"},
+    {w:"sold out",m:"bán hết, hết hàng",t:"ph"},
+    {w:"strategy",m:"chiến lược",t:"n"},
+    {w:"opposite",m:"đối diện",t:"n"},
+    {w:"submit",m:"nộp, gửi",t:"v"},
+    {w:"residential",m:"thuộc khu dân cư",t:"adj"},
+    {w:"broken",m:"bị hỏng",t:"adj"},
+    {w:"complain",m:"phàn nàn",t:"v"},
+    {w:"instructions",m:"hướng dẫn",t:"n"},
+    {w:"expired",m:"hết hạn",t:"adj"},
+    {w:"volunteer",m:"tình nguyện / người tình nguyện",t:"n"},
+    {w:"approval",m:"sự chấp thuận",t:"n"},
+    {w:"access",m:"truy cập / tiếp cận",t:"n"},
+    {w:"transportation",m:"phương tiện giao thông",t:"n"},
+    {w:"promotional",m:"quảng bá / khuyến mãi",t:"adj"},
+    {w:"currently",m:"hiện tại",t:"adv"},
+    {w:"address",m:"giải quyết (vấn đề)",t:"v"},
+    {w:"decline",m:"giảm / suy giảm",t:"v"},
+    {w:"organize",m:"tổ chức",t:"v"},
+    {w:"celebrity",m:"người nổi tiếng",t:"n"},
+    {w:"sponsor",m:"nhà tài trợ",t:"n"},
+    {w:"reduce",m:"giảm",t:"v"},
+    {w:"property",m:"tài sản / bất động sản",t:"n"},
+    {w:"reward",m:"thưởng / phần thưởng",t:"n"},
+    {w:"demand",m:"nhu cầu",t:"n"},
+    {w:"potential",m:"tiềm năng",t:"n"},
+    {w:"candidate",m:"ứng viên",t:"n"},
+    {w:"competitor",m:"đối thủ cạnh tranh",t:"n"},
+    {w:"venue",m:"địa điểm tổ chức",t:"n"},
+    {w:"former",m:"trước đây / cựu",t:"n"},
+    {w:"résumé",m:"sơ yếu lý lịch (CV)",t:"n"},
+    {w:"arrange",m:"sắp xếp",t:"v"},
+    {w:"colleague",m:"đồng nghiệp",t:"n"},
+    {w:"appropriate",m:"phù hợp",t:"adj"},
+    {w:"recruitment",m:"tuyển dụng",t:"n"},
+    {w:"reject",m:"từ chối",t:"v"},
+    {w:"assistance",m:"sự giúp đỡ",t:"n"},
+    {w:"affordable",m:"giá phải chăng",t:"adj"},
+    {w:"invitation",m:"lời mời / thiệp mời",t:"n"},
+    {w:"typically",m:"thường thường",t:"adv"},
+    {w:"merger",m:"sáp nhập",t:"n"},
+    {w:"durable",m:"bền",t:"adj"},
+    {w:"justify",m:"biện minh / chứng minh hợp lý",t:"n"},
+    {w:"inspection",m:"kiểm tra",t:"n"},
+    {w:"prototype",m:"nguyên mẫu",t:"n"},
+    {w:"originally",m:"ban đầu",t:"adv"},
+    {w:"share",m:"chia sẻ",t:"v"},
+    {w:"shorten",m:"rút ngắn",t:"v"},
+    {w:"accept",m:"chấp nhận",t:"v"},
+    {w:"loan",m:"khoản vay",t:"n"},
+    {w:"layout",m:"bố cục / sơ đồ bố trí",t:"n"},
+    {w:"proof",m:"bằng chứng",t:"n"},
+    {w:"insurance",m:"bảo hiểm",t:"n"},
+    {w:"upcoming",m:"sắp tới",t:"n"},
+    {w:"opportunity",m:"cơ hội",t:"n"},
+    {w:"brief",m:"ngắn gọn",t:"n"},
+    {w:"screen",m:"sàng lọc",t:"v"},
+    {w:"invoice",m:"hóa đơn",t:"n"},
+    {w:"incorrect",m:"không chính xác",t:"adj"},
+    {w:"frequent",m:"thường xuyên",t:"adj"}
+  ],
+  // TEST 03
+  [
+    {w:"fix",m:"sửa chữa, khắc phục",t:"v"},
+    {w:"pedestrian",m:"người đi bộ",t:"n"},
+    {w:"attend",m:"tham dự",t:"v"},
+    {w:"face",m:"đối mặt / hướng về phía",t:"v"},
+    {w:"certificate",m:"chứng chỉ, giấy chứng nhận",t:"n"},
+    {w:"press conference",m:"họp báo",t:"ph"},
+    {w:"weigh",m:"cân nặng, nặng",t:"v"},
+    {w:"quarter",m:"quý (3 tháng)",t:"n"},
+    {w:"directory",m:"danh bạ / sổ địa chỉ",t:"n"},
+    {w:"be supposed to",m:"được cho là / phải",t:"ph"},
+    {w:"replace",m:"thay thế",t:"v"},
+    {w:"lead",m:"dẫn dắt, lãnh đạo",t:"v"},
+    {w:"award-winning",m:"đạt giải thưởng",t:"adj"},
+    {w:"supplies",m:"vật dụng, đồ dùng",t:"n"},
+    {w:"storage",m:"lưu trữ, kho chứa",t:"n"},
+    {w:"manufacturer",m:"nhà sản xuất",t:"n"},
+    {w:"measures",m:"biện pháp",t:"n"},
+    {w:"success",m:"thành công",t:"n"},
+    {w:"upstairs",m:"tầng trên",t:"adv"},
+    {w:"draft",m:"bản nháp",t:"n"},
+    {w:"appreciate",m:"đánh giá cao / cảm ơn",t:"v"},
+    {w:"extend",m:"kéo dài, gia hạn",t:"v"},
+    {w:"warranty",m:"bảo hành",t:"n"},
+    {w:"qualification",m:"trình độ / bằng cấp",t:"n"},
+    {w:"unexpected",m:"bất ngờ, không mong đợi",t:"adj"},
+    {w:"floor plan",m:"bản vẽ mặt bằng",t:"ph"},
+    {w:"architect",m:"kiến trúc sư",t:"n"},
+    {w:"inspect",m:"kiểm tra",t:"v"},
+    {w:"approximately",m:"khoảng, xấp xỉ",t:"adv"},
+    {w:"recommendation",m:"sự đề xuất / khuyến nghị",t:"n"},
+    {w:"patron",m:"khách hàng",t:"n"},
+    {w:"regular",m:"thường xuyên",t:"n"},
+    {w:"deposit",m:"tiền đặt cọc",t:"n"},
+    {w:"reschedule",m:"sắp xếp lại lịch",t:"n"},
+    {w:"prescription",m:"đơn thuốc",t:"n"},
+    {w:"inconvenient",m:"bất tiện",t:"adj"},
+    {w:"medication",m:"thuốc",t:"n"},
+    {w:"inventory",m:"hàng tồn kho",t:"n"},
+    {w:"drop",m:"giảm xuống",t:"n"},
+    {w:"stand out",m:"nổi bật",t:"ph"},
+    {w:"input",m:"ý kiến / đóng góp",t:"n"},
+    {w:"athlete",m:"vận động viên",t:"n"},
+    {w:"consult",m:"tham khảo / tư vấn",t:"v"},
+    {w:"faulty",m:"bị lỗi",t:"adj"},
+    {w:"understaffed",m:"thiếu nhân viên",t:"adj"},
+    {w:"feature",m:"đặc điểm / đăng tải nổi bật",t:"n"},
+    {w:"public",m:"công khai",t:"adj"},
+    {w:"expire",m:"hết hạn",t:"n"},
+    {w:"archive",m:"kho lưu trữ",t:"n"},
+    {w:"verify",m:"xác minh",t:"v"},
+    {w:"confirm",m:"xác nhận",t:"v"},
+    {w:"deadline",m:"hạn chót",t:"n"},
+    {w:"apply for",m:"nộp đơn / xin",t:"ph"},
+    {w:"renew",m:"gia hạn",t:"v"},
+    {w:"subscription",m:"đăng ký (dịch vụ)",t:"n"},
+    {w:"appear",m:"xuất hiện",t:"v"},
+    {w:"nominate",m:"đề cử",t:"v"},
+    {w:"refund",m:"hoàn tiền",t:"n"},
+    {w:"goods",m:"hàng hóa",t:"n"},
+    {w:"authority",m:"thẩm quyền",t:"n"},
+    {w:"transaction",m:"giao dịch",t:"n"},
+    {w:"efficiently",m:"hiệu quả",t:"adv"},
+    {w:"significant",m:"đáng kể",t:"n"},
+    {w:"advertisement",m:"quảng cáo",t:"n"},
+    {w:"regulation",m:"quy định",t:"n"},
+    {w:"organic",m:"hữu cơ",t:"n"},
+    {w:"entirely",m:"hoàn toàn",t:"adv"},
+    {w:"individual",m:"cá nhân",t:"n"},
+    {w:"nutritional",m:"thuộc dinh dưỡng",t:"adj"},
+    {w:"investment",m:"đầu tư",t:"n"},
+    {w:"donate",m:"quyên góp",t:"v"},
+    {w:"charity",m:"tổ chức từ thiện",t:"n"},
+    {w:"unavailable",m:"không có sẵn / không rảnh",t:"n"},
+    {w:"participate in",m:"tham gia",t:"ph"},
+    {w:"relocate",m:"chuyển địa điểm",t:"v"},
+    {w:"affect",m:"ảnh hưởng",t:"v"},
+    {w:"condition",m:"tình trạng / điều kiện",t:"n"},
+    {w:"reference",m:"người giới thiệu / tài liệu tham khảo",t:"n"},
+    {w:"hygienist",m:"chuyên viên vệ sinh răng miệng",t:"n"},
+    {w:"reimbursement",m:"hoàn trả chi phí",t:"n"}
+  ],
+  // TEST 04
+  [
+    {w:"cross",m:"băng qua, đi qua",t:"v"},
+    {w:"traffic",m:"giao thông",t:"n"},
+    {w:"put together",m:"lắp ráp",t:"ph"},
+    {w:"empty",m:"làm trống, đổ ra",t:"n"},
+    {w:"reservation",m:"đặt chỗ",t:"n"},
+    {w:"commute",m:"đi làm / đi học hằng ngày",t:"n"},
+    {w:"usually",m:"thường xuyên",t:"adv"},
+    {w:"negative",m:"tiêu cực",t:"n"},
+    {w:"job posting",m:"thông báo tuyển dụng",t:"ph"},
+    {w:"council",m:"hội đồng",t:"n"},
+    {w:"review",m:"xem xét / đánh giá",t:"v"},
+    {w:"shift",m:"ca làm việc",t:"n"},
+    {w:"valid",m:"hợp lệ",t:"n"},
+    {w:"identification",m:"giấy tờ tùy thân",t:"n"},
+    {w:"post",m:"đăng, đăng tải",t:"v"},
+    {w:"transfer",m:"chuyển, chuyển công tác",t:"v"},
+    {w:"in time",m:"đúng lúc",t:"ph"},
+    {w:"in person",m:"trực tiếp",t:"ph"},
+    {w:"tenant",m:"người thuê nhà",t:"n"},
+    {w:"particular",m:"cụ thể, đặc biệt",t:"n"},
+    {w:"district",m:"khu vực",t:"n"},
+    {w:"routinely",m:"thường xuyên",t:"adv"},
+    {w:"congested",m:"tắc nghẽn, đông đúc",t:"n"},
+    {w:"temporarily",m:"tạm thời",t:"adv"},
+    {w:"ingredient",m:"nguyên liệu",t:"n"},
+    {w:"fairly",m:"khá, tương đối",t:"adv"},
+    {w:"guarantee",m:"đảm bảo / bảo hành",t:"n"},
+    {w:"forward",m:"chuyển tiếp",t:"n"},
+    {w:"household",m:"hộ gia đình",t:"n"},
+    {w:"industrial",m:"công nghiệp",t:"n"},
+    {w:"textile",m:"dệt may",t:"n"},
+    {w:"pharmaceutical",m:"dược phẩm",t:"n"},
+    {w:"skilled",m:"có tay nghề",t:"n"},
+    {w:"details",m:"chi tiết",t:"n"},
+    {w:"overseas",m:"ở nước ngoài",t:"adv"},
+    {w:"vendor",m:"nhà cung cấp / người bán",t:"n"},
+    {w:"timeline",m:"lịch trình",t:"n"},
+    {w:"appearance",m:"sự xuất hiện",t:"n"},
+    {w:"act",m:"hành động / diễn",t:"n"},
+    {w:"fill",m:"điền / lấp đầy",t:"v"},
+    {w:"revised",m:"đã sửa đổi",t:"n"},
+    {w:"workstation",m:"bàn làm việc",t:"n"},
+    {w:"unpredictability",m:"sự khó đoán",t:"n"},
+    {w:"in advance",m:"trước, заранее",t:"ph"},
+    {w:"collection",m:"bộ sưu tập",t:"n"},
+    {w:"positive",m:"tích cực",t:"n"},
+    {w:"contribution",m:"sự đóng góp",t:"n"},
+    {w:"recognize",m:"công nhận / nhận ra",t:"v"},
+    {w:"priority",m:"ưu tiên",t:"n"},
+    {w:"exceptional",m:"xuất sắc",t:"n"},
+    {w:"criticism",m:"sự chỉ trích",t:"n"},
+    {w:"accurate",m:"chính xác",t:"n"},
+    {w:"outcome",m:"kết quả",t:"n"},
+    {w:"encourage",m:"khuyến khích",t:"v"},
+    {w:"focus on",m:"tập trung vào",t:"ph"},
+    {w:"definitely",m:"chắc chắn",t:"adv"},
+    {w:"entire",m:"toàn bộ",t:"n"},
+    {w:"knowledgeable",m:"hiểu biết",t:"n"},
+    {w:"own",m:"sở hữu",t:"n"},
+    {w:"stock",m:"hàng tồn kho",t:"n"},
+    {w:"illustrator",m:"họa sĩ minh họa",t:"n"},
+    {w:"temporary",m:"tạm thời",t:"n"},
+    {w:"concerned",m:"lo lắng / quan tâm",t:"n"},
+    {w:"statement",m:"bản kê / tuyên bố",t:"n"},
+    {w:"abroad",m:"ở nước ngoài",t:"adv"},
+    {w:"clarify",m:"làm rõ",t:"v"},
+    {w:"resource",m:"tài nguyên / nguồn lực",t:"n"},
+    {w:"fertilizer",m:"phân bón",t:"n"},
+    {w:"tolerant",m:"chịu đựng tốt",t:"n"},
+    {w:"irrigation",m:"tưới tiêu",t:"n"},
+    {w:"disruption",m:"sự gián đoạn",t:"n"},
+    {w:"multiple",m:"nhiều, đa dạng",t:"n"},
+    {w:"discover",m:"phát hiện",t:"v"},
+    {w:"restore",m:"khôi phục",t:"v"},
+    {w:"authentic",m:"xác thực / chính gốc",t:"n"},
+    {w:"recruit",m:"tuyển dụng",t:"v"},
+    {w:"challenging",m:"đầy thử thách",t:"n"},
+    {w:"unfavorable",m:"bất lợi",t:"n"},
+    {w:"prospective",m:"tiềm năng",t:"n"},
+    {w:"persuade",m:"thuyết phục",t:"v"}
+  ],
+  // TEST 05
+  [
+    {w:"container",m:"thùng chứa, hộp chứa",t:"n"},
+    {w:"information",m:"thông tin",t:"n"},
+    {w:"seal",m:"niêm phong, đóng kín",t:"v"},
+    {w:"rack",m:"giá, kệ treo",t:"n"},
+    {w:"crowded",m:"đông đúc",t:"adj"},
+    {w:"inspector",m:"thanh tra, người kiểm tra",t:"n"},
+    {w:"exterior",m:"bên ngoài",t:"n"},
+    {w:"due",m:"đến hạn",t:"n"},
+    {w:"bill",m:"hóa đơn",t:"n"},
+    {w:"fund-raising",m:"gây quỹ",t:"n"},
+    {w:"representative",m:"đại diện",t:"n"},
+    {w:"promote",m:"thăng chức / quảng bá",t:"v"},
+    {w:"registration",m:"đăng ký",t:"n"},
+    {w:"quarterly",m:"hàng quý",t:"adj"},
+    {w:"include",m:"bao gồm",t:"n"},
+    {w:"adjust",m:"điều chỉnh",t:"v"},
+    {w:"pitch",m:"bài thuyết trình / chào bán",t:"n"},
+    {w:"analysis",m:"phân tích",t:"n"},
+    {w:"greet",m:"chào đón",t:"v"},
+    {w:"current",m:"hiện tại",t:"adj"},
+    {w:"estimate",m:"ước tính",t:"v"},
+    {w:"contract",m:"hợp đồng",t:"n"},
+    {w:"onboarding",m:"đào tạo nhân viên mới",t:"n"},
+    {w:"institution",m:"tổ chức / cơ quan",t:"n"},
+    {w:"previous",m:"trước đó",t:"adj"},
+    {w:"meet",m:"đáp ứng (yêu cầu)",t:"n"},
+    {w:"supplier",m:"nhà cung cấp",t:"n"},
+    {w:"target audience",m:"khách hàng mục tiêu",t:"ph"},
+    {w:"develop",m:"phát triển",t:"v"},
+    {w:"launch",m:"ra mắt / khởi động",t:"v"},
+    {w:"challenge",m:"thử thách",t:"n"},
+    {w:"doubtful",m:"nghi ngờ",t:"adj"},
+    {w:"suggestion",m:"đề xuất",t:"n"},
+    {w:"associate",m:"cộng sự / nhân viên",t:"n"},
+    {w:"highlight",m:"điểm nổi bật / nhấn mạnh",t:"n"},
+    {w:"catch up",m:"bắt kịp",t:"ph"},
+    {w:"organization",m:"tổ chức",t:"n"},
+    {w:"miss",m:"bỏ lỡ",t:"n"},
+    {w:"avoid",m:"tránh",t:"n"},
+    {w:"bid",m:"đấu thầu / giá thầu",t:"n"},
+    {w:"renovate",m:"cải tạo",t:"n"},
+    {w:"compile",m:"biên soạn / tổng hợp",t:"v"},
+    {w:"comment",m:"bình luận / ý kiến",t:"n"},
+    {w:"recurring",m:"lặp lại",t:"adj"},
+    {w:"complaint",m:"khiếu nại",t:"n"},
+    {w:"enlarge",m:"mở rộng",t:"n"},
+    {w:"take down",m:"tháo dỡ",t:"ph"},
+    {w:"reception",m:"buổi tiếp đón",t:"n"},
+    {w:"recycling",m:"tái chế",t:"n"},
+    {w:"recent",m:"gần đây",t:"adj"},
+    {w:"match",m:"phù hợp / khớp",t:"n"},
+    {w:"management",m:"ban quản lý",t:"n"},
+    {w:"progress",m:"tiến triển",t:"n"},
+    {w:"expedite",m:"thúc đẩy / xử lý nhanh",t:"n"},
+    {w:"explain",m:"giải thích",t:"v"},
+    {w:"attempt",m:"cố gắng / thử",t:"v"},
+    {w:"resolve",m:"giải quyết",t:"v"},
+    {w:"assemble",m:"lắp ráp",t:"v"},
+    {w:"attract",m:"thu hút",t:"v"},
+    {w:"summary",m:"bản tóm tắt",t:"n"},
+    {w:"trim",m:"cắt tỉa",t:"v"},
+    {w:"figure",m:"con số",t:"n"},
+    {w:"branch",m:"chi nhánh",t:"n"},
+    {w:"achieve",m:"đạt được",t:"v"},
+    {w:"certification",m:"chứng chỉ",t:"n"},
+    {w:"submission",m:"sự nộp / hồ sơ nộp",t:"n"},
+    {w:"emphasize",m:"nhấn mạnh",t:"v"},
+    {w:"designated",m:"được chỉ định",t:"adj"},
+    {w:"culinary",m:"thuộc ẩm thực",t:"adj"},
+    {w:"a variety of",m:"nhiều loại",t:"ph"},
+    {w:"original",m:"nguyên bản",t:"adj"},
+    {w:"focus",m:"trọng tâm",t:"n"},
+    {w:"popularity",m:"sự phổ biến",t:"n"},
+    {w:"founder",m:"người sáng lập",t:"n"},
+    {w:"outstanding",m:"xuất sắc",t:"adj"},
+    {w:"lack",m:"thiếu",t:"n"},
+    {w:"qualified",m:"đủ điều kiện",t:"adj"},
+    {w:"applicant",m:"người nộp đơn",t:"n"},
+    {w:"unique",m:"độc đáo",t:"adj"},
+    {w:"income",m:"thu nhập",t:"n"}
+  ],
+  // TEST 06
+  [
+    {w:"repair",m:"sửa chữa",t:"v"},
+    {w:"tie",m:"buộc, thắt",t:"v"},
+    {w:"board",m:"lên (tàu, máy bay, xe)",t:"v"},
+    {w:"doorway",m:"cửa ra vào",t:"n"},
+    {w:"thorough",m:"kỹ lưỡng, cẩn thận",t:"adj"},
+    {w:"ship",m:"vận chuyển, gửi hàng",t:"v"},
+    {w:"voucher",m:"phiếu mua hàng / phiếu giảm giá",t:"n"},
+    {w:"signature",m:"chữ ký",t:"n"},
+    {w:"lease",m:"hợp đồng thuê",t:"n"},
+    {w:"replacement",m:"đồ thay thế",t:"n"},
+    {w:"recently",m:"gần đây",t:"adv"},
+    {w:"elect",m:"bầu chọn",t:"v"},
+    {w:"mayor",m:"thị trưởng",t:"n"},
+    {w:"research",m:"nghiên cứu",t:"n"},
+    {w:"open position",m:"vị trí còn trống",t:"ph"},
+    {w:"store",m:"lưu trữ",t:"v"},
+    {w:"protocol",m:"quy trình / quy định",t:"n"},
+    {w:"commercial",m:"quảng cáo",t:"adj"},
+    {w:"advertising",m:"quảng cáo",t:"n"},
+    {w:"exploration",m:"thám hiểm / khám phá",t:"n"},
+    {w:"approve",m:"phê duyệt",t:"v"},
+    {w:"exit",m:"lối ra / rời khỏi",t:"n"},
+    {w:"landscaping",m:"thiết kế cảnh quan",t:"n"},
+    {w:"reminder",m:"lời nhắc",t:"n"},
+    {w:"vote",m:"bỏ phiếu",t:"v"},
+    {w:"deserve",m:"xứng đáng",t:"v"},
+    {w:"honor",m:"vinh danh / danh dự",t:"v"},
+    {w:"attention",m:"sự chú ý",t:"n"},
+    {w:"celebrate",m:"kỷ niệm / chúc mừng",t:"v"},
+    {w:"facility",m:"cơ sở vật chất",t:"n"},
+    {w:"list",m:"liệt kê",t:"v"},
+    {w:"coworker",m:"đồng nghiệp",t:"n"},
+    {w:"abstract",m:"trừu tượng",t:"adj"},
+    {w:"pack",m:"đóng gói",t:"v"},
+    {w:"cover",m:"đưa tin / đề cập",t:"v"},
+    {w:"funding",m:"nguồn tài trợ",t:"n"},
+    {w:"resident",m:"cư dân",t:"n"},
+    {w:"expansion",m:"mở rộng",t:"n"},
+    {w:"initiative",m:"sáng kiến",t:"n"},
+    {w:"inquire",m:"hỏi, tìm hiểu",t:"v"},
+    {w:"specifications",m:"thông số kỹ thuật",t:"n"},
+    {w:"source",m:"nguồn",t:"n"},
+    {w:"mechanic",m:"thợ máy",t:"n"},
+    {w:"accountant",m:"kế toán viên",t:"n"},
+    {w:"expedition",m:"cuộc thám hiểm",t:"n"},
+    {w:"overnight",m:"qua đêm",t:"n"},
+    {w:"rent",m:"thuê",t:"n"},
+    {w:"disagree",m:"không đồng ý",t:"v"},
+    {w:"route",m:"tuyến đường",t:"n"},
+    {w:"coordinator",m:"điều phối viên",t:"n"},
+    {w:"freezing",m:"rất lạnh / đóng băng",t:"adj"},
+    {w:"temperature",m:"nhiệt độ",t:"n"},
+    {w:"fabric",m:"vải, chất liệu",t:"n"},
+    {w:"translate",m:"dịch",t:"v"},
+    {w:"rush",m:"gấp gáp",t:"v"},
+    {w:"unusually",m:"bất thường",t:"adj"},
+    {w:"additional",m:"thêm, bổ sung",t:"n"},
+    {w:"day off",m:"ngày nghỉ",t:"ph"},
+    {w:"contain",m:"chứa",t:"v"},
+    {w:"anniversary",m:"ngày kỷ niệm",t:"n"},
+    {w:"banquet",m:"tiệc lớn",t:"n"},
+    {w:"announcement",m:"thông báo",t:"n"},
+    {w:"host",m:"tổ chức (sự kiện)",t:"v"},
+    {w:"destination",m:"điểm đến",t:"n"},
+    {w:"accommodate",m:"chứa / cung cấp chỗ ở",t:"n"},
+    {w:"exhibit",m:"triển lãm",t:"n"},
+    {w:"claim",m:"yêu cầu / tuyên bố",t:"v"},
+    {w:"term",m:"thuật ngữ / kỳ hạn",t:"n"},
+    {w:"professional",m:"chuyên nghiệp",t:"adj"},
+    {w:"inaccurate",m:"không chính xác",t:"adj"},
+    {w:"profession",m:"nghề nghiệp",t:"n"},
+    {w:"definition",m:"định nghĩa",t:"n"},
+    {w:"managerial",m:"thuộc quản lý",t:"adj"},
+    {w:"supervisor",m:"giám sát / quản lý",t:"n"},
+    {w:"consumer",m:"người tiêu dùng",t:"n"},
+    {w:"distribute",m:"phân phối",t:"v"},
+    {w:"transport",m:"vận chuyển",t:"v"},
+    {w:"afford",m:"có khả năng chi trả",t:"v"},
+    {w:"restoration",m:"khôi phục",t:"n"},
+    {w:"shortage",m:"sự thiếu hụt",t:"n"}
+  ],
+  // TEST 07
+  [
+    {w:"garage",m:"gara / nhà để xe",t:"n"},
+    {w:"liquid",m:"chất lỏng",t:"n"},
+    {w:"bulletin board",m:"bảng thông báo",t:"ph"},
+    {w:"occupied",m:"đang được sử dụng / có người dùng",t:"adj"},
+    {w:"committee",m:"ủy ban",t:"n"},
+    {w:"layover",m:"điểm dừng trung chuyển",t:"n"},
+    {w:"astronomy",m:"thiên văn học",t:"n"},
+    {w:"astronaut",m:"phi hành gia",t:"n"},
+    {w:"fit",m:"phù hợp",t:"n"},
+    {w:"cookware",m:"dụng cụ nấu ăn",t:"n"},
+    {w:"agreement",m:"thỏa thuận / hợp đồng",t:"n"},
+    {w:"supervise",m:"giám sát",t:"v"},
+    {w:"forecast",m:"dự báo",t:"v"},
+    {w:"depart",m:"khởi hành",t:"v"},
+    {w:"short-staffed",m:"thiếu nhân viên",t:"adj"},
+    {w:"storefront",m:"mặt tiền cửa hàng",t:"n"},
+    {w:"vacant",m:"trống, chưa có người",t:"adj"},
+    {w:"analyze",m:"phân tích",t:"v"},
+    {w:"demonstrate",m:"trình diễn / chứng minh",t:"v"},
+    {w:"itinerary",m:"lịch trình",t:"n"},
+    {w:"realize",m:"nhận ra",t:"v"},
+    {w:"distracting",m:"gây mất tập trung",t:"adj"},
+    {w:"flavor",m:"hương vị",t:"n"},
+    {w:"expert",m:"chuyên gia",t:"n"},
+    {w:"extension",m:"gia hạn",t:"n"},
+    {w:"overtime",m:"làm thêm giờ",t:"n"},
+    {w:"exchange",m:"trao đổi",t:"v"},
+    {w:"receipt",m:"hóa đơn / biên lai",t:"n"},
+    {w:"ancient",m:"cổ đại",t:"adj"},
+    {w:"civilization",m:"nền văn minh",t:"n"},
+    {w:"last-minute",m:"phút chót",t:"adj"},
+    {w:"expertise",m:"chuyên môn",t:"n"},
+    {w:"memorable",m:"đáng nhớ",t:"adj"},
+    {w:"immediately",m:"ngay lập tức",t:"adv"},
+    {w:"fair",m:"hội chợ / triển lãm",t:"n"},
+    {w:"demolition",m:"phá dỡ",t:"n"},
+    {w:"involvement",m:"sự tham gia",t:"n"},
+    {w:"invest",m:"đầu tư",t:"v"},
+    {w:"substantial",m:"đáng kể",t:"adj"},
+    {w:"press",m:"báo chí",t:"n"},
+    {w:"improve",m:"cải thiện",t:"v"},
+    {w:"partial",m:"một phần",t:"adj"},
+    {w:"motivate",m:"tạo động lực",t:"v"},
+    {w:"reassurance",m:"sự trấn an",t:"n"},
+    {w:"misunderstanding",m:"sự hiểu lầm",t:"n"},
+    {w:"specific",m:"cụ thể",t:"adj"},
+    {w:"guideline",m:"hướng dẫn / quy tắc",t:"n"},
+    {w:"practical",m:"thực tế / thực hành",t:"adj"},
+    {w:"disposal",m:"xử lý / vứt bỏ",t:"n"},
+    {w:"determine",m:"xác định",t:"v"},
+    {w:"protective",m:"bảo vệ",t:"adj"},
+    {w:"represent",m:"đại diện",t:"v"},
+    {w:"approach",m:"tiếp cận / tiến tới",t:"v"},
+    {w:"yield",m:"sản lượng",t:"n"},
+    {w:"assembly",m:"lắp ráp",t:"adv"},
+    {w:"authorize",m:"cho phép / ủy quyền",t:"v"},
+    {w:"margin",m:"khoảng dư / lợi nhuận",t:"n"},
+    {w:"adjustment",m:"điều chỉnh",t:"n"},
+    {w:"broadcast",m:"phát sóng",t:"v"},
+    {w:"present",m:"hiện tại",t:"adj"},
+    {w:"certainly",m:"chắc chắn",t:"adv"},
+    {w:"policy",m:"chính sách",t:"n"},
+    {w:"achievement",m:"thành tựu",t:"n"},
+    {w:"feedback",m:"phản hồi",t:"n"},
+    {w:"excuse",m:"lý do / lời xin lỗi",t:"n"},
+    {w:"disappointment",m:"sự thất vọng",t:"n"},
+    {w:"aboard",m:"trên tàu / máy bay",t:"n"},
+    {w:"renowned",m:"nổi tiếng",t:"adj"},
+    {w:"inconvenience",m:"sự bất tiện",t:"n"},
+    {w:"architectural",m:"thuộc kiến trúc",t:"adj"},
+    {w:"landmark",m:"địa danh nổi tiếng",t:"n"},
+    {w:"connection",m:"sự kết nối",t:"n"},
+    {w:"express",m:"nhanh / tốc hành",t:"n"},
+    {w:"caution",m:"sự cẩn thận / cảnh báo",t:"n"},
+    {w:"conservation",m:"bảo tồn",t:"n"},
+    {w:"catering",m:"dịch vụ ăn uống",t:"n"},
+    {w:"urban",m:"đô thị",t:"adj"},
+    {w:"suburban",m:"ngoại ô",t:"adj"},
+    {w:"rating",m:"xếp hạng",t:"n"},
+    {w:"organization",m:"tổ chức",t:"n"}
+  ],
+  // TEST 08
+  [
+    {w:"flowerpot",m:"chậu hoa",t:"n"},
+    {w:"rug",m:"thảm",t:"n"},
+    {w:"covered",m:"được che phủ",t:"n"},
+    {w:"patio",m:"sân hiên",t:"n"},
+    {w:"intersection",m:"ngã tư",t:"n"},
+    {w:"flyer",m:"tờ rơi quảng cáo",t:"n"},
+    {w:"ceiling",m:"trần nhà",t:"n"},
+    {w:"unload",m:"dỡ hàng",t:"n"},
+    {w:"climb",m:"leo lên",t:"n"},
+    {w:"rake",m:"cào (lá, đất)",t:"n"},
+    {w:"alert",m:"cảnh báo / thông báo",t:"n"},
+    {w:"agenda",m:"chương trình nghị sự",t:"n"},
+    {w:"informational",m:"mang tính thông tin",t:"adj"},
+    {w:"satisfaction",m:"sự hài lòng",t:"n"},
+    {w:"predict",m:"dự đoán",t:"n"},
+    {w:"assignment",m:"nhiệm vụ",t:"n"},
+    {w:"productive",m:"hiệu quả / năng suất",t:"adj"},
+    {w:"comfortable",m:"thoải mái",t:"adj"},
+    {w:"laboratory",m:"phòng thí nghiệm",t:"n"},
+    {w:"worth",m:"đáng giá",t:"adj"},
+    {w:"apply",m:"áp dụng",t:"adv"},
+    {w:"calculate",m:"tính toán",t:"n"},
+    {w:"degree",m:"độ (nhiệt độ)",t:"n"},
+    {w:"monitor",m:"theo dõi / giám sát",t:"n"},
+    {w:"incomplete",m:"chưa hoàn chỉnh",t:"adj"},
+    {w:"insufficient",m:"không đủ",t:"adj"},
+    {w:"equipment",m:"thiết bị",t:"n"},
+    {w:"rare",m:"hiếm",t:"adj"},
+    {w:"practice",m:"thực hành",t:"n"},
+    {w:"publicity",m:"quảng bá",t:"n"},
+    {w:"wing",m:"cánh / khu nhà phụ",t:"n"},
+    {w:"city hall",m:"tòa thị chính",t:"ph"},
+    {w:"create",m:"tạo ra",t:"n"},
+    {w:"official",m:"quan chức / chính thức",t:"n"},
+    {w:"construction",m:"xây dựng",t:"n"},
+    {w:"soil",m:"đất",t:"n"},
+    {w:"agriculture",m:"nông nghiệp",t:"n"},
+    {w:"curious",m:"tò mò",t:"adj"},
+    {w:"improvement",m:"sự cải thiện",t:"n"},
+    {w:"script",m:"kịch bản",t:"n"},
+    {w:"episode",m:"tập (phim, chương trình)",t:"n"},
+    {w:"performer",m:"người biểu diễn",t:"n"},
+    {w:"outdoor",m:"ngoài trời",t:"adj"},
+    {w:"flat rate",m:"giá cố định",t:"ph"},
+    {w:"varied",m:"đa dạng",t:"adj"},
+    {w:"machinery",m:"máy móc",t:"n"},
+    {w:"automated",m:"tự động hóa",t:"adj"},
+    {w:"transplant",m:"cấy ghép / chuyển cây",t:"n"},
+    {w:"handle",m:"xử lý",t:"n"},
+    {w:"amazement",m:"sự ngạc nhiên",t:"n"},
+    {w:"inclement weather",m:"thời tiết xấu",t:"ph"},
+    {w:"doubt",m:"nghi ngờ",t:"n"},
+    {w:"organizer",m:"người tổ chức",t:"n"},
+    {w:"rebook",m:"đặt lại",t:"n"},
+    {w:"misinformation",m:"thông tin sai lệch",t:"n"},
+    {w:"compliment",m:"lời khen",t:"n"},
+    {w:"pillow",m:"gối",t:"n"},
+    {w:"assist",m:"hỗ trợ",t:"n"},
+    {w:"position",m:"vị trí / tư thế",t:"n"},
+    {w:"firm",m:"chắc, cứng",t:"adj"},
+    {w:"pain",m:"cơn đau",t:"n"},
+    {w:"objection",m:"sự phản đối",t:"n"},
+    {w:"paperwork",m:"giấy tờ",t:"n"},
+    {w:"autonomous",m:"tự động / tự trị",t:"adj"},
+    {w:"remotely",m:"từ xa",t:"adv"},
+    {w:"operate",m:"vận hành",t:"n"},
+    {w:"maintain",m:"bảo trì",t:"n"},
+    {w:"administer",m:"quản lý / thực hiện",t:"n"},
+    {w:"compliance",m:"sự tuân thủ",t:"n"},
+    {w:"primarily",m:"chủ yếu",t:"adv"},
+    {w:"exceed",m:"vượt quá",t:"n"},
+    {w:"standard",m:"tiêu chuẩn",t:"n"},
+    {w:"responsibility",m:"trách nhiệm",t:"n"},
+    {w:"respond",m:"phản hồi",t:"n"},
+    {w:"control",m:"kiểm soát",t:"n"},
+    {w:"allow",m:"cho phép",t:"n"},
+    {w:"clinical",m:"lâm sàng",t:"adj"},
+    {w:"alternative",m:"lựa chọn thay thế",t:"adj"},
+    {w:"bulk",m:"số lượng lớn",t:"n"},
+    {w:"officially",m:"chính thức",t:"adv"}
+  ],
+  // TEST 09
+  [
+    {w:"shade",m:"che bóng / làm râm",t:"v"},
+    {w:"bin",m:"thùng / thùng rác",t:"n"},
+    {w:"frame",m:"khung / khung ảnh",t:"n"},
+    {w:"dentist",m:"nha sĩ",t:"n"},
+    {w:"groceries",m:"thực phẩm, đồ tạp hóa",t:"n"},
+    {w:"select",m:"chọn",t:"v"},
+    {w:"payroll",m:"bảng lương / quản lý lương",t:"n"},
+    {w:"damaged",m:"bị hư hỏng",t:"adj"},
+    {w:"purchase",m:"mua",t:"v"},
+    {w:"pass",m:"thẻ / vé",t:"n"},
+    {w:"athletic",m:"thuộc thể thao",t:"adj"},
+    {w:"question",m:"nghi vấn / đặt câu hỏi",t:"n"},
+    {w:"treatment",m:"điều trị",t:"n"},
+    {w:"personalized",m:"cá nhân hóa",t:"adj"},
+    {w:"nutrition",m:"dinh dưỡng",t:"n"},
+    {w:"previously",m:"trước đây",t:"adv"},
+    {w:"sanitize",m:"khử trùng",t:"v"},
+    {w:"sourcing",m:"tìm nguồn cung",t:"n"},
+    {w:"consideration",m:"sự cân nhắc",t:"n"},
+    {w:"cleanliness",m:"sự sạch sẽ",t:"n"},
+    {w:"attendance",m:"sự có mặt / điểm danh",t:"n"},
+    {w:"attractive",m:"hấp dẫn",t:"adj"},
+    {w:"inadequate",m:"không đầy đủ",t:"adj"},
+    {w:"reassign",m:"phân công lại",t:"v"},
+    {w:"publish",m:"xuất bản",t:"v"},
+    {w:"retire",m:"nghỉ hưu",t:"v"},
+    {w:"opening",m:"vị trí trống",t:"n"},
+    {w:"intensive",m:"chuyên sâu / cường độ cao",t:"adj"},
+    {w:"encouragement",m:"sự khích lệ",t:"n"},
+    {w:"praise",m:"khen ngợi",t:"v"},
+    {w:"decision",m:"quyết định",t:"n"},
+    {w:"intrigued",m:"bị thu hút / tò mò",t:"adj"},
+    {w:"shred",m:"xé nhỏ / nghiền nhỏ",t:"v"},
+    {w:"discarded",m:"bị vứt bỏ",t:"n"},
+    {w:"watery",m:"loãng / nhiều nước",t:"adj"},
+    {w:"mixture",m:"hỗn hợp",t:"n"},
+    {w:"unnecessary",m:"không cần thiết",t:"adj"},
+    {w:"leftover",m:"đồ còn lại",t:"n"},
+    {w:"eventually",m:"cuối cùng",t:"adv"},
+    {w:"decrease",m:"giảm",t:"v"},
+    {w:"morale",m:"tinh thần / động lực",t:"n"},
+    {w:"acquire",m:"đạt được / mua được",t:"v"},
+    {w:"adopt",m:"áp dụng / nhận nuôi",t:"v"},
+    {w:"confident",m:"tự tin",t:"adj"},
+    {w:"presence",m:"sự hiện diện",t:"n"},
+    {w:"spokesperson",m:"người phát ngôn",t:"n"},
+    {w:"limited",m:"hạn chế",t:"adj"},
+    {w:"availability",m:"sự sẵn có",t:"n"},
+    {w:"relevant",m:"liên quan",t:"adj"},
+    {w:"retrieve",m:"lấy lại / thu hồi",t:"v"},
+    {w:"traditional",m:"truyền thống",t:"adj"},
+    {w:"unusual",m:"bất thường",t:"adj"},
+    {w:"contemporary",m:"hiện đại",t:"adj"},
+    {w:"inspiration",m:"cảm hứng",t:"n"},
+    {w:"combine",m:"kết hợp",t:"v"},
+    {w:"recipe",m:"công thức nấu ăn",t:"n"},
+    {w:"intend",m:"dự định",t:"v"},
+    {w:"measure",m:"đo lường",t:"v"},
+    {w:"method",m:"phương pháp",t:"n"},
+    {w:"sustainable",m:"bền vững",t:"adj"},
+    {w:"ongoing",m:"đang diễn ra",t:"adj"},
+    {w:"admission",m:"vé vào cửa",t:"n"},
+    {w:"sturdy",m:"chắc chắn",t:"adj"},
+    {w:"promotion",m:"khuyến mãi / thăng chức",t:"n"},
+    {w:"refer",m:"giới thiệu / tham khảo",t:"v"},
+    {w:"obtain",m:"đạt được",t:"v"},
+    {w:"belongings",m:"đồ đạc cá nhân",t:"n"},
+    {w:"exclusive",m:"độc quyền",t:"adj"},
+    {w:"register",m:"quầy thu ngân / đăng ký",t:"v"},
+    {w:"enrollment",m:"sự đăng ký",t:"n"},
+    {w:"form",m:"mẫu đơn / biểu mẫu",t:"n"},
+    {w:"exercise",m:"bài tập / tập thể dục",t:"n"},
+    {w:"installation",m:"lắp đặt",t:"n"},
+    {w:"lane",m:"làn đường",t:"n"},
+    {w:"publication",m:"ấn phẩm",t:"n"},
+    {w:"immediate",m:"ngay lập tức",t:"adj"},
+    {w:"comprehensive",m:"toàn diện",t:"adj"},
+    {w:"handbook",m:"sổ tay hướng dẫn",t:"n"},
+    {w:"procedure",m:"quy trình",t:"n"},
+    {w:"pursue",m:"theo đuổi",t:"v"}
+  ],
+  // TEST 10
+  [
+    {w:"bucket",m:"xô, thùng",t:"n"},
+    {w:"stroll",m:"đi dạo",t:"v"},
+    {w:"hand",m:"đưa, trao",t:"v"},
+    {w:"tow",m:"kéo (xe)",t:"v"},
+    {w:"dock",m:"cập bến / neo đậu",t:"v"},
+    {w:"shore",m:"bờ biển",t:"n"},
+    {w:"downtown",m:"trung tâm thành phố",t:"adv"},
+    {w:"cuisine",m:"ẩm thực",t:"n"},
+    {w:"lightweight",m:"nhẹ",t:"adj"},
+    {w:"sales",m:"doanh số bán hàng",t:"n"},
+    {w:"edit",m:"chỉnh sửa",t:"v"},
+    {w:"advanced",m:"nâng cao",t:"adj"},
+    {w:"result",m:"kết quả",t:"n"},
+    {w:"pharmacy",m:"hiệu thuốc",t:"n"},
+    {w:"keynote speech",m:"bài phát biểu chính",t:"ph"},
+    {w:"inspiring",m:"truyền cảm hứng",t:"adj"},
+    {w:"technical",m:"kỹ thuật",t:"adj"},
+    {w:"bookkeeping",m:"kế toán sổ sách",t:"n"},
+    {w:"luncheon",m:"bữa trưa trang trọng",t:"n"},
+    {w:"indoors",m:"trong nhà",t:"adv"},
+    {w:"outdoors",m:"ngoài trời",t:"adv"},
+    {w:"retail",m:"bán lẻ",t:"n"},
+    {w:"private",m:"riêng tư",t:"adj"},
+    {w:"craft",m:"đồ thủ công",t:"n"},
+    {w:"fade",m:"phai màu",t:"v"},
+    {w:"custom",m:"theo yêu cầu",t:"adj"},
+    {w:"accidentally",m:"tình cờ / vô tình",t:"adv"},
+    {w:"boarding pass",m:"thẻ lên máy bay",t:"ph"},
+    {w:"locate",m:"xác định vị trí",t:"v"},
+    {w:"describe",m:"mô tả",t:"v"},
+    {w:"benefits",m:"phúc lợi",t:"n"},
+    {w:"walkway",m:"lối đi bộ",t:"n"},
+    {w:"durability",m:"độ bền",t:"n"},
+    {w:"anticipate",m:"dự đoán / mong đợi",t:"v"},
+    {w:"negotiation",m:"đàm phán",t:"n"},
+    {w:"passenger",m:"hành khách",t:"n"},
+    {w:"bypass",m:"đường tránh",t:"v"},
+    {w:"correction",m:"sự sửa chữa",t:"n"},
+    {w:"alternate",m:"thay thế",t:"n"},
+    {w:"cause",m:"gây ra",t:"v"},
+    {w:"attendant",m:"nhân viên phục vụ",t:"n"},
+    {w:"sterile",m:"vô trùng",t:"adj"},
+    {w:"separate",m:"tách biệt",t:"v"},
+    {w:"radius",m:"bán kính",t:"n"},
+    {w:"proceeds",m:"tiền thu được",t:"n"},
+    {w:"go toward",m:"được dùng cho",t:"ph"},
+    {w:"raffle",m:"xổ số / bốc thăm trúng thưởng",t:"n"},
+    {w:"donation",m:"quyên góp",t:"n"},
+    {w:"drawing",m:"bốc thăm",t:"n"},
+    {w:"getaway",m:"chuyến nghỉ ngắn",t:"n"},
+    {w:"arrangement",m:"sự sắp xếp",t:"n"},
+    {w:"observe",m:"tổ chức / kỷ niệm",t:"v"},
+    {w:"mark",m:"đánh dấu / kỷ niệm",t:"v"},
+    {w:"completion",m:"hoàn thành",t:"n"},
+    {w:"decorative",m:"trang trí",t:"adj"},
+    {w:"harvest",m:"thu hoạch",t:"v"},
+    {w:"feed",m:"cho ăn",t:"v"},
+    {w:"hands-on",m:"thực hành trực tiếp",t:"n"},
+    {w:"grain",m:"ngũ cốc",t:"n"},
+    {w:"enable",m:"cho phép",t:"v"},
+    {w:"direct",m:"hướng dẫn / chỉ đạo",t:"v"},
+    {w:"factor",m:"yếu tố",t:"n"},
+    {w:"distance",m:"khoảng cách",t:"n"},
+    {w:"identity",m:"danh tính",t:"n"},
+    {w:"status",m:"tình trạng / trạng thái",t:"n"},
+    {w:"takeoff",m:"cất cánh",t:"n"},
+    {w:"fasten",m:"thắt / buộc chặt",t:"v"},
+    {w:"overhead",m:"phía trên đầu",t:"n"},
+    {w:"compartment",m:"ngăn chứa",t:"n"},
+    {w:"virtually",m:"hầu như / gần như",t:"adv"},
+    {w:"fulfill",m:"hoàn thành / thực hiện",t:"v"},
+    {w:"assure",m:"đảm bảo / cam đoan",t:"v"},
+    {w:"remain",m:"vẫn còn / duy trì",t:"v"},
+    {w:"showcase",m:"trưng bày",t:"v"},
+    {w:"talented",m:"tài năng",t:"adj"},
+    {w:"enter",m:"tham gia / đi vào",t:"v"},
+    {w:"trend",m:"xu hướng",t:"n"},
+    {w:"informal",m:"không trang trọng",t:"adj"},
+    {w:"inappropriate",m:"không phù hợp",t:"adj"},
+    {w:"recipient",m:"người nhận",t:"n"}
+  ]
+];
+
+const RC_TESTS = [
         // TEST 01
         [
           { w: "take place", m: "xảy ra, diễn ra", t: "ph" },
@@ -1626,233 +2049,231 @@
         ],
       ];
 
-      // Flatten with test index
-      const ALL = [];
-      TESTS.forEach((test, ti) =>
-        test.forEach((w, wi) => ALL.push({ ...w, test: ti + 1, idx: wi })),
-      );
+// Flatten
+const LC_ALL = [];
+LC_TESTS.forEach((test,ti) => test.forEach((w,wi) => LC_ALL.push({...w, test:ti+1, idx:wi, section:'lc'})));
+const RC_ALL = [];
+RC_TESTS.forEach((test,ti) => test.forEach((w,wi) => RC_ALL.push({...w, test:ti+1, idx:wi, section:'rc'})));
+const ALL = [...LC_ALL, ...RC_ALL];
 
-      // ═══════════════════════════════════════════════
-      //  STATE
-      // ═══════════════════════════════════════════════
-      let state = { type: "all", test: 0, q: "", starred: new Set() };
+// ═══════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════
+let state = { type:'all', test:0, q:'', starred:new Set(), section:'lc' };
 
-      // ═══════════════════════════════════════════════
-      //  TABS
-      // ═══════════════════════════════════════════════
-      const COLORS = [
-        "linear-gradient(135deg,#4f8fff,#7c3aed)",
-        "linear-gradient(135deg,#ff6b6b,#f59e0b)",
-        "linear-gradient(135deg,#43e97b,#38f9d7)",
-        "linear-gradient(135deg,#fa8231,#f53b57)",
-        "linear-gradient(135deg,#a78bfa,#ec4899)",
-        "linear-gradient(135deg,#00b4d8,#0077b6)",
-        "linear-gradient(135deg,#f7971e,#ffd200)",
-        "linear-gradient(135deg,#11998e,#38ef7d)",
-        "linear-gradient(135deg,#ee0979,#ff6a00)",
-        "linear-gradient(135deg,#8e2de2,#4a00e0)",
-      ];
+// ═══════════════════════════════════════════════
+//  SECTION TOGGLE
+// ═══════════════════════════════════════════════
+function setSection(sec) {
+  state.section = sec;
+  state.test = 0;
+  document.getElementById('btn-lc').className = 'sec-btn' + (sec==='lc' ? ' active-lc' : '');
+  document.getElementById('btn-rc').className = 'sec-btn' + (sec==='rc' ? ' active-rc' : '');
+  document.getElementById('btn-all').className = 'sec-btn' + (sec==='all' ? ' active-rc' : '');
+  // rebuild test tabs
+  const wrap = document.getElementById('test-tabs');
+  wrap.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'ttab on';
+  allBtn.dataset.test = 0;
+  allBtn.textContent = 'Tất cả';
+  allBtn.style.background = COLORS[0];
+  allBtn.onclick = function(){ setTest(0,this); };
+  wrap.appendChild(allBtn);
+  for(let i=1;i<=10;i++){
+    const btn = document.createElement('button');
+    btn.className = 'ttab';
+    btn.dataset.test = i;
+    btn.textContent = 'Test '+i;
+    btn.onclick = function(){ setTest(i,this); };
+    wrap.appendChild(btn);
+  }
+  updateTitle();
+  render();
+}
 
-      function buildTabs() {
-        const wrap = document.getElementById("test-tabs");
-        for (let i = 1; i <= 10; i++) {
-          const btn = document.createElement("button");
-          btn.className = "ttab";
-          btn.dataset.test = i;
-          btn.textContent = `Test ${i}`;
-          btn.onclick = function () {
-            setTest(i, this);
-          };
-          wrap.appendChild(btn);
-        }
-      }
+// ═══════════════════════════════════════════════
+//  TABS
+// ═══════════════════════════════════════════════
+const COLORS = [
+  "linear-gradient(135deg,#4f8fff,#7c3aed)",
+  "linear-gradient(135deg,#ff6b6b,#f59e0b)",
+  "linear-gradient(135deg,#43e97b,#38f9d7)",
+  "linear-gradient(135deg,#fa8231,#f53b57)",
+  "linear-gradient(135deg,#a78bfa,#ec4899)",
+  "linear-gradient(135deg,#00b4d8,#0077b6)",
+  "linear-gradient(135deg,#f7971e,#ffd200)",
+  "linear-gradient(135deg,#11998e,#38ef7d)",
+  "linear-gradient(135deg,#ee0979,#ff6a00)",
+  "linear-gradient(135deg,#8e2de2,#4a00e0)",
+];
 
-      function setTest(t, el) {
-        state.test = t;
-        document.querySelectorAll(".ttab").forEach((b) => {
-          b.classList.remove("on");
-          b.style.background = "";
-        });
-        el.classList.add("on");
-        if (t === 0) el.style.background = COLORS[0];
-        else el.style.background = COLORS[(t - 1) % COLORS.length];
-        updateTitle();
-        render();
-      }
+function buildTabs(){
+  const wrap = document.getElementById('test-tabs');
+  for(let i=1;i<=10;i++){
+    const btn = document.createElement('button');
+    btn.className = 'ttab';
+    btn.dataset.test = i;
+    btn.textContent = 'Test '+i;
+    btn.onclick = function(){ setTest(i,this); };
+    wrap.appendChild(btn);
+  }
+}
 
-      // ═══════════════════════════════════════════════
-      //  TYPE FILTER
-      // ═══════════════════════════════════════════════
-      function setType(tp, el) {
-        state.type = tp;
-        document
-          .querySelectorAll("#type-chips .chip")
-          .forEach((b) => b.classList.remove("on"));
-        el.classList.add("on");
-        render();
-      }
+function setTest(t,el){
+  state.test = t;
+  document.querySelectorAll('.ttab').forEach(b => { b.classList.remove('on'); b.style.background=''; });
+  el.classList.add('on');
+  el.style.background = t===0 ? COLORS[0] : COLORS[(t-1)%COLORS.length];
+  updateTitle();
+  render();
+}
 
-      // ═══════════════════════════════════════════════
-      //  FILTER + RENDER
-      // ═══════════════════════════════════════════════
-      function getFiltered() {
-        const q = state.q.toLowerCase();
-        return ALL.filter((item) => {
-          if (state.test !== 0 && item.test !== state.test) return false;
-          if (state.type === "starred")
-            return state.starred.has(item.test + "-" + item.idx);
-          if (state.type !== "all" && item.t !== state.type) return false;
-          if (q)
-            return (
-              item.w.toLowerCase().includes(q) ||
-              item.m.toLowerCase().includes(q)
-            );
-          return true;
-        });
-      }
+// ═══════════════════════════════════════════════
+//  TYPE FILTER
+// ═══════════════════════════════════════════════
+function setType(tp,el){
+  state.type = tp;
+  document.querySelectorAll('#type-chips .chip').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+  render();
+}
 
-      const TYPE_LABELS = {
-        v: "Động từ",
-        n: "Danh từ",
-        adj: "Tính từ",
-        adv: "Trạng từ",
-        ph: "Cụm từ",
-      };
+// ═══════════════════════════════════════════════
+//  FILTER + RENDER
+// ═══════════════════════════════════════════════
+function getPool() {
+  if(state.section==='lc') return LC_ALL;
+  if(state.section==='rc') return RC_ALL;
+  return ALL;
+}
 
-      function playPron(encodedWord) {
-        const word = decodeURIComponent(encodedWord);
-        if (!("speechSynthesis" in window)) {
-          alert("Trình duyệt của bạn chưa hỗ trợ phát âm tự động.");
-          return;
-        }
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(word);
-        utter.lang = "en-US";
-        utter.rate = 0.95;
-        utter.pitch = 1;
-        window.speechSynthesis.speak(utter);
-      }
+function getFiltered(){
+  const q = state.q.toLowerCase();
+  const pool = getPool();
+  return pool.filter(item => {
+    if(state.test!==0 && item.test!==state.test) return false;
+    if(state.type==='starred') return state.starred.has(item.section+'-'+item.test+'-'+item.idx);
+    if(state.type!=='all' && item.t!==state.type) return false;
+    if(q) return item.w.toLowerCase().includes(q) || item.m.toLowerCase().includes(q);
+    return true;
+  });
+}
 
-      function render() {
-        const data = getFiltered();
-        const tbody = document.getElementById("tbody");
-        const nr = document.getElementById("no-results");
-        document.getElementById("g-showing").textContent = data.length;
+const TYPE_LABELS = {v:'Động từ', n:'Danh từ', adj:'Tính từ', adv:'Trạng từ', ph:'Cụm từ'};
 
-        if (!data.length) {
-          tbody.innerHTML = "";
-          nr.style.display = "block";
-          return;
-        }
-        nr.style.display = "none";
+function playPron(encodedWord){
+  const word = decodeURIComponent(encodedWord);
+  if(!('speechSynthesis' in window)){alert('Trình duyệt chưa hỗ trợ phát âm.');return;}
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang='en-US'; u.rate=0.92; u.pitch=1;
+  window.speechSynthesis.speak(u);
+}
 
-        tbody.innerHTML = data
-          .map((item, i) => {
-            const key = item.test + "-" + item.idx;
-            const isS = state.starred.has(key);
-            return `<tr style="animation-delay:${Math.min(i * 8, 300)}ms">
-      <td>${i + 1}</td>
-      <td><span class="word">${item.w}</span> <button class="speak-btn" onclick="playPron('${encodeURIComponent(item.w)}')">🔊</button><br><small style="color:var(--muted);font-size:11px">Test ${item.test} · #${item.idx + 1}</small></td>
+function getPhonetic(word) {
+  // Use a simple phonetic approximation via ResponsiveVoice or return empty
+  // We'll show IPA-like representation for common patterns
+  return '';
+}
+
+function render(){
+  const data = getFiltered();
+  const tbody = document.getElementById('tbody');
+  const nr = document.getElementById('no-results');
+  document.getElementById('g-showing').textContent = data.length;
+  document.getElementById('g-starred').textContent = state.starred.size;
+
+  if(!data.length){ tbody.innerHTML=''; nr.style.display='block'; return; }
+  nr.style.display='none';
+
+  tbody.innerHTML = data.map((item,i) => {
+    const key = item.section+'-'+item.test+'-'+item.idx;
+    const isS = state.starred.has(key);
+    const secLabel = item.section==='lc' ? '🎧LC' : '📖RC';
+    return `<tr style="animation-delay:${Math.min(i*8,300)}ms">
+      <td>${i+1}</td>
+      <td>
+        <span class="word">${item.w}</span>
+        <button class="speak-btn" onclick="playPron('${encodeURIComponent(item.w)}')" title="Phát âm">🔊</button>
+        <br><small style="color:var(--muted);font-size:11px">${secLabel} · Test ${item.test} · #${item.idx+1}</small>
+      </td>
       <td><span class="meaning">${item.m}</span></td>
-      <td><span class="tag ${item.t}">${TYPE_LABELS[item.t] || item.t}</span></td>
-      <td><button class="star-btn ${isS ? "on" : ""}" onclick="toggleStar('${key}',this)">${isS ? "⭐" : "☆"}</button></td>
+      <td><span class="tag ${item.t}">${TYPE_LABELS[item.t]||item.t}</span></td>
+      <td><button class="star-btn ${isS?'on':''}" onclick="toggleStar('${key}',this)">${isS?'⭐':'☆'}</button></td>
     </tr>`;
-          })
-          .join("");
-      }
+  }).join('');
+}
 
-      function updateTitle() {
-        const t = state.test;
-        document.getElementById("sec-title").innerHTML =
-          t === 0
-            ? `Tất cả <span id="sec-sub">10 Tests · 800 từ</span>`
-            : `TEST 0${t < 10 ? "" : ""}${t} <span id="sec-sub">80 từ vựng</span>`;
-      }
+function updateTitle(){
+  const t = state.test;
+  const secName = state.section==='lc'?'🎧 LISTENING':state.section==='rc'?'📖 READING':'📚 Tất cả';
+  const total = state.section==='all' ? 1600 : 800;
+  const perTest = state.section==='all' ? 160 : 80;
+  document.getElementById('sec-title').innerHTML = t===0
+    ? secName+' <span id="sec-sub">10 Tests · '+total+' từ</span>'
+    : secName+' · TEST '+String(t).padStart(2,'0')+' <span id="sec-sub">'+perTest+' từ</span>';
+}
 
-      document.getElementById("search").addEventListener("input", (e) => {
-        state.q = e.target.value;
-        render();
-      });
+document.getElementById('search').addEventListener('input', e => { state.q = e.target.value; render(); });
 
-      // ═══════════════════════════════════════════════
-      //  STAR
-      // ═══════════════════════════════════════════════
-      function toggleStar(key, btn) {
-        if (state.starred.has(key)) {
-          state.starred.delete(key);
-          btn.classList.remove("on");
-          btn.textContent = "☆";
-        } else {
-          state.starred.add(key);
-          btn.classList.add("on");
-          btn.textContent = "⭐";
-        }
-        document.getElementById("g-starred").textContent = state.starred.size;
-        if (state.type === "starred") render();
-      }
+// ═══════════════════════════════════════════════
+//  STAR
+// ═══════════════════════════════════════════════
+function toggleStar(key,btn){
+  if(state.starred.has(key)){ state.starred.delete(key); btn.classList.remove('on'); btn.textContent='☆'; }
+  else { state.starred.add(key); btn.classList.add('on'); btn.textContent='⭐'; }
+  document.getElementById('g-starred').textContent = state.starred.size;
+  if(state.type==='starred') render();
+}
 
-      // ═══════════════════════════════════════════════
-      //  QUIZ
-      // ═══════════════════════════════════════════════
-      let Q = { data: [], idx: 0, score: 0, done: false };
+// ═══════════════════════════════════════════════
+//  QUIZ
+// ═══════════════════════════════════════════════
+let Q = {data:[],idx:0,score:0,done:false};
 
-      function startQuiz() {
-        const pool = getFiltered();
-        if (pool.length < 4) {
-          alert("Cần ít nhất 4 từ để bắt đầu quiz!");
-          return;
-        }
-        Q.data = shuffle([...pool]).slice(0, Math.min(20, pool.length));
-        Q.idx = 0;
-        Q.score = 0;
-        Q.done = false;
-        document.getElementById("quiz-overlay").classList.add("show");
-        showQ();
-      }
+function startQuiz(){
+  const pool = getFiltered();
+  if(pool.length<4){alert('Cần ít nhất 4 từ!');return;}
+  Q.data = shuffle([...pool]).slice(0,Math.min(20,pool.length));
+  Q.idx=0; Q.score=0; Q.done=false;
+  document.getElementById('quiz-overlay').classList.add('show');
+  showQ();
+}
 
-      function showQ() {
-        if (Q.idx >= Q.data.length) {
-          showResult();
-          return;
-        }
-        const item = Q.data[Q.idx];
-        const wrongs = shuffle(ALL.filter((v) => v.w !== item.w)).slice(0, 3);
-        const opts = shuffle([item, ...wrongs]);
-        const pct = Math.round((Q.idx / Q.data.length) * 100);
-        document.getElementById("qcard").innerHTML = `
-    <div class="qprogress">Câu ${Q.idx + 1} / ${Q.data.length} · ✅ ${Q.score}</div>
+function showQ(){
+  if(Q.idx>=Q.data.length){showResult();return;}
+  const item = Q.data[Q.idx];
+  const currentPool = getPool();
+  const wrongs = shuffle(currentPool.filter(v=>v.w!==item.w)).slice(0,3);
+  const opts = shuffle([item,...wrongs]);
+  const pct = Math.round(Q.idx/Q.data.length*100);
+  document.getElementById('qcard').innerHTML = `
+    <div class="qprogress">Câu ${Q.idx+1} / ${Q.data.length} · ✅ ${Q.score}</div>
     <div class="qbar"><div class="qbar-fill" style="width:${pct}%"></div></div>
     <div class="qword">${item.w}</div>
-    <div class="qhint">Test ${item.test} · Chọn nghĩa đúng</div>
-    <div class="qopts">
-      ${opts.map((o) => `<button class="qopt" onclick="answer(this,'${o.w}','${item.w}')">${o.m}</button>`).join("")}
-    </div>`;
-      }
+    <div class="qhint">${item.section==='lc'?'🎧 LC':'📖 RC'} · Test ${item.test} · Chọn nghĩa đúng</div>
+    <div class="qopts">${opts.map(o => `<button class="qopt" onclick="answer(this,'${o.w.replace(/'/g,"\\'")}','${item.w.replace(/'/g,"\\'")}')">${o.m}</button>`).join('')}</div>`;
+}
 
-      function answer(btn, chosen, correct) {
-        if (Q.done) return;
-        Q.done = true;
-        document.querySelectorAll(".qopt").forEach((b) => {
-          const word = ALL.find((v) => v.m === b.textContent);
-          if (word && word.w === correct) b.classList.add("correct");
-        });
-        if (chosen === correct) {
-          btn.classList.add("correct");
-          Q.score++;
-        } else btn.classList.add("wrong");
-        setTimeout(() => {
-          Q.idx++;
-          Q.done = false;
-          showQ();
-        }, 900);
-      }
+function answer(btn,chosen,correct){
+  if(Q.done)return;
+  Q.done=true;
+  const pool = getPool();
+  document.querySelectorAll('.qopt').forEach(b => {
+    const word = pool.find(v=>v.m===b.textContent);
+    if(word && word.w===correct) b.classList.add('correct');
+  });
+  if(chosen===correct){btn.classList.add('correct');Q.score++;}
+  else btn.classList.add('wrong');
+  setTimeout(()=>{Q.idx++;Q.done=false;showQ();},900);
+}
 
-      function showResult() {
-        const pct = Math.round((Q.score / Q.data.length) * 100);
-        const e = pct >= 80 ? "🎉" : pct >= 60 ? "💪" : "📚";
-        const msg =
-          pct >= 80 ? "Xuất sắc!" : pct >= 60 ? "Tốt lắm!" : "Cần ôn thêm!";
-        document.getElementById("qcard").innerHTML = `
+function showResult(){
+  const pct = Math.round(Q.score/Q.data.length*100);
+  const e = pct>=80?'🎉':pct>=60?'💪':'📚';
+  const msg = pct>=80?'Xuất sắc!':pct>=60?'Tốt lắm!':'Cần ôn thêm!';
+  document.getElementById('qcard').innerHTML = `
     <div style="font-size:52px">${e}</div>
     <div style="font-family:'Lexend',sans-serif;font-size:22px;font-weight:800;margin:12px 0 4px">${msg}</div>
     <div class="result-score">${Q.score}/${Q.data.length}</div>
@@ -1861,31 +2282,96 @@
       <button class="qbtn primary" onclick="startQuiz()">🔁 Chơi lại</button>
       <button class="qbtn" onclick="closeQuiz()">✕ Đóng</button>
     </div>`;
-      }
+}
 
-      function closeQuiz() {
-        document.getElementById("quiz-overlay").classList.remove("show");
-      }
-      document.getElementById("quiz-overlay").addEventListener("click", (e) => {
-        if (e.target.id === "quiz-overlay") closeQuiz();
-      });
+function closeQuiz(){document.getElementById('quiz-overlay').classList.remove('show');}
+document.getElementById('quiz-overlay').addEventListener('click',e=>{if(e.target.id==='quiz-overlay')closeQuiz();});
 
-      // ═══════════════════════════════════════════════
-      //  UTILS
-      // ═══════════════════════════════════════════════
-      function shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
-      }
+// ═══════════════════════════════════════════════
+//  FLASHCARD
+// ═══════════════════════════════════════════════
+let FC = {data:[],idx:0,hard:[],ok:[],easy:[]};
 
-      // ═══════════════════════════════════════════════
-      //  INIT
-      // ═══════════════════════════════════════════════
-      buildTabs();
-      render();
+function startFlashcard(){
+  const pool = getFiltered();
+  if(pool.length<1){alert('Không có từ nào để ôn!');return;}
+  FC.data = shuffle([...pool]).slice(0,Math.min(30,pool.length));
+  FC.idx=0; FC.hard=[]; FC.ok=[]; FC.easy=[];
+  document.getElementById('flash-overlay').classList.add('show');
+  showFlash();
+}
+
+function showFlash(){
+  if(FC.idx>=FC.data.length){showFlashResult();return;}
+  const item = FC.data[FC.idx];
+  const card = document.getElementById('flashcard');
+  card.classList.remove('flipped');
+  const secLabel = item.section==='lc'?'🎧 Listening':'📖 Reading';
+  document.getElementById('flash-progress').textContent =
+    'Thẻ '+(FC.idx+1)+' / '+FC.data.length+' · 😓'+FC.hard.length+' 🤔'+FC.ok.length+' ✅'+FC.easy.length;
+  document.getElementById('flash-front').innerHTML = `
+    <div class="flash-word">${item.w}</div>
+    <div class="flash-type">${TYPE_LABELS[item.t]||item.t} · ${secLabel} · Test ${item.test}</div>
+    <div class="flash-hint">Nhấn để lật thẻ</div>`;
+  document.getElementById('flash-back').innerHTML = `
+    <div class="flash-meaning">${item.m}</div>
+    <div class="flash-word" style="font-size:22px;color:var(--text);margin-bottom:4px">${item.w}</div>
+    <div class="flash-test-info">${TYPE_LABELS[item.t]||item.t} · ${secLabel} · Test ${item.test} · #${item.idx+1}</div>`;
+}
+
+function flipCard(){
+  document.getElementById('flashcard').classList.toggle('flipped');
+}
+
+function flashMark(level){
+  const item = FC.data[FC.idx];
+  if(level==='hard') FC.hard.push(item);
+  else if(level==='ok') FC.ok.push(item);
+  else FC.easy.push(item);
+  FC.idx++;
+  showFlash();
+}
+
+function showFlashResult(){
+  const total = FC.hard.length+FC.ok.length+FC.easy.length;
+  const pct = Math.round(FC.easy.length/total*100);
+  document.getElementById('flash-progress').textContent = 'Hoàn tất!';
+  document.getElementById('flashcard').classList.remove('flipped');
+  document.getElementById('flash-front').innerHTML = `
+    <div style="font-size:48px;margin-bottom:16px">${pct>=70?'🎉':'📚'}</div>
+    <div style="font-family:'Lexend',sans-serif;font-size:22px;font-weight:800;margin-bottom:16px">${pct>=70?'Tuyệt vời!':'Cần ôn thêm!'}</div>
+    <div style="display:flex;gap:24px;font-size:18px;font-weight:700">
+      <div>😓 <span style="color:var(--accent2)">${FC.hard.length}</span></div>
+      <div>🤔 <span style="color:var(--gold)">${FC.ok.length}</span></div>
+      <div>✅ <span style="color:var(--accent3)">${FC.easy.length}</span></div>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      ${FC.hard.length>0?'<button class="flash-btn danger" onclick="reviewHard()">Ôn lại từ khó</button>':''}
+      <button class="flash-btn primary" onclick="startFlashcard()">🔁 Ôn lại</button>
+      <button class="flash-btn" onclick="closeFlash()">✕ Đóng</button>
+    </div>`;
+  document.getElementById('flash-back').innerHTML = '';
+}
+
+function reviewHard(){
+  FC.data = shuffle([...FC.hard]);
+  FC.idx=0; FC.hard=[]; FC.ok=[]; FC.easy=[];
+  showFlash();
+}
+
+function closeFlash(){document.getElementById('flash-overlay').classList.remove('show');}
+document.getElementById('flash-overlay').addEventListener('click',e=>{if(e.target.id==='flash-overlay')closeFlash();});
+
+// ═══════════════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════════════
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+// ═══════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════
+buildTabs();
+render();
     </script>
   </body>
 </html>
